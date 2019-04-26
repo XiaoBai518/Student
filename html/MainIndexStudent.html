@@ -46,7 +46,7 @@
         <div class="th-bar">
           <span class="tit fl">通知</span>
           <div class="less fr">
-            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+            <a id="messageset" href="userSetting.html">设置</a>
           </div>
           <div class="less fr">
             <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
@@ -236,7 +236,7 @@
             <p>您的这个班级的任何信息或评论将被永久删除<br>
             	<span style="color:red">警告：此操作无法撤消</span>
             </p>
-            <p><span title="如果您不是VIP，删除班级，也会被计算在免费的班级数里" style="color:blue">提醒：已用班级数包含了“删除班级数”</span></p>
+            <p><span title="是否有删除" style="color:blue">提醒：已用班级数包含了“删除班级数”</span></p>
         </div>
         <div class="deletekccon">
             <input type="password" placeholder="请输入登录密码验证">
@@ -405,7 +405,7 @@
     </dt>
 	<dd>
 		<ul>
-			<li class="off"><span>近期作业</span></li>
+			<li class="off"><span>近期公告</span></li>
 			{{each l['hlist'] as h}}
 				<li><span title="{{h['title']}}"><a href={{if h['type']==0}}"/Review/index/homeworkid/{{h['id']}}.html"{{else}}"/Review/groupindex/homeworkid/{{h['id']}}.html"{{/if}}>{{h['title']}}</a></span></li>
             {{/each}}

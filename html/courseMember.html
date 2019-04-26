@@ -50,7 +50,7 @@
         <div class="th-bar">
           <span class="tit fl">通知</span>
           <div class="less fr">
-            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+            <a id="messageset" href="userSetting.html">设置</a>
           </div>
           <div class="less fr">
             <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
@@ -69,10 +69,10 @@
 	<div class="user-info hide">
 		<ul>
 			<li>
-				<a class="link setting" href="https://www.ketangpai.com/User/setting.html">个人设置</a>
+				<a class="link setting" href="userSetting.html">个人设置</a>
 			</li>
             <li>
-				<a class="link logout" href="https://www.ketangpai.com/User/logout.html">退出账户</a>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
 			</li>        
         </ul>
     </div>
@@ -153,13 +153,13 @@
         <span class="delete_hidden">全部</span>
         <a href="javascript:;" class="btn_delete_checked disabled">删除成员</a>
     </div>
-        <li>
-        <span class="delete_check  delete_list"></span>
-        <p class="studentavatar"><img src="/userIcon/defaultUserIcon.jpg" data-src="/userIcon/defaultUserIcon.jpg" class="avatar" data-end="1"></p>
-        <p class="stuno" title="2015015528">2015015528</p>
-        <p class="name" title="张天润a">张天润a</p>
-        <p class="mail" title="456123@qq.com">456123@qq.com</p>
-        </li>
+    <li>
+        <span style=" float: left;height: 100%;width: 40px;"></span>
+        <p class="studentavatar" style="color:#999">&nbsp;&nbsp;头像</p>
+        <p class="stuno" style="color:#999">&nbsp;&nbsp;&nbsp;&nbsp;学号</p>
+        <p class="name" style="color:#999">&nbsp;&nbsp;姓名</p>
+        <p class="mail" style="color:#999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱</p>
+    </li>
     </ul>
             </div>
         </div>
@@ -172,6 +172,7 @@
 
 <!--全部学生-->
 <script type="text/html" id="tpl-allStudent">
+    
     {{each lists as l}}
     <li data-id="{{l['id']}}">
         <span class="delete_check  delete_list"></span>
