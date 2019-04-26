@@ -1,0 +1,600 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.textoverflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.overflow {
+	overflow: hidden;
+}
+
+.attend_datadetail {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+/*ä¾§è¾¹æ */
+.attend_nav {
+	width: 213px;
+	height: 100%;
+	background-color: #fff;
+	position: relative;
+	padding: 17px 0px 17px 0;
+	top: -17px;
+	overflow: auto;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.nav_attenddatelist {
+	font-size: 16px;
+	color: #357ae8;
+}
+
+.nav_data {
+	width: 130px;
+	margin-left: 20px;
+	display: inline-block;
+	cursor: pointer;
+	line-height: 30px;
+}
+
+.nav_down {
+	background: url('/html/Public/Home/img/rightdisplay.png') right center
+		no-repeat;
+	width: 10px;
+	height: 30px;
+	margin-left: 25px;
+	display: inline-block;
+}
+
+.nav_down.on {
+	background: url(/html/Public/Home/img/downdisplay.png) right center no-repeat;
+	;
+}
+
+.nav_attendnamelists {
+	display: none;
+}
+
+.nav_down.on+.nav_attendnamelists {
+	display: block
+}
+
+.nav_attendnamelist {
+	font-size: 14px;
+	color: #808080;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 38px 0 45px;
+	cursor: pointer;
+}
+
+.nav_attendnamelist:last-child {
+	margin-bottom: 20px;
+}
+
+.nav_attendnamelist:hover {
+	color: #fff;
+	background: rgba(53, 122, 232, 0.7);
+}
+
+.nav_attendnamelist.on {
+	color: #fff;
+	background-color: #357ae8;
+}
+
+.nav_attenddatelists {
+	margin: 20px 0;
+}
+
+/*æŸæ¬¡è€ƒå‹¤è¯¦æƒ…*/
+.attend_adetailmain {
+	background-color: #fff;
+	width: 980px;
+	min-height: 500px;
+	box-sizing: border-box;
+	padding: 30px 20px;
+}
+
+.attend_admhd {
+	height: 170px;
+}
+
+.admhdtop {
+	height: 80px;
+	border-bottom: 1px solid #ccc;
+}
+
+.admhd_dis {
+	width: 350px;
+	display: inline-block;
+}
+
+/* .btn_root {
+	float: right;
+	font-size: 14px;
+	color: #808080;
+	padding-left: 20px;
+	background: url(/html/Public/Home/img/setting.png) left center no-repeat;
+} */
+.btn_root {
+	float: right;
+	height: 20px;
+	width: 20px;
+	font-size: 14px;
+	color: #808080;
+	background: url(../img/attend_setoff.png) center no-repeat;
+}
+.btn_dl_single{
+	float: right;
+	height: 20px;
+	width: 20px;
+	margin-right: 15px;
+	background: url(../img/attend_dloff.png) center no-repeat;
+}
+.btn_root:hover{
+	background: url(../img/attend_seton.png) center no-repeat;
+}
+.btn_dl_single:hover{
+	background: url(../img/attend_dlon.png) center no-repeat;
+}
+.admhd_name {
+	width: 250px;
+	font-size: 24px;
+	color: #333;
+	font-weight: 800;
+}
+
+.admhd_date {
+	width: 300px;
+	font-size: 14px;
+	color: #999;
+}
+
+.admhd_peoplenum {
+	display: inline-block;
+	margin-left: 200px;
+	width: 90px;
+	text-align: center;
+}
+
+.admhd_peoplenumtop {
+	font-size: 14px;
+	color: #357ae8;
+}
+
+.admhd_peoplenumfont {
+	font-size: 14px;
+	color: #999;
+}
+
+.admhd_rate {
+	display: inline-block;
+	width: 90px;
+	margin-left: 70px;
+	text-align: center;
+}
+
+.admhd_ratetop {
+	font-size: 14px;
+	color: #357ae8;
+}
+
+.admhd_ratefont {
+	font-size: 14px;
+	color: #999;
+}
+
+.admhdtab {
+	height: 50px;
+	line-height: 60px;
+	overflow: hidden;
+}
+
+.attend_suspicious {
+	float: right;
+	position: relative;
+}
+
+.suspicious_num {
+	position: absolute;
+	display: inline-block;
+	height: 15px;
+	min-width: 15px;
+	background-color: #ff3d74;
+	border-radius: 7px;
+	color: #fff;
+	right: 0;
+	top: 15px;
+	font-size: 12px;
+	line-height: 15px;
+	text-align: center;
+	display: none;
+}
+
+.btn_suspicious {
+	font-size: 14px;
+	color: #666;
+	padding-right: 10px;
+	padding-left: 20px;
+	background: url(/html/Public/Home/img/suspicious.png) left center no-repeat;
+}
+
+.btn_GPS {
+	font-size: 14px;
+	color: #666;
+	padding-right: 10px;
+	padding-left: 20px;
+	background: url(/html/Public/Home/img/GPS2.png) left center no-repeat;
+	background-size: auto 100%;
+	margin-right: 20px;
+}
+
+.attend_tab {
+	float: left;
+	padding: 0 10px;
+	margin-right: 20px;
+	font-size: 13px;
+	color: #666;
+	text-align: center;
+	font-weight: 400;
+	height: 50px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.attend_tab.on {
+	color: #357ae8;
+	border-bottom: 2px solid #357ae8;
+}
+
+.adnhdsort {
+	line-height: 50px;
+	font-size: 14px;
+	padding: 0 13px;
+}
+
+.btn_sort.down {
+	background: url(/html/Public/Home/img/downdisplay.png) right center no-repeat;
+}
+
+.btn_sort.up {
+	background: url(/html/Public/Home/img/displayup.png) right center no-repeat;
+}
+
+.attend_date_member {
+	display: inline-block;
+	width: 220px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.attend_date_member img {
+	cursor: pointer;
+}
+
+.btn_sort_member {
+	color: #999;
+	padding-right: 20px;
+}
+
+.btn_sort_stunum {
+	color: #999;
+	padding-right: 5px;
+	margin-left: 65px;
+}
+
+.attend_date_state {
+	display: inline-block;
+	width: 90px;
+	margin-right: 35px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.btn_changeattendstate {
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.btn_changeattendstate img {
+	margin-top: 8px;
+}
+
+.btn_changeattendstate:hover {
+	box-shadow: 0 0 2px #666;
+}
+
+.btn_sort_state {
+	color: #999;
+	padding-right: 20px;
+}
+
+.attend_date_logtime {
+	display: inline-block;
+	width: 170px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.btn_sort_logtime {
+	color: #999;
+	padding-right: 20px;
+}
+
+.attend_date_ip {
+	display: inline-block;
+	width: 115px;
+	margin-right: 30px;
+	vertical-align: middle;
+}
+
+.btn_sort_ip {
+	color: #999;
+	padding-right: 20px;
+}
+
+.attend_date_gps {
+	display: inline-block;
+	width: 70px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.attend_dategpsimg {
+	vertical-align: middle;
+	width: 12px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+.btn_sort_gps {
+	color: #999;
+	padding-right: 20px;
+}
+
+.attend_date_change {
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn_sort_change {
+	color: #999;
+	padding-right: 20px;
+}
+
+.attend_date_lists {
+	padding: 0 13px;
+	font-size: 14px;
+}
+
+.attend_date_list {
+	height: 32px;
+	margin-top: 16px;
+}
+
+.img_date_people_head {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background-color: #fbfafa;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.attend_date_member_name {
+	color: #333;
+	width: 80px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.attend_date_member_name:hover {
+	color: #328eeb;
+}
+
+.attend_date_member_num {
+	color: #999;
+	width: 86px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.btn_change_state {
+	
+}
+
+.attend_date_change {
+	
+}
+
+/*å¯ä»¥ä»£ç­¾*/
+.img_attendstate_img {
+	cursor: pointer;
+}
+
+.suspicious_list:last-child {
+	margin-bottom: 10px;
+}
+
+#btn_changestate span {
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	width: 145px;
+	height: 60px;
+	line-height: 58px;
+	display: inline-block;
+	margin-bottom: 10px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#btn_changestate span.on {
+	border: 2px solid #357AE8;
+	line-height: 56px;
+}
+
+.map-cont .states {
+	float: right;
+	width: 58px;
+	height: 28px;
+	border: 1px solid #DCDCDC;
+	margin-top: 9px;
+	text-align: center;
+	line-height: 1;
+}
+
+.map-cont .states span {
+	display: inline-block;
+}
+
+.map-cont .states .ok {
+	width: 20px;
+	height: 14px;
+	background: url(/Public/Home/img/ok.png) 0 0 no-repeat;
+	margin-top: 6px;
+}
+
+.map-cont .states .no {
+	width: 14px;
+	height: 14px;
+	background: url(/Public/Home/img/no.png) 0 0 no-repeat;
+	margin-top: 6px;
+}
+
+.map-cont .states .late {
+	width: 7px;
+	height: 13px;
+	background: url(/Public/Home/img/late.png) 0 0 no-repeat;
+	margin-top: 7px;
+}
+
+.map-cont .states .parse {
+	width: 8px;
+	height: 14px;
+	background: url(/Public/Home/img/parse.png) 0 0 no-repeat;
+	margin-top: 7px;
+}
+
+.map-cont .states .zaotui {
+	width: 8px;
+	height: 14px;
+	background: url(/Public/Home/img/zaotui.png) 0 0 no-repeat;
+	background-size: auto 100%;
+	margin-top: 7px;
+}
+
+.map-cont .states .parse1 {
+	width: 16px;
+	height: 16px;
+	background: url(/Public/Home/img/parse1.png) 0 0 no-repeat;
+	background-size: auto 100%;
+	margin-top: 7px;
+}
+
+.map-cont .states .parse2 {
+	width: 16px;
+	height: 16px;
+	background: url(/Public/Home/img/parse2.png) 0 0 no-repeat;
+	background-size: auto 100%;
+	margin-top: 7px;
+}
+
+.map-cont .states .parse3 {
+	width: 16px;
+	height: 16px;
+	background: url(/Public/Home/img/parse3.png) 0 0 no-repeat;
+	background-size: auto 100%;
+	margin-top: 7px;
+}
+
+.map-cont .states:hover {
+	border: 1px solid #AAAAAA;
+}
+
+#mouhu_search {
+	height: 30px;
+	width: 0px;
+	border-bottom: 1px solid #ccc;
+	transition: 0.3s;
+	margin-top: 17px;
+	margin-right: 20px;
+	color: #666;
+	box-sizing: border-box;
+	opacity: 0;
+	transition: opacity 0.3s, width 0.3s, padding 0.3s;
+}
+
+#mouhu_search.on {
+	width: 140px;
+	opacity: 1;
+	padding: 0 10px;
+	padding-right: 20px;
+}
+
+#serach_student {
+	position: absolute;
+	height: 100%;
+	width: 20px;
+	top: 0;
+	right: 15px;
+	background: url(/Public/Home/img/searchpeople.png) no-repeat;
+	background-position: right 23px;
+	background-size: auto 17px;
+	opacity: 0.7
+}
+
+.btn_root+ul {
+	display: none;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 0 5px #ccc;
+	right: 0;
+	top: 30px;
+	padding: 5px 0;
+}
+
+.btn_root+ul.on {
+	display: block;
+}
+
+.btn_root+ul li {
+	padding: 0 30px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn_root+ul li:hover {
+	background: rgb(113, 160, 239);
+	color: #fff;
+}

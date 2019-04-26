@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>考勤</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+<link rel="stylesheet" href="Public/Home/css/coursewarev3.css">
+<link href="Public/Home/css/attencev3.css" rel="stylesheet" type="text/css">
+
+<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/laydate/default/laydate.css" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/layer/default/layer.css" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/code.css" media="all">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+
+</head>
+<body style="background-color:#fff;">
+<div id="MYAttence"></div>
+<div id="course-header" data-id="MDAwMDAwMDAwMLOspZiGz7Ns" data-sys="0" class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
+    <div class="nav nav-clear clearfix">
+        <ul class="nav-menu-left">
+            <li class="nav-menu-item">
+                <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
+                <i style="display: inline-block;width: 27px;height: 18px;background: url(Public/Common/img/return.png) left top no-repeat;position: relative;top: 5px;"></i>
+        <span style="font-size: 20px;color: #FFF;line-height: 24px;vertical-align: middle;">课堂</span>
+    </a>
+            </li>
+        </ul>
+    	<ul class="nav-menu-right">
+            <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="/html/Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>            <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="" alt="用户" title="用户">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="https://www.ketangpai.com/User/setting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        
+        </ul>
+    </div>
+</li>        </ul>
+    </div>
+        <div class="topm cl">
+            <h1 id="courseName"></h1>
+                <div class="codetip">使用以下邀请码邀请学生加课</div>            
+                    <div class="box-box">
+                        <div class="sele" id="course-code-select" >
+                    	       <div  id="courseCode"class="codetext" style="margin-left:25px;"></div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+    <div class="banner cl">
+        <div class="in-header" style="background: none repeat scroll 0% 0% #455b8c;">
+            <ul class="nav-menu-left hide" style="display: none;">
+                <li class="nav-menu-item">
+                    <a class="side-button" href="javascript:;"><img src="Public/Common/img/ktp1_09.png" alt=""></a>
+                </li>
+            </ul>
+            <div id="third-nav" class="nav gWidth">
+                 <a href="courseVideo.html"><img src="Public/Common/img/datachart.png">互动</a>
+                <a id="mymember" href="courseMember.html" ><img src="Public/Common/img/ktp1_24.png">成员</a>
+                <a href="courseAttence.html" class="active"><img src="Public/Common/img/ktp1_19.png">考勤</a>
+                <a href="#" ><img src="Public/Common/img/ktp1_26.png">公告</a>     
+            </div>
+        </div>
+    </div>
+
+
+        <link rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/layui.css" media="all">
+        <script type="text/javascript">
+    seajs.use('jquery',function(ex){
+        try{
+            if(self!=top){
+                $('.nav-menu-right').css('display','none');
+                $('#third-nav').css('display','none');
+                $('#return-course.return').css('display','none');
+                $('#alongheader').css('display','block')
+            }
+        }catch(err){}
+    });
+
+</script>
+<div class="data-page">
+    
+    <div class="attend normal">
+        <div class="attend_header">
+            <div class="attend_headleft" style="height: 100px;">
+                <p class="attend_rate">
+                    平均出勤率                    
+                    <span class="attend_ratenums" style="color: rgb(50, 142, 235);">
+                    	<big class="attend_ratenum"></big>%</span>
+                </p>
+                <h3 class="attend_className textoverflow"><span id="mycoursename"></span></h3>
+                <p class="attend_stunum">班级人数：</p>
+            </div>
+            <div class="attend_headright">
+                <div class="dlchartbox">
+                    <a href="javascript:;" class="btn-download" id="downloadAttenceReport" data-href="/Export/attence/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html">下载报表</a>
+                    <ul class="dlul">
+                        <li class="dlli">
+                            <a href="javascript:;" class="dlall">下载全部</a>
+                        </li>
+                        <li class="dlli">
+                            <a href="javascript:;" class="dlbytime">按时间下载</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:;" class="btn-createattend">新建考勤</a>
+            </div>
+            <script type="text/html" id="tpl-timeselect">
+                <style>
+                    .timeline{
+                        height: 40px;
+                        line-height: 40px;
+                    }
+                    
+                    .layui-laydate{
+                        z-index:9999999999;
+                    }
+
+                    @font-face{font-family:
+                    layui-icon;src:url(/Public/Home/personLession/layui/font/iconfont.eot?v=220);src:url(/Public/Home/personLession/layui/font/iconfont.eot?v=220#iefix) format('embedded-opentype'),url(/Public/Home/personLession/layui/font/iconfont.svg?v=220#iconfont) format('svg'),url(/Public/Home/personLession/layui/font/iconfont.woff?v=220) format('woff'),url(/Public/Home/personLession/layui/font/iconfont.ttf?v=220) format('truetype')}
+                    .layui-laydate-main .layui-laydate-header i{
+                        color: #fff;
+                        font-family: layui-icon !important;
+                        font-size: 16px;
+                        font-style: normal;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+                    .layui-laydate-header{
+                        background: #328eeb;
+                    }
+                    .layui-laydate td{
+                        border: 1px solid #ccc
+                    }
+                    .layui-laydate td:last-child,.layui-laydate td:first-child,.layui-laydate th:last-child,.layui-laydate th:first-child{
+                        color: rgb(255,121,29);
+                    }
+                    .layui-laydate .laydate-set-ym{
+                        color: #fff;
+                    }
+                    .layui-laydate .layui-laydate-header span:hover {
+                        color: #bee823;
+                    }
+                    .layui-laydate .layui-laydate-content .laydate-day-next,.layui-laydate .layui-laydate-content .laydate-day-prev{
+                        color: #fff;
+                        transition: 0;
+                    }
+                    .layui-laydate .layui-laydate-content .laydate-day-next:hover,.layui-laydate .layui-laydate-content .laydate-day-prev:hover{
+                        color: #000;
+                    }
+
+
+                    .blur{
+                    /**  格式，filer: blur(模糊半径)
+                        *  模糊半径，取值范围0~Npx，0为无效果
+                        */
+                        -webkit-filter: blur(10px);
+                        -moz-filter: blur(10px);
+                        -o-filter: blur(10px);
+                        -ms-filter: blur(10px);
+                        filter: blur(10px); 
+                        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+                    }
+
+                    .timeline>input{
+                        border: 1px solid #ececec;
+                        padding: 8px 20px;
+                        margin-left: 20px;
+                        width: 100px;
+                        background: url(/Public/Home/personLession/img/cal.png) 100px center no-repeat;
+                        margin-right: 20px;
+                    }
+                </style>
+                <div class="timeline">
+                    <span class="timetitle">起始时间</span>
+                    <input type="text" class="layui-input" id="limitdates" name="" placeholder="请选择日期">
+                </div>
+                <div class="timeline">
+                    <span class="timetitle">结束时间</span>
+                    <input type="text" class="layui-input" id="limitdatee" name="" placeholder="请选择日期">
+                </div>
+            </script>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="attend_main">
+            <div class="attend_mainleft">
+                <p class="attend_mlhead">
+                    <span>考勤历史</span><span style="margin:0 10px;font-size: 12px;" id="attence_count">3次</span>
+                    <a href="/attence/coursedata/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html" class="btn-data">数据统计</a>
+                </p>
+                <div class="overflow" style="height: 420px">
+                    <div class="attend_attendlists">
+
+    				</div>
+                </div>
+            </div>
+            <div class="attend_mainright">
+
+               
+       		 </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+<!--新建弹窗-->
+<div class="del-pop" id="new-perform" data-type="1">
+    <div class="pop-title">
+        <h3>新建考勤</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="input-box">
+            <span>考勤名称：</span>
+            <input type="text" placeholder="请输入考勤名称">
+        </div>
+        <div class="choose-box">
+            <p>考勤方式：</p>
+            <ul class="attance-way">
+                <li class="active" data-type="1">
+                    <div class="iconarea digit">
+                        <div class="icons"></div>
+                    </div>
+                    <span class="lable-title">数字考勤</span>
+                    <span style="margin: 5px 20px 0; display: block; font-size: 12px; color: #aaaaaa">学生通过数字码签到，自动生成考勤状态</span>
+                </li>
+                <li data-type="2">
+                    <div class="iconarea nows">
+                        <div class="icons"></div>
+                    </div>
+                    <span class="lable-title">人脸智能考勤</span>
+                    <span style="margin: 5px 20px 0; display: block; font-size: 12px; color: #aaaaaa">学生直接进行签到，系统会获取人脸数据进行活体检测</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure">开始考勤</a>
+    </div>
+</div>
+
+<!--新建数字考勤-->
+<div class="del-pop" id="number-attend" data-type="1">
+    <div class="pop-title">
+        <h3>数字考勤</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="number-box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="opt clearfix">
+            <span class="fl">学生通过以上数字完成签到</span>
+        </div>
+        <div class="sign-count">
+            <span>已签到：</span>
+            <i class="ing"></i>
+            <i class="line">/</i>
+            <i class="total"></i>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">放弃</a>
+        <a href="javascript:;" class="sure active">结束</a>
+    </div>
+</div>
+<!--新建智能人脸考勤-->
+<div class="del-pop" id="Face-attend" data-type="2">
+    <div class="pop-title">
+        <h3>智能人脸考勤</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="sign-count">
+            <span>已签到：</span>
+            <i class="ing"></i>
+            <i class="line">/</i>
+            <i class="total"></i>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">放弃</a>
+        <a href="javascript:;" class="sure active">结束</a>
+    </div>
+</div>
+<!--新建GPS考勤-->
+<!--<div class="del-pop" id="gps-attend" data-type="2">
+    <div class="pop-title">
+        <h3>GPS考勤</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="sign-count">
+            <span>已签到：</span>
+            <i class="ing"></i>
+            <i class="line">/</i>
+            <i class="total"></i>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">放弃</a>
+        <a href="javascript:;" class="sure active">结束</a>
+    </div>
+</div> -->
+
+<!--放弃弹窗-->
+<div class="little-pop" id="abandon-attend">
+    <h3 class="title">放弃此次考勤？</h3>
+    <p class="re-words">放弃此考勤后，此次考勤数据将清零</p>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">放弃</a>
+    </div>
+</div>
+    <div class="little-pop" id="abandon-attend2">
+        <h3 class="title">放弃此次考勤？</h3>
+        <p class="re-words">放弃此考勤后，此次考勤数据将清零</p>
+        <div class="btns">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;" class="sure active">放弃</a>
+        </div>
+    </div>
+    
+<!--结束弹窗-->
+<div class="little-pop" id="end-attend">
+    <h3 class="title">结束并完成考勤？</h3>
+    <p class="re-words">考勤结束后，老师可手动修改未签到学生考勤状态</p>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">结束</a>
+    </div>
+</div>
+
+<!--进入若有考勤未完成-->
+<div class="little-pop" id="have-attend">
+    <h3 class="new-pop-title">"<span></span>"考勤尚未结束</h3>
+    <div class="btns fs14">
+        <a href="javascript:;" class="cancel">放弃</a>
+        <a href="javascript:;" class="sure active">查看详情</a>
+    </div>
+</div>
+
+
+<!-- 顶部班级信息 -->
+<script type="text/html" id="tmp-headleft">
+    <p class="attend_rate">
+        平均出勤率        <span class="attend_ratenums" 
+            <% if(attendrate<=50) {%> style="color:#ec3452" <%}%>  >
+            <big class="attend_ratenum"><%= attendrate %></big>
+            %
+        </span>
+    </p>
+    <h3 class="attend_className textoverflow"><%= classname%></h3>
+    <p class="attend_stunum">班级人数：<%=stucont%></p>
+</script>
+<!-- 低出勤率学生模板 -->
+<script type="text/html" id="tmp-stulatelist">
+    <% var length = lists.length; %>
+    <p class="attend_mrhead">
+        <span>旷课次数最高(<%=length%>)</span>
+    </p>
+    <div class="overflow" style="height: 470px;">
+        <div class="attend_studentlists" style="height: 470px;">
+            <% if( length == 0 ){ %>
+                <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">好棒,没有旷课的学生</p>
+            <%} else{ 
+                for(var i = 0;i<length;i++){
+            %>
+                <div class="attend_studentlist">
+                    <img src="<%=lists[i].iconPath %>" class="attend_stuimg" >
+                    <span class="attend_stuname textoverflow"><%=lists[i].username %></span>
+                    <span class="attend_stuatt"><%=lists[i].count %><span style="font-size: 12px;">次 </span>   </span>
+                </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</script>
+
+<!-- 考勤模板 -->
+<script type="text/html" id="tmp-attendlist">
+    <% if( lists.length === 0 ){ %>
+        <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">还没有考勤历史！！</p>
+    <% }else{ %>
+        <% for( var i = 0; i<lists.length; i++ ) { %>    
+        <div class="attend_attendlist" data-id="<%=lists[i].id%>" style="position: relative;">
+            <div class="attend_alright">
+                <span>出勤率</span>
+                <div class="attend_circle">
+                    <%=lists[i].absenceRate%>%
+                </div>
+                <a href="javascript:;" class="attend_alrmore"></a>
+                <ul >
+                    <li class="btn_delete_attend">删除</li>
+                    <li class="btn_altertitle_attend">重命名</li>
+                </ul>
+            </div>
+            <p class="attend_alname textoverflow" onclick="toAttence( <%=lists[i].id%>)">
+                <%=lists[i].title%>
+            </p>
+            <p class="attend_aldis">
+                <span class="attend_aldate"><%=lists[i].createTime%></span>
+               <!--  <span class="attend_altime"><%=hour_min(lists[i].createtime*1000)%></span> -->
+                <span class="attend_altype">
+                <%  var attendtype='';
+                    switch(lists[i].type){
+                        case '1':attendtype = '数字考勤';break;
+                        case '2':attendtype = '人脸考勤';break;
+                        case '0':attendtype = '传统考勤';break;
+
+                    }   %>
+                <%=attendtype%> 
+                </span>
+            </p>
+        </div>
+        <% } %>
+    <% } %>
+</script>
+<!--考勤详情-->
+<script type="text/html" id="tpl-p-detail">
+    <div class="p-detail" id="p-detail" data-type="<%=type%>">
+        <div class="d-title">
+            <div class="item fl">
+                <a href="javascript:;" class="active">考勤总览</a>
+                <%if(isVip||(!isVip&&isUseGPS==1)){%>
+                <a href="javascript:;">异常签到</a>
+               <%}%>
+            </div>
+            <a href="javascript:;" class="close fr"></a>
+        </div>
+        <div class="cont">
+            <div class="total-cont">
+                <div class="choose-div">
+                    <div class="choose-title">
+
+                    </div>
+                </div>
+                <div class="list">
+
+                </div>
+            </div>
+            <%if(isVip||(!isVip&&isUseGPS==1)){%>
+            <div class="error-cont hide">
+                <div class="choose-div">
+                    <div class="choose-title">
+                        <a href="javascript:;" class="active">异常签到(<i>0</i>)</a>
+                        <a href="javascript:;">未开启GPS(<i>0</i>)</a>
+                        <a href="javascript:;">可疑代签(<i>0</i>)</a>
+                        <a href="javascript:;">GPS地图定位</a>
+                    </div>
+                </div>
+                <div class="list exlist">
+
+                </div>
+                <div class="list noGPSlist">
+
+                </div>
+                <div class="list pplist">
+
+                </div>
+                <div class="map" id="container">
+
+                </div>
+            </div>
+            <%}%>
+        </div>
+        <div class="close-box">
+            <%if(type>0){ %>
+                <%if(isVip==1){%>
+                    <p class="has-vip fl">已默认获取异常考勤</p>
+                
+                <%}else{%>
+                    <%if (isUseGPS==0){%>
+                    <a href="javascript:;" class="get-error-btn fl">获取异常考勤列表</a>
+                    <%}%>
+                    <%if (isUseGPS==1){%>
+                    <p class="get-vip fl">已获取异常考勤</p>
+                    <%}%>
+                <%}%>
+            <%}%>
+            <a href="javascript:;" class="close fr">关闭</a>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="tpl-GPSlist">
+    <%if (lists.length){%>
+    <ul>
+    <%for(var i = 0;i<lists.length;i++){ %>
+    <li data-id="<%=lists[i].uid%>">
+        <i><%=toDou( i+1 )%></i>
+        <p class="names"><span><%=lists[i].stno%></span><b><%=lists[i].username%></b></p>
+        <a href="javascript:;" data-state="<%=lists[i].state%>">
+            <%if (lists[i].state==0){%>
+            <span class="ok"></span>
+            <%}else if (lists[i].state==1){%>
+            <span class="no"></span>
+            <%}else if (lists[i].state==2){%>
+            <span class="late"></span>
+            <%}else{%>
+            <span class="parse"></span>
+            <%}%>
+        </a>
+    </li>
+    <%}%>
+    <%}else{%>
+        <p style="text-align: center; line-height: 200px; color: #595959">该考勤状态下无成员</p>
+    <%}%>
+    </ul>
+</script>
+<script type="text/html" id="tpl-GPSlist2">
+    <%if (exArray.length){%>
+    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生位置可疑，您可参考此列表修改学生考勤状态。</p>
+    <ul>
+        <%for(var i= 0;i<exArray.length;i++){%>
+        <li data-id="<%=exArray[i].id%>">
+            <i><%=toDou(i+1)%></i>
+            <p class="names"><span><%=exArray[i].stno%></span><b><%=exArray[i].username%></b></p>
+            <p class="offset"><%=exArray[i].reason%></p>
+            <a href="javascript:;" data-state="<%=exArray[i].state%>">
+                <%if (exArray[i].state==0){%>
+                <span class="ok"></span>
+                <%}else if (exArray[i].state==1){%>
+                <span class="no"></span>
+                <%}else if (exArray[i].state==2){%>
+                <span class="late"></span>
+                <%}else{%>
+                <span class="parse"></span>
+                <%}%>
+            </a>
+        </li>
+       
+        <%}%>
+        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">无异常签到成员</p>
+        <%}%>
+    </ul>
+</script>
+
+
+<script type="text/html" id="tpl-GPSlist3">
+    <%if (noGPSArray!=null&&noGPSArray.length){%>
+    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生'未开启GPS'，您可参考此列表修改学生考勤状态。</p>
+    <ul>
+        <%for(var i=0;i<noGPSArray;i++){%>
+        <li data-id="<%=noGPSArray[i].id%>">
+            <i><%=toDou (i+1)%></i>
+            <p class="names"><span><%=noGPSArray[i].stno%></span><b><%=noGPSArray[i].username%></b></p>
+            <p class="offset"><%=noGPSArray[i].reason%></p>
+            <a href="javascript:;" data-state="<%=noGPSArray[i].state%>">
+                <%if (noGPSArray[i].state==0){%>
+                <span class="ok"></span>
+                <%}else if (noGPSArray[i].state==1){%>
+                <span class="no"></span>
+                <%}else if (noGPSArray[i].state==2){%>
+                <span class="late"></span>
+                <%}else{%>
+                <span class="parse"></span>
+                <%}%>
+            </a>
+        </li>
+        <%}%>
+        <%}else{%>
+        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">所有成员签到都开启了GPS</p>
+        <%}%>
+    </ul>
+</script>
+
+<script type="text/html" id="tpl-pp-lists">
+    <%if (ppLists!=null && ppLists.length){%>
+    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生的IP和微信都一样，可能是代签，老师可以进行确认。</p>
+        <%for(var i=0;i<ppLists.length;i++){%>
+        <ul style="margin-bottom: 20px;">
+        <%for(var j=0;j<pp.length;j++){%>
+        <li data-id="<%=pp[j].id%>">
+            <i><%=toDou (i+1)%></i>
+            <p class="names"><span><%=pp[j].stno%></span><b><%=pp[j].username%></b></p>
+            <p class="offset">签到IP：<%=pp[i]['attence']['ip']%></p>
+            <a href="javascript:;" data-state="<%=pp[j].state%>">
+                <%if(pp[j].state==0){%>
+                <span class="ok"></span>
+                <%}else if (pp[j].state==1){%>
+                <span class="no"></span>
+                <%}else if (pp[j].state==2){%>
+                <span class="late"></span>
+                <%}else{%>
+                <span class="parse"></span>
+                <%}%>
+            </a>
+        </li>
+        <%}%>
+        </ul>
+        <%}%>
+   <%}else{%>
+        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">没有发现代替签到的情况</p>
+    <%}%>
+</script>
+
+
+<script type="text/html" id="tpl-attence-change-dialog">
+<div class="attenceChangeDialog">
+    <ul>
+        <li class="<%if (index==0){%>active<%}%>">
+            <i class="ok"></i>
+            <i class="tips">出勤</i>
+        </li>
+        <li class="<%if (index==1){%>active<%}%>">
+            <i class="no"></i>
+            <i class="tips">旷课</i>
+        </li>
+        <li class="<%if (index==2){%>active<%}%>">
+            <i class="late"></i>
+            <i class="tips">迟到</i>
+        </li>
+        <li class="<%if (index==3){%>active<%}%>">
+            <i class="parse"></i>
+            <i class="tips">请假</i>
+        </li>
+    </ul>
+</div>
+</script>
+
+<!--进入若有考勤未完成-->
+<div class="little-pop" id="have-attend">
+    <h3 class="new-pop-title">"<span></span>"考勤尚未结束</h3>
+    <div class="btns fs14">
+        <a href="javascript:;" class="cancel">放弃</a>
+        <a href="javascript:;" class="sure active">查看详情</a>
+    </div>
+</div>
+<!--考勤详情-->
+<script type="text/html" id="tpl-p-detail">
+    <div class="p-detail" id="p-detail" data-type="<%=type%>">
+        <div class="d-title">
+            <div class="item fl">
+                <a href="javascript:;" class="active">考勤总览</a>
+                <%if (isVip||(!isVip&&isUseGPS==1)){%>
+                <a href="javascript:;">异常签到</a>
+                <%}%>
+            </div>
+            <a href="javascript:;" class="close fr"></a>
+        </div>
+        <div class="cont">
+            <div class="total-cont">
+                <div class="choose-div">
+                    <div class="choose-title">
+
+                    </div>
+                </div>
+                <div class="list">
+
+                </div>
+            </div>
+            <%if (isVip||(!isVip&&isUseGPS==1)){%>
+            <div class="error-cont hide">
+                <div class="choose-div">
+                    <div class="choose-title">
+                        <a href="javascript:;" class="active">异常签到(<i>0</i>)</a>
+                        <a href="javascript:;">未开启GPS(<i>0</i>)</a>
+                        <a href="javascript:;">可疑代签(<i>0</i>)</a>
+                        <a href="javascript:;">GPS地图定位</a>
+                    </div>
+                </div>
+                <div class="list exlist">
+
+                </div>
+                <div class="list noGPSlist">
+
+                </div>
+                <div class="list pplist">
+
+                </div>
+                <div class="map" id="container">
+
+                </div>
+            </div>
+            <%}%>
+        </div>
+        <div class="close-box">
+            <%if (type>0){ %>
+            <%if (isVip==1){%>
+                <p class="has-vip fl">已默认获取异常考勤</p>
+            <%}else{%>
+                <%if (isUseGPS==0){%>
+                <a href="javascript:;" class="get-error-btn fl">获取异常考勤列表</a>
+                <%}%>
+                <%if (isUseGPS==1){%>
+                <p class="get-vip fl">已获取异常考勤</p>
+                <%}%>
+            <%}%>
+            <%}%>
+            <a href="javascript:;" class="close fr">关闭</a>
+        </div>
+    </div>
+</script>
+<div class="check-pop">
+</div>
+<script type="text/html" id="tpl-students">
+          <%for(stu in students){%>
+            <ul class="clearfix" data-id="<%=stu['id']%>">
+                <li class="s-name fl">
+                    <span class="ids" title="<%=stu['stno']%>"><%=stu['stno']%></span>
+                    <span class="names" title="<%=stu['username']%>"><%=stu['username']%></span>
+                    <div class="total-l">
+                    <span>
+                        <img src="/Public/Home/img/ok.png">
+                        <i><%=stu.stat.attenctCount%></i>
+                    </span>
+                    <span>
+                        <img src="/Public/Home/img/no.png">
+                        <i><%=stu.stat.absenceCount%></i>
+                    </span>
+                    <span>
+                        <img src="/Public/Home/img/late.png">
+                        <i><%=stu.stat.lateCount%></i>
+                    </span>
+                    <span>
+                        <img src="/Public/Home/img/parse.png">
+                        <i><%=stu.stat.pleaseCount%></i>
+                    </span>
+                    </div>
+                </li>
+                <li class="s-perform fl">
+                    <div class="perform-div">
+                        <ul class="perform-box">
+                        <%for(sat in stu['lists']){%>
+                          <%if (sat['state'] == 0 || sat['state'] == ""){ %>
+                            <li>
+                                <div class="li-div">
+                                    <i class="ok"></i>
+                                </div>
+                            </li>
+                          <%}%>
+                          <%if (sat['state']==1){ %> 
+                            <li>
+                                <div class="li-div">
+                                    <i class="no"></i>
+                                </div>
+                            </li>
+                          <%}%>
+                          <%if (sat['state']==2){ %>
+                            <li>
+                                <div class="li-div">
+                                    <i class="late"></i>
+                                </div>
+                            </li>
+                          <%}%>
+                          <%if (sat['state']==3){ %>
+                            <li>
+                                <div class="li-div">
+                                    <i class="parse"></i>
+                                </div>
+                            </li>
+                          <%}%>
+                        <%}%>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+         <%}%>
+</script>
+<script type="text/html" id="tpl-aCount">
+    <a href="javascript:;" class="active">出勤(<%=stat.attenceCount%>)</a>
+    <a href="javascript:;">旷课(<%=stat.absenceCount%>)</a>
+    <a href="javascript:;">迟到(<%=stat.lateCount%>)</a>
+    <a href="javascript:;">请假(<%=stat.pleaseCount%>)</a>
+    <a href="javascript:;">早退({{stat.zaotuiCount}})</a>
+</script>
+
+<script>
+    seajs.use('/html/Public/Home/js/attendanceV3.js',function(ex){
+        ex.init();
+    });
+</script>
+
+
+<script src="Public/Common/js/lib/layui/layui-v2.0.0/layui/layui.all.js"></script>
+<script type="text/javascript">
+	seajs.use('/html/Public/Home/js/coursewarev3.js');
+</script>
+<a href="javascript:;" class="back-to-top"></a>
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
+
+</body></html>

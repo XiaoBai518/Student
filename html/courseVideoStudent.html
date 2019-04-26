@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>投屏</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+
+<link rel="stylesheet" href="Public/Home/css/coursewarev3.css">
+<link rel="stylesheet" href="Public/Home/css/classDetail.css">
+<link rel="stylesheet" href="Public/Home/css/announce.css">
+<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/laydate/default/laydate.css" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/layer/default/layer.css" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/code.css" media="all">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+
+</head>
+<body style="background-color:#f6ebef;">
+	
+<div id="course-header" data-id="MDAwMDAwMDAwMLOspZiGz7Ns" data-sys="0" class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
+    <div class="nav nav-clear clearfix">
+        <ul class="nav-menu-left">
+            <li class="nav-menu-item">
+                 <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
+                <i style="display: inline-block;width: 27px;height: 18px;background: url(Public/Common/img/return.png) left top no-repeat;position: relative;top: 5px;"></i>
+        <span style="font-size: 20px;color: #FFF;line-height: 24px;vertical-align: middle;">课堂</span>
+    </a>
+            </li>
+        </ul>
+    	<ul class="nav-menu-right">
+            <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="/html/Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>            <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="" alt="李雅" title="李雅">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="https://www.ketangpai.com/User/setting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        
+        </ul>
+    </div>
+</li>        </ul>
+    </div>
+        <div class="topm cl">
+            <h1 id="courseName"></h1>
+                <div class="codetip">你可以使用以下邀请码邀请同学加课</div>            
+                    <div class="box-box">
+                        <div class="sele" id="course-code-select" data-abc="76M59D">
+                    	       <div id="courseCode" class="codetext" style="margin-left:25px;"></div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+    <div class="banner cl">
+        <div class="in-header" style="background: none repeat scroll 0% 0% #455b8c;">
+            <ul class="nav-menu-left hide" style="display: none;">
+                <li class="nav-menu-item">
+                    <a class="side-button" href="javascript:;"><img src="Public/Common/img/ktp1_09.png" alt=""></a>
+                </li>
+            </ul>
+            <div id="third-nav" class="nav gWidth">
+                <a href="courseVideoStudent.html" class="active"><img src="Public/Common/img/datachart.png">互动</a>
+                <a id="mymember" href="courseMemberStudent.html" ><img src="Public/Common/img/ktp1_24.png">同学</a>
+                <a href="#" ><img src="Public/Common/img/ktp1_26.png">公告</a>     
+            </div>
+        </div>
+    </div>
+
+
+        <link rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/layui.css" media="all">
+<div class="data-page">
+    <div style="margin: auto;width: 100px;position: relative;">
+          <button class="layui-btn layui-btn-lg layui-btn-fluid" onclick="window.location.href="class.html">加入课堂</button>
+    </div>
+    <div class="empty-box hide" style="display: block;margin-left: 150px;">
+            <div class="box" style="height: 185px">
+                <h3 style="margin-top:25px">点击上方按钮，加入课堂开始互动吧！</h3>
+                <p>老师随时组织投票与讨论，学生使用网页直接参与互动。</p>
+                <p>大屏幕同步展示互动结果，活跃课堂气氛。</p>
+            </div>
+        </div>
+ 
+</div>
+
+
+<div class="little-pop" id="have-attend">
+    <h3 class="new-pop-title">班级老师正在考勤，是否前去签到？</h3>
+    <div class="btns fs14">
+        <a href="javascript:;" class="cancel">一会再说</a>
+        <a href="javascript:;" class="sure active">立即签到</a>
+    </div>
+</div>
+
+<!--签到弹窗-->
+
+<!--数字签到-->
+<div class="del-pop" id="number-attend" data-type="1">
+    <div class="pop-title">
+        <h3>数字签到（<span></span>）</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="opt clearfix">
+            <p>请输入数字，手动完成签到</p>
+            <span>（数字由老师处获取）</span>
+        </div>
+        <div class="number-box">
+            <!--<input type="text" maxlength="4">-->
+            <div class="vc-number">
+                <span class="vc-n-grid">
+                    <span class="grid-item"></span>
+                    <span class="grid-item"></span>
+                    <span class="grid-item"></span>
+                    <span class="grid-item"></span>
+                </span>
+                <input type="text" class="vc-n-input j_modalAuthInput" style="ime-mode:active,padding-left: 90px;" maxlength="4" id="phoneVer_modalAuthInput">
+                <div class="vc-n-block" style="margin-left: 250px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    
+    #Face-attend .content {
+        padding-top: 72px;
+    }
+</style>
+<!--人脸采集-->
+<div class="del-pop" id="Face-attend" data-type="2">
+    <div class="pop-title">
+        <h3>智能人脸签到（<span></span>）</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content">
+        <div class="opt clearfix">
+            <p>请正视摄像头，自动完成签到</p>
+        </div>
+        <div class="Face-box">
+            <div style="width:250px; height:250px;float:right;display: none">
+                 <canvas id="canvas" width="250"  height="250"></canvas>
+            </div>
+            <div style="margin:auto;width: 250px;">
+                <video id="video" autoplay playsinline style="display: inline;width:250px; height:250px;"></video>
+                <img id="target" style="display:inline;"/>
+            </div>
+        </div>
+    </div>
+</div>
+<!--放弃签到-->
+<div class="little-pop" id="abandon-attend">
+    <h3 class="title">放弃此次考勤？</h3>
+    <p class="re-words">老师结束考勤前未完成签到，将记为旷课！</p>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">放弃</a>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="Public/Common/js/lib/layui/layui-v2.0.0/layui/layui.all.js"></script>
+<script type="text/javascript">
+	seajs.use('/html/Public/Home/js/coursewarev3.js');
+</script>
+<script>
+seajs.use('/html/Public/Home/js/student.js',function(ex){ex.videoAll();});
+</script>
+<a href="javascript:;" class="back-to-top"></a>
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
+
+</body>
+</html>

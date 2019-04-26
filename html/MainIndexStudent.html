@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>课堂</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+<link href="Public/Home/css/course-work.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/announce.css" rel="stylesheet" type="text/css">
+
+
+<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/laydate/default/laydate.css" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/layer/default/layer.css" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/code.css" media="all">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link id="layuicss-https:wwwketangpaicomPublicCommonjsliblayuilayuiv3cssmoduleslayerstylecss" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/layer/style.css" media="all"> 
+</head>
+<body class="bge">
+	<div class="nav nav-default clearfix">
+    <ul class="nav-menu-left">
+        <li class="nav-menu-item">
+            <a class="side-button" href="javascript:;"><img src="/html/Public/Common/img/ktp1_09.png" alt=""></a>
+        </li>
+        <li class="nav-menu-item"><a href="javascript:;" class="active" onclick="window.location.reload()">课堂</a></li>
+    </ul>
+    <ul class="nav-menu-right">
+        <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="/html/Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>        <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="#" alt="学生" title="学生">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="userSetting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        </ul>
+    </div>
+</li>    </ul>
+        <div class="leftcon">
+        <div class="nav-top">
+            <a href="javascript:;" onclick="window.location.reload()">课堂</a>
+       
+        </div>
+        <div class="open-course">
+            <div class="open-box">
+                <p>已有课程</p>
+                <div id="left_lists" class="list">
+                        
+                </div>
+            </div>
+        </div>
+    </div></div>	
+    <div class="ktcon cl">
+        <div class="ktcon1 cl">
+            <div class="ktcon1l fl">加入班级</div>
+            <div class="ktcon1r fr">
+                <ul>
+                    <li class="ktli1"><a href="javascript:void(0);">班级排序</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="empty-box hide" style="display: none;">
+            <img src="Public/Home/img/coue3.jpg" class="img1">
+            <img src="Public/Home/img/coue2.jpg" class="img2">
+        </div>
+        <div class="ktcon2 cl clearfix hide" id="viewer-container-lists" data-course-count="50" style="display: block;">
+        </div>
+    </div>
+    <!--加入班级弹窗-->
+    <div class="chuangjiankc">
+        <div class="chuangjiankctop">加入班级</div>
+        <div class="chuangjiankccon">
+            <input type="text" placeholder="请输入班级加课验证码">
+        </div>
+        <div class="chuangjiankcbot">
+            <ul>
+                <li class="cjli1"><a class="btn btn-defalut" href="javascript:void(0);">取消</a></li>
+                <li class="cjli2"><a class="btn disable" href="javascript:void(0);">加入</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--加入班级弹窗end-->
+
+<!-- 创建班级弹窗-->
+<style>
+    .islink{
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        margin-top: 26px;
+        margin-bottom: 26px;
+    }
+    .islinkswitch{
+        width: 40px;
+        height: 20px;
+        float: left;
+        margin-right: 30px;
+    }
+    .switchinfo{
+        color: #999;
+    }
+    .linkschool,.linkclass{
+        height: 30px;
+        line-height: 30px;
+        color: #666;
+        font-size: 14px;
+    }
+    .linkschool{
+        margin-bottom: 20px;
+    }
+    .linktitle{
+        width: 90px;
+        vertical-align: middle;
+    }
+    .classnum{
+        height: 28px;
+        border: 1px solid #ccc;
+        padding: 0 15px;
+        line-height: 18px;
+        vertical-align: middle;
+        border-radius: 3px;
+    }
+</style>
+<script type="text/html" id="tpl-newClass">
+    <div class="pop-new-2 new-class-pop" id="new-class">
+        <div class="title">
+            <h3>新建班级</h3>
+        </div>
+        <div class="input-box">
+            <span>班级名称：</span>
+            <input type="text" placeholder="新建班级名称">
+        </div>
+        <div class="infosettip">学生必须额外填写下列信息才能加入班级</div>
+        <div class="infosetbox">
+            <div class="check-box normalp" id="spro" isopen="0">
+                <i></i>
+                <span>专业</span>
+            </div>
+            <div class="check-box normalp" id="sclass" isopen="0">
+                <i></i>
+                <span>自然班级</span>
+            </div>
+            <div class="check-box normalp" id="sgrade" isopen="0">
+                <i></i>
+                <span>年级</span>
+            </div>
+            <div class="check-box normalp" id="sdate" isopen="0">
+                <i></i>
+                <span>入学年月</span>
+            </div>
+        </div>
+        <div class="pop-btns">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;" class="sure">创建</a>
+        </div>
+    </div>
+</script>
+
+<style>
+    .normalp.check-box{
+        position:static;
+        width: 25%;
+        float: left;
+        text-align: center;
+    }
+    .infosettip{
+        font-size: 12px;
+        color: #666;
+        margin: 30px 0 15px;
+    }
+    .infosetbox{
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    .item.school{
+        height: 30px;
+        background: #f0f0f0;
+        padding: 0 30px;
+        border: 1px solid #ccc;
+        line-height: 30px;
+        margin: 0 0 20px;
+        cursor: pointer;
+        position: relative;
+    }
+    .item.school>span{
+        display: block;
+    }
+    .item.school .item-box{
+        top:31px;
+    }
+</style>
+<!--创建班级弹窗end-->
+  
+    <!--删除班级弹窗-->
+    <div class="deletekt">
+        <div class="deletetop cl">
+            确定要删除 “<span></span>”？
+        </div>
+        <div class="deletecon cl">
+            <p>您的这个班级的任何信息或评论将被永久删除<br>
+            	<span style="color:red">警告：此操作无法撤消</span>
+            </p>
+            <p><span title="如果您不是VIP，删除班级，也会被计算在免费的班级数里" style="color:blue">提醒：已用班级数包含了“删除班级数”</span></p>
+        </div>
+        <div class="deletekccon">
+            <input type="password" placeholder="请输入登录密码验证">
+        </div>
+        <div class="deletebot cl">
+            <ul>
+                <li class="dli1"><a class="btn btn-default" href="javascript:void(0);">取消</a></li>
+                <li class="dli2"><a class="btn btn-positive" href="javascript:void(0);">删除</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--删除班级弹窗end-->
+ <!--排序管理-->
+    <div class="guidangpaixu cl" style="display: none; margin-top: -290px;">
+        <div class="bgx">
+        </div>
+        <div class="guidangpaixutop cl">
+            <ul>
+                <li class="ktli1 on"><a href="javascript:void(0);">班级排序</a></li>
+            </ul>
+            <span class="gdpcmore"><a href="javascript:void(0);"></a></span>
+        </div>
+        <div class="guidangpaixucon gd1 clearfix" style="display: block; height: 520px;">
+                <ul class="gxul ui-sortable" style="top: 0px;">
+                </ul>
+         </div>
+    	<div class="guidangpaixucon gd2 clearfix" style="display: none; height: 520px;" id="viewer-container-archiverlist">
+            <div class="bb-div" style="top: 0px;">
+
+            </div>
+    	</div>
+    </div>
+    <!--排序管理end-->
+    <!--进入若有考勤未完成-->
+    <div class="little-pop" id="have-attend">
+        <h3 class="new-pop-title">"<span></span>"考勤尚未结束</h3>
+        <div class="btns">
+            <a href="javascript:;" class="cancel">放弃</a>
+            <a href="javascript:;" class="sure active">查看详情</a>
+        </div>
+    </div>
+    
+    <!--放弃弹窗-->
+    <div class="little-pop" id="abandon-attend">
+        <h3 class="title">放弃此次考勤？</h3>
+        <p class="re-words">放弃此考勤后，此次考勤数据将清零</p>
+        <div class="btns">
+            <a href="javascript:;" class="cancel">取消</a>
+            <a href="javascript:;" class="sure active">放弃</a>
+        </div>
+    </div>
+
+    <!--公告弹窗-->
+    <div class="dr-pop gray" id="notice-pop" data-index="0">
+        <script id="tpl-notice-pop" type="text/html">
+        <div class="pop-title" style="height:60px">
+            <h3>{{data.length}}条重要提醒</h3>
+            <a href="javascript:;" class="close"></a>
+        </div>
+        <div class="pop-cont clearfix" style="padding:10px 0;width:100%;">
+            <div class="class-cont">
+                <div class="cont-box clearfix">
+                    <ul class="announce-cont-box" style="padding: 0px 40px 60px">
+                        {{each data as value i}}
+                        <li class="notifyV2-item clearfix {{if value.type==1}}type-red{{else if value.type==2}}type-blue{{/if}}" data-id="{{value.id}}">
+                            <div class="notifyV2-left">
+                                <span class="type">{{if value.type==1}}{{if value.coid!=0}}校级通知{{else}}班级公告{{/if}}{{else if value.type==2}}系统通知{{/if}}</span>
+                                <div class="notifyV2-coursename">
+                                    <div class="coursename-cell">
+                                        <span>【{{if value.type==1}}{{value.coursename}}{{else if value.type==2}}{{value.tag}}{{/if}}】</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifyV2-right {{if value.type==1&&data.length==1}}toggleDown{{/if}}">
+                                <div class="notifyV2-title">{{if value.type==1}}{{value.title}}{{else if value.type==2}}<a href="/Message/agencyMsgList/coid/sys?coid=sys#{{value.id}}">{{value.title}}</a>{{/if}}</div>
+                                <div class="notifyV2-mid clearfix">
+                                    <span class="fl">{{value.createtime}}</span>
+                                    {{if value.type==1}}
+                                    <a href="javascript:;" class="fr readedit">忽略</a>
+                                    <a href="javascript:;" class="fr toggle">{{if data.length==1}}收起{{else}}展开{{/if}}</a>
+                                    {{else if value.type==2}}
+                                    <a href="/Message/agencyMsgList/coid/sys?coid=sys#{{value.id}}" class="fr seeDetail">查看详情&gt;</a>
+                                    {{/if}}
+                                </div>
+                                <div class="notifyV2-content">
+                                    <div class="announce-cont">
+                                        <div class="word">
+                                            <div class="p">{{#value.content}}</div>
+                                        </div>
+                                        {{if value.attachment}}
+                                        <div class="annex">
+                                            <ul class="clearfix">
+                                                {{each value.attachment as file}}
+                                                <li data-id="{{file['fileid']}}" data-size="{{file['size']}}">
+                                                    <a href="javascript:;" data-url="{{file['rurl']}}" data-ispic="{{file['isPic']}}" data-isvideo="{{file['isVideo']}}" data-isOnline="{{file['isOnline']}}" class="fileext preview">
+                                                    <img src={{file['ext']}} data-src="{{file['src']}}">
+                                                    </a>
+                                                    <h4>
+                                                        <a href="javascript:;" data-url="{{file['rurl']}}" data-src="{{file['src']}}"  data-ispic="{{file['isPic']}}" data-isvideo="{{file['isVideo']}}" data-isOnline="{{file['isOnline']}}" class="fileext preview" title="{{file['name']}}">
+                                                            {{file['name']}}
+                                                        </a>
+                                                    </h4>
+                                                    <a href="{{file['url']}}" class="download">下载</a>
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </script>
+    </div>
+    <!--弹出默认背景，点击空白关闭-->
+    <div class="bgx"></div>
+    <!--弹出默认灰色背景-->
+    <div class="bg" style="display: none;"></div>
+
+	<script type="text/html" id="tpl-archive">
+	<dl class="gpdl1 dv1" data-id="{{a['courseid']}}" title="{{a['coursename']}}">
+		<dt style="background:url({{a['minarpic']}}) no-repeat;background-color: #1066af;">
+			<strong><a class="text-overflow" href="/Interact/index/courseid/{{a['courseid']}}.html" title="{{a['coursename']}}">{{a['coursename']}}</a></strong>
+			<p>{{if a.role==0}}角色：学生 &nbsp;&nbsp;&nbsp;&nbsp; 老师：{{a.username}}{{else if a.role==1}}角色：老师{{/if}}</p>
+			<a class="kdmorex" href="javascript:;"></a>
+			<ul class="kdcgdx">
+				<li class="kdli1 gdhf"><a href="javascript:;">恢复</a></li>
+				<li class="kdli2 gdsc"><a href="javascript:;">{{if a.role==0}}退课{{else if a.role==1}}删除{{/if}}</a></li>
+			</ul>
+		</dt>
+	</dl>
+	</script>
+   <script type="text/html" id="tpl-leftlists">
+    {{each lists as l i}}
+    <a href="javascript:;" title="{{l['coursename']}}" onclick="toCourse({{l['id']}})">
+                        <i style="background-color:#3f3957"></i>
+                        <span>{{l['coursename']}}</span>
+                    </a>     
+   {{/each}}
+   </script>
+   <script type="text/html" id="tpl-course">
+{{each lists as l i}}
+<dl class="ktdl1 ktpx1" data-id="{{l['id']}}" data-color="{{l['bannercolor']}}" >
+	<dt style="background:url({{l['minpic']}}) no-repeat;background-color: #1066af;" >
+		<strong {{if newtype}}class="newtype"{{/if}}>
+			<a href="javascript:;" onclick="toCourseStudent({{l['id']}})" title="{{l['coursename']}}" class="jumptoclass" data-id="{{l['id']}}" {{if i==0}}data-step="2"  data-intro="这是一个示例班级；点击班级名称进入此班级，可以快速了解课堂派。"  data-position="right"{{/if}}>{{substr38 l['coursename']}}</a>
+		</strong>
+        <p>{{if l.role==0}}角色：学生 &nbsp;&nbsp;&nbsp;&nbsp; 老师：{{l.username}}{{else if l.role==1}}角色：老师{{/if}}</p>
+		<a class="kdmore" href="javascript:;" {{if i==0}}data-step="4"  data-intro="点击此图标；可以对班级进行管理，如：编辑、删除等操作"  data-position="right"{{/if}}></a>
+		<ul class="kdcgd">
+			{{if l.role==1}}
+			<li class="kdli1"><a href="javascript:;">编辑</a></li>
+			{{/if}}
+            <li class="kdli3"><a href="javascript:;">{{if l.role==0}}退课{{else if l.role==1}}删除{{/if}}</a></li>
+		   	<li class="kdli2"><a href="javascript:;">归档</a></li>
+			{{if l.role==1}}
+			<li class="kdli5"><a href="javascript:;">复制班级</a></li>
+			<li class="kdli4"><a href="{{l.packageUrl}}" target="_blank">打包下载</a></li>
+			{{/if}}
+		</ul>
+    </dt>
+	<dd>
+		<ul>
+			<li class="off"><span>近期作业</span></li>
+			{{each l['hlist'] as h}}
+				<li><span title="{{h['title']}}"><a href={{if h['type']==0}}"/Review/index/homeworkid/{{h['id']}}.html"{{else}}"/Review/groupindex/homeworkid/{{h['id']}}.html"{{/if}}>{{h['title']}}</a></span></li>
+            {{/each}}
+		</ul>
+        <div class="ddfoot clearfix">
+            <span class="fl">邀请码：{{l.code}}</span>
+            <a href="/StudentsV2/index/courseid/{{l['id']}}.html" class="fr">
+                <span class="hy" {{if i==0}}data-step="3"  data-intro="班级成员；点击可以快速查看成员详情"  data-position="right"{{/if}}>成员{{l['total']}}</span>
+            </a>
+        </div>
+    </dd>
+    {{if l['issys']==1}}
+    <img src="/Public/Home/img/slkt.png" class="slkt">
+    {{/if}}
+</dl>
+{{/each}}
+</script>
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.feedback();});</script>	
+<script type="text/javascript">
+    seajs.use('/html/Public/Home/js/course.js',function(ex){ex.student();});
+</script>
+
+	<script type="text/javascript">seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.mainHeaderActive();});</script>
+
+</body></html>

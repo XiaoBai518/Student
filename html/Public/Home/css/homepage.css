@@ -1,0 +1,1206 @@
+@charset "utf-8";
+.home-page{
+    letter-spacing: 2px;
+}
+.home-page .section1{
+    padding-top: 60px;
+    height: 540px;
+    background: url(../img/sec2.jpg?v=100) center top repeat-x;
+    position: relative;
+}
+.home-page .section1 .banner_logo{
+	text-align: center;
+    font-size: 50px;
+    color: #fff;
+    margin-top: 190px;
+    letter-spacing: 5px;
+    font-weight: lighter;
+}
+.home-page .section1 .cWidth{
+     height: 580px;
+     position: absolute;
+     top:0;
+     left: 50%;
+     margin-left: -490px;
+     text-align: center;
+}
+.home-page .section1 .page_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-page .section1 .reg-btn{
+	display: inline-block;
+    width: 240px;
+    height: 60px;
+    margin-top: 60px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    background: #357ae8;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    line-height: 60px;
+    padding-left: 10px;
+	padding-right: 10px;
+}
+.home-page .section1 .cWidth{
+    text-align: center;
+    margin-top: 335px;
+    font-size: 0;
+}
+.home-page .section1 .reg-btn:hover{
+    background-color: #4D90FE;
+}
+.home-page .section1 .reg-btn:active{
+    background-color: #4D90FE;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+}
+.word h3{
+    padding-bottom: 60px;
+    font-size: 30px;
+    font-weight: normal;
+}
+.word p{
+    line-height: 34px;
+    font-size: 18px;
+}
+.word p:before{
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.home-page .section2{
+    height: 862px;
+    background: url(../img/sec2-new150907.jpg) center center no-repeat #fcfcfc;
+    position: relative;
+}
+.home-page .section2  .word{
+    text-align: center;
+    padding-top: 65px;
+}
+.home-page .section2  .word h3{
+    padding-bottom: 30px;
+}
+.home-page .section2  .word p{
+    font-size: 18px;
+    color: #5b5b5b;
+}
+.home-page .section2 .sx-box{
+    position: absolute;
+    width: 996px;
+    height: 587px;
+    background: url(../img/sx.png) left top no-repeat;
+    left: 50%;
+    margin-left: -498px;
+    top: 240px;
+}
+.home-page .section2 .sx-box .sx-bg{
+    width: 861px;
+    height: 500px;
+    background: #000;
+    position: absolute;
+    left: 63px;
+    top: 42px;
+    opacity: 0.3;
+    filter: alpha(opacity:30);
+    display: none;
+}
+.home-page .section2 .sx-box .fk1{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border:2px solid #dcdcdc;
+    left: 150px;
+    top: 47px;
+    display: none;
+    overflow: hidden;
+}
+.home-page .section2 .sx-box .fk2{
+    width: 475px;
+    height: 110px;
+    background: url(../img/dk1.png) left top no-repeat;
+    position: absolute;
+    left: 224px;
+    top: 195px;
+    display: none;
+}
+.home-page .section2 .sx-box .fk3{
+    position: absolute;
+    width: 99px;
+    height: 0;
+    overflow: hidden;
+    border:2px solid #dcdcdc;
+    left: 137px;
+    top: 203px;
+    display: none;
+}
+.home-page .section2 .sx-box .fk4{
+    width: 483px;
+    height: 98px;
+    background: url(../img/dk2.png) left top no-repeat;
+    position: absolute;
+    left: 238px;
+    top: 215px;
+    display: none;
+}
+
+.home-page .section3{
+    background: #ececec;
+    height: 580px;
+    border-top: 1px solid #c9c9c9;
+}
+.home-page .section3 .word{
+    float: right;
+    padding-top: 130px;
+    color: #fff;
+}
+.home-page .section3 .word p:before{
+    background-color: #fff;
+}
+/* .home-page .section3 .lang{
+    float: right;
+    margin-top: 68px;
+    padding-right: 40px;
+}
+.home-page .section3 .son{
+    height: 50px;
+    border-top: 1px solid #c9c9c9;
+    border-bottom: 1px solid #c9c9c9;
+    background: #f6f6f6;
+}
+.home-page .section3 .son img{
+    display: block;
+} */
+.home-page .section4{
+    height: 580px;
+    border-bottom: 1px solid #c9c9c9;
+    background: #fcfcfc;
+}
+.home-page .section4 .word{
+    float: left;
+    padding-top: 158px;
+    padding-left: 14px;
+    color: #2d2d2d;
+}
+.home-page .section4 .word p{
+    color: #595959;
+}
+.home-page .section4 .word p:before{
+    background-color: #595959;
+}
+.home-page .section4 .lang{
+    float: right;
+    margin-top: 58px;
+    padding-right: 10px;
+}
+.home-page .section5{
+    background:#c7d3e3;
+    height:580px;
+    position: relative;
+}
+
+.home-page .section5 .word{
+    float: right;
+    padding-top: 158px;
+    z-index: 1;
+    position: relative;
+}
+.home-page .section5 .word h3{
+    color: #192338;
+}
+.home-page .section5 .word p{
+    color: #274271;
+}
+.home-page .section5 .word p:before{
+    background-color: #556888;
+}
+.home-page .section5 .lang{
+    position: absolute;
+    left: 50%;
+    margin-left: -590px;
+    bottom: 0;
+}
+.home-page .section5 .lang img{
+    display: block;
+}
+
+.home-page .section6{
+    background: #fcfcfc;
+    height: 580px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.home-page .section6 h3{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 70px;
+    font-weight: normal;
+}
+.home-page .section6 .all{
+    margin-top: 90px;
+}
+.home-page .section7{
+    background: #fcfcfc;
+    height: 600px;
+    border-bottom: 1px solid #c9c9c9;
+}
+.home-page .section7 h3{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 70px;
+    font-weight: normal;
+}
+.home-page .section7 p{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #595959;
+}
+.home-page .section7 p span{
+    color: #e71f19;
+}
+.home-page .section7 .all{
+    margin-top: 75px;
+    text-align: center;
+}
+/*2016/04/26 add 媒体评价*/
+.home-page .section8{
+    background: #fcfcfc;
+    height: 580px;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+.home-page .section8 h3{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 70px;
+    font-weight: normal;
+}
+.home-page .section8 .TVsayswrap{
+    width: 985px;
+    margin:90px auto 0;
+}
+.home-page .section8 .TVsayswrap .item{
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing: 0;
+}
+.home-page .section8 .left-yin,
+.home-page .section8 .right-yin{
+    width: 40px;
+    height: 37px;
+    background: url('../img/TVsayswords.jpg') no-repeat;
+}
+.home-page .section8 .left-yin{
+    background-position: left center;
+}
+.home-page .section8 .right-yin{
+    background-position: right center;
+}
+.home-page .section8 .center-cont{
+    width: 870px;
+    padding: 0 10px;
+    /*transition:opacity 1s;*/
+}
+.home-page .section8 .center-cont p{
+    font-size: 24px;
+    padding-bottom: 40px;
+    color: #595959;
+}
+.home-page .section8 .center-cont span{
+    font-size: 16px;
+    color: #2B98F0;
+}
+.home-page .section8 .center-cont a{
+    color: #2B98F0;
+}
+.home-page .section8 .center-cont a:hover{
+    text-decoration: underline;
+}
+.home-page .section8 .TVsaysmenu{
+    margin-top: 70px;
+    text-align: center;
+    background: url('../img/TVsayswords_line.png') no-repeat center center;
+}
+.home-page .section8 .TVsaysmenu a{
+    display: inline-block;
+    margin-right: 30px;
+    border:3px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 54px;
+    width: 54px;
+    height: 54px;
+    position: relative;
+    overflow: hidden;
+}
+.home-page .section8 .TVsaysmenu a:last-child{
+    margin-right: 0;    
+}
+.home-page .section8 .TVsaysmenu a img{
+    width: 54px;
+    height: 54px;
+}
+.home-page .section8 .TVsaysmenu a:hover{
+    border-radius: 50%;
+}
+.home-page .section8 .TVsaysmenu a:before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -3px;
+    width: 100%;
+    top:-3px;
+    height: 100%;
+    background-color: rgba(230,230,230,.85);
+    border:3px solid #ccc;
+    border-radius: 50%;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s; 
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.home-page .section8 .TVsaysmenu a.active:before,
+.home-page .section8 .TVsaysmenu a:hover:before{
+    opacity: 0;
+    
+}
+/*新增首页banner201509071054*/
+/*修改首页banner201509081440*/
+.fullSlide {
+    width: 100%;
+    position: relative;
+    height: 540px;
+}
+.fullSlide .bd {
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.fullSlide .bd ul {
+    width: 100% !important;
+}
+.fullSlide .bd li {
+    width: 100% !important;
+    height: 540px;
+    overflow: hidden;
+    text-align: center;
+}
+.fullSlide .hd {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    line-height: 30px;
+}
+.fullSlide .hd ul {
+    text-align: center;
+}
+.fullSlide .hd ul li {
+    cursor: pointer;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 42px;
+    height: 11px;
+    margin: 1px;
+    overflow: hidden;
+    background: #000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    line-height: 999px;
+}
+.fullSlide .hd ul .on {
+    background: #f00;
+}
+.fullSlide .prev{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -50px;
+    left: 40px;
+    z-index: 1;
+    width: 40px;
+    height: 100px;
+    background: url(../img/banner_ctrl.png) 0 0 no-repeat;
+    cursor: pointer;
+    display: none;
+}
+.fullSlide .prev:hover{
+    background: url(../img/banner_ctrl.png) 0 -114px no-repeat;
+}
+.fullSlide .next {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -50px;
+    right: 40px;
+    z-index: 1;
+    width: 40px;
+    height: 100px;
+    background: url(../img/banner_ctrl.png) -78px 0 no-repeat;
+    cursor: pointer;
+    display: none;
+}
+.fullSlide .next:hover{
+    background: url(../img/banner_ctrl.png) -78px -114px no-repeat;
+}
+.fullSlide .reg-btn{
+    display: inline-block;
+    width: 220px;
+    height: 54px;
+    background: #a7b92f;
+    margin-top: 387px;
+    margin-left: 210px;
+    color: #FFFFFF;
+    line-height: 52px;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid #000000;
+}
+.fullSlide .reg-btn:hover{
+    background: #7d8e0c;
+}
+.index-banner-vip-text{
+    background: url(../img/holiday/newtermvip/index-banner-vip-text.png) center 20px no-repeat;
+    width: 1036px;
+    height: 540px;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+}
+.fullSlide .cWidth{
+    text-align: left;
+    margin-top: 395px;
+    font-size: 0;
+}
+.fullSlide .cWidth a{
+    display: inline-block;
+    width: 232px;
+    height: 66px;
+    border-radius: 50px;
+    border: 2px solid #FFFFFF;
+    line-height: 66px;
+    text-align: center;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin-right: 16px;
+}
+.fullSlide .free-reg-btn{
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: #4d00ff;
+    margin-top: 463px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 60px;
+    margin-left: 12px;
+    text-align: center;
+    
+}
+.fullSlide .free-reg-btn:hover{
+    background-color: #7a41ff;
+}
+.fullSlide .free-reg-btn:active{
+    background-color: #7a41ff;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+    margin-top: 462px;
+}
+.fullSlide .free-vip-btn{
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: #f62d61;
+    margin-top: 463px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 60px;
+    margin-right: 12px;
+    text-align: center;
+}
+.fullSlide .free-vip-btn:hover{
+    background-color: #ff658d;
+}
+.fullSlide .free-vip-btn:active{
+    background-color: #ff658d;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+    margin-top: 462px;
+}
+.teachersDay-image{
+     background: url(../img/holiday/teacherday/index-bannerteachersDay.png) no-repeat;
+     display: block;
+     margin: 100px auto 0px auto;
+     width: 980px;
+     height: 286px;
+     position: relative;
+}
+ .teachersDay-image a{
+    position: absolute;
+    display: block;
+    top: 210px;
+    z-index: 99;
+    width: 180px;
+    height: 40px;
+}
+.teachersDay-text{
+    background: url(../img/holiday/teacherday/index-banner-teachersday-text.png) no-repeat;
+    display: block;
+    width: 773px;
+    height: 24px;
+    margin: 116px auto 0;
+}
+.btn-inActivity{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn.png) -8px -11px no-repeat;
+    left: 162px;
+}
+.btn-inActivity:hover{
+    background-position: -4px -89px;
+}
+.btn-inActivity:active{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn.png) -5px -164px no-repeat;
+}
+.btn-teacherDay-reg{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn.png) -201px -10px no-repeat;
+    left: 356px;
+}
+.btn-teacherDay-reg:hover{
+    background-position: -206px -88px;
+}
+.btn-teacherDay-reg:active{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn.png) -206px -163px no-repeat;
+}
+
+.btn-teacherDay-reg-big{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn-big.png) -11px -11px no-repeat;
+    left: 200px;
+    width: 324px !important;
+    height: 45px !important;
+}
+.btn-teacherDay-reg-big:hover{
+    background-position: -11px -71px;
+}
+.btn-teacherDay-reg-big:active{
+    background: url(../img/holiday/teacherday/index-banner-teacherday-btn-big.png) -11px -133px no-repeat;
+} 
+
+/*重阳节*/
+.home-page .section1-chongyang{
+	padding-top: 60px;
+    height: 480px;
+    background: url(../img/holiday/chongyangjie/cyj-banner.jpg) center top no-repeat;
+}
+ .home-page .section1-chongyang .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-chongyang .reg-btn{
+    display: inline-block;
+    width: 256px;
+    height: 53px;
+    background: url(../img/holiday/chongyangjie/cyj-btn.png) -3px -4px no-repeat;
+    margin-top: 220px;
+    border-radius: 3px;
+    position: relative;
+}
+.home-page .section1-chongyang .reg-btn:hover{
+    background-position: -3px -59px;
+}
+.home-page .section1-chongyang .reg-btn:active{
+    background-position: -3px -114px;
+}
+
+/*万圣节*/
+.home-page .section1-wansheng{
+    height: 540px;
+    background: url(../img/holiday/wansheng/hollybanner.jpg) center top  no-repeat;
+}
+ .home-page .section1-wansheng .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-wansheng .reg-btn{
+    display: inline-block;
+    width: 273px;
+    height: 70px;
+    background: url("../img/holiday/wansheng/hollybtn.png") -12px -12px no-repeat;
+    margin-top: 350px;
+    border-radius: 3px;
+    position: relative;
+}
+.home-page .section1-wansheng .reg-btn:hover{
+    background-position: -12px -90px;
+}
+.home-page .section1-wansheng .reg-btn:active{
+    background-position: -12px -169px;
+}
+
+/*2017教师节*/
+.home-page .section1-2017teacherday{
+    height: 540px;
+    background: url(../img/holiday/2017teacherday/teacherday.png) center top  no-repeat;
+}
+ .home-page .section1-2017teacherday .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-2017teacherday .reg-btn{    
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: url(../img/mfzc.png) center center no-repeat #357ae8;
+     margin-top: 430px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+}
+
+/*感恩节*/
+.home-page .section1-ganen{
+	padding-top: 60px;
+    height: 540px;
+    background: url(../img/holiday/ganen/ganen-banner.jpg) center top #BFD3B8 no-repeat;
+}
+.home-page .section1-ganen .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-ganen .reg-btn{
+    display: inline-block;
+    width: 225px;
+    height: 60px;
+    background: url(../img/holiday/ganen/ganen-btn.png) -6px -17px no-repeat;
+    margin-top: 270px;
+    margin-left: 510px;
+    position: relative;
+}
+.home-page .section1-ganen .reg-btn:hover{
+    background-position: -7px -96px;
+}
+.home-page .section1-ganen .reg-btn:active{
+    background-position: -7px -177px;
+}
+
+/*元旦节*/
+.home-page .section1-yuandan{
+    height:675px;
+    background: url(../img/holiday/yuandan/yuandanbanner.png) center top #262d35 no-repeat;
+    position: relative;
+}
+.home-page .section1-yuandan .cWidth{
+    height: 675px;
+    position: relative;
+    text-align: right;
+}
+.home-page .section1-yuandan .page_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-page .section1-yuandan .reg-btn{
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    width: 212px;
+    height: 57px;
+    background: url(../img/holiday/yuandan/yuandanbtn.png) center -2px no-repeat;
+    margin-top: 450px;
+    margin-right: 200px;
+}
+.home-page .section1-yuandan .reg-btn:hover{
+    background-position: center -60px;
+}
+.home-page .section1-yuandan .reg-btn:active{
+    background-position: center -118px;
+}
+
+
+.home-page .section1-2018-yuandan{
+    height:675px;
+    background: url(../img/holiday/yuandan/2018yuandan.png) center top #262d35 no-repeat;
+    position: relative;
+}
+.home-page .section1-2018-yuandan .cWidth{
+    height: 675px;
+    position: relative;
+    text-align: right;
+}
+.home-page .section1-2018-yuandan .page_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-page .section1-2018-yuandan .reg-btn{
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    width: 212px;
+    height: 57px;
+    background: url(../img/holiday/yuandan/yuandanbtn.png) center -2px no-repeat;
+    margin-top: 450px;
+    margin-right: 200px;
+}
+.home-page .section1-2018-yuandan .reg-btn:hover{
+    background-position: center -60px;
+}
+.home-page .section1-2018-yuandan .reg-btn:active{
+    background-position: center -118px;
+}
+
+/*新年*/
+.home-page .section1-newyear{
+    height: 540px;
+    position: relative;
+}
+.home-page .section1-newyear .div1{
+    background: url(../img/holiday/hounian/newyear1.jpg) center top repeat-x;
+    height: 270px;
+}
+.home-page .section1-newyear .div2{
+    background: url(../img/holiday/hounian/newyear2.jpg) center top repeat-x;
+    height: 270px;
+}
+.home-page .section1-newyear .cWidth{
+     height: 540px;
+     position: absolute;
+     top:0;
+     left: 50%;
+     margin-left: -490px;
+     text-align: center;
+}
+.home-page .section1-newyear .page_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-page .section1-newyear .reg-btn{
+    display: inline-block;
+    width: 278px;
+    height: 86px;
+    background: url(../img/holiday/hounian/newyearbtn.png) center 0 no-repeat;
+    margin-top: 425px;
+}
+.home-page .section1-newyear .reg-btn:hover{
+    background-position: center bottom;
+}
+.home-page .section1-newyear .reg-btn:active{
+}
+
+/*教师节*/
+.home-page .section1-teacherday{
+	padding-top: 80px;
+    height: 520px;
+    background: url(../img/index-banner-vip.jpg) center top #0ab3fa no-repeat;
+}
+.home-page .section1-teacherday .index-banner-vip-text{
+    background: url(../img/index-banner-vip-text.png) no-repeat;
+    width: 1036px;
+    height: 352px;
+    display: block;
+    margin: 0px auto;
+}
+.home-page .section1-teacherday .cWidth{
+    text-align: center;
+    /*height: 600px;*/
+}
+.home-page .section1-teacherday .reg-btn{
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: url(../img/mfzc.png) center center no-repeat #357ae8;
+    margin-top: 440px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    position: relative;
+}
+.home-page .section1-teacherday .reg-btn:hover{
+    background-color: #4D90FE;
+}
+.home-page .section1-teacherday .reg-btn:active{
+    background-color: #4D90FE;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+}
+
+.home-page .section1-teacherday .free-reg-btn{
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: #4d00ff;
+    margin-top: 90px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 60px;
+    margin-left: 12px;
+    
+}
+.home-page .section1-teacherday .free-reg-btn:hover{
+    background-color: #7a41ff;
+}
+.home-page .section1-teacherday .free-reg-btn:active{
+    background-color: #7a41ff;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+    margin-top: 89px;
+}
+.home-page .section1-teacherday .free-vip-btn{
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: #f62d61;
+    margin-top: 90px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 60px;
+    margin-right: 12px
+}
+.home-page .section1-teacherday .free-vip-btn:hover{
+    background-color: #ff658d;
+}
+.home-page .section1-teacherday .free-vip-btn:active{
+    background-color: #ff658d;
+    width: 238px;
+    height: 58px;
+    border: 1px solid #FFF;
+    box-shadow: 0 0 0 1px #4D90FE;
+    margin-top: 89px;
+}
+
+/*盒子版的主题*/
+.home-page .section1-hezi{
+    height: 540px;
+    background: url(../img/holiday/hezi/hezi.png) center top  no-repeat;
+}
+.home-page .section1-hezi .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-hezi .reg-btn{    
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: url(../img/mfzc.png) center center no-repeat #357ae8;
+     margin-top: 430px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+}
+
+/*双11*/
+.home-page .section1-1111{
+    height: 540px;
+    background: url(../img/holiday/1111/1111.png) center top  no-repeat;
+}
+.home-page .section1-1111 .cWidth{
+    text-align: center;
+    height: 600px;
+}
+.home-page .section1-1111 .reg-btn{    
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    background: url(../img/holiday/1111/registerbtn.png) center center no-repeat #357ae8;
+     margin-top: 430px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px 1px rgba(0,0,0,0.1);
+}
+
+/*2018年新年主题*/
+.header-theme-newyear2018{
+	width: 100%;
+	background: none;
+	height: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9;
+}
+.header-theme-newyear2018 .nav a {
+    float: left;
+    color: #cc1e29;
+    font-size: 16px;
+    padding: 0 20px;
+    margin-right: 32px;
+}
+.header-theme-newyear2018 .nav a.active{
+	background:#f2e8e8;
+}
+.header-theme-newyear2018 .nav a:hover{
+    background:#f2e8e8;
+}
+.header-theme-newyear2018 .jr-ktp span{
+    font-size: 16px;
+    color: #cc1e29;
+    line-height: 24px;
+    vertical-align: middle;
+    margin-left: 14px;
+    margin-right: 10px;
+}
+.header-theme-newyear2018 .jr-ktp a:hover i{
+    background-position: left center;
+}
+.header-theme-newyear2018 .jr-ktp a:hover span{
+    color: #cc1e29;
+}
+
+.header-theme-newyear2018 .log-reg a {
+    display: inline-block;
+    width: 76px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    color: #cc1e29;
+    font-size: 16px;
+}
+.header-theme-newyear2018 .log-reg a.login:hover{
+    color: #cc1e29 ;
+}
+.header-theme-newyear2018 .log-reg a.regist{
+    background: #f2e8e8;
+}
+.header-theme-newyear2018 a.regist:hover{
+    background: #f2e8e8;
+}
+
+.header-theme-newyear2018 .logo a {
+    display: block;
+    height: 32px;
+    margin-top: 12px;
+    background: url("../img/holiday/2018newyear/newyearlog.png");
+    width: 127px;
+}
+
+.home-page .section1-newyear-2018{
+    height: 540px;
+    position: relative;
+    padding-top: 60px;
+    background: #fff;
+}
+.home-page .section1-newyear-2018 .divall{
+    background: url(../img/holiday/2018newyear/newyearbanner.png) center top repeat-x;
+    height: 540px;
+}
+.home-page .section1-newyear-2018 .cWidth{
+     height: 540px;
+     position: absolute;
+     top:0;
+     left: 50%;
+     margin-left: -490px;
+     text-align: center;
+     padding-top: 60px;
+}
+.home-page .section1-newyear-2018 .page_container{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-page .section1-newyear-2018 .reg-btn{
+    display: inline-block;
+    width: 278px;
+    height: 86px;
+    background: url(../img/holiday/hounian/newyearbtn.png) center 0 no-repeat;
+    margin-top: 425px;
+}
+.home-page .section1-newyear-2018 .reg-btn:hover{
+    background-position: center bottom;
+}
+.home-page .section1-newyear-2018 .reg-btn:active{
+}
+.toplogo {
+    width: 88px;
+    height: 78px;
+    background-image: url(../img/all.jpg);
+    background-repeat:  no-repeat;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.bottext {
+    /* width: 84px; */
+    text-align:  center;
+    height:  18px;
+    font-size: 18px;
+    line-height: 18px;
+    /* text-align:  center; */
+}
+
+.onelogo {
+    width: 101px;
+    margin-left:  72px;
+    margin-right:  72px;
+    float: left;
+    user-select: none;
+}
+#zaixiankaoqin .toplogo{
+    background-position: -95px 0;
+}
+#jilubiaoxian .toplogo{
+    background-position: -335px 0;
+}
+#zuoyetongji .toplogo{
+    background-position: -582px 0;
+}
+#kejiangongxiang .toplogo{
+    background-position: -825px 0;
+}
+#chengjihuizong .toplogo{
+    background-position: -95px -184px;
+}
+#kechengtaolun .toplogo{
+    background-position: -335px -184px;
+}
+#banjigonggao .toplogo{
+    background-position: -582px -184px;
+}
+#zhujiaoxiezhu .toplogo{
+    background-position: -825px -184px;
+}
+#chengjihuizong,#kechengtaolun,#banjigonggao,#zhujiaoxiezhu{
+    margin-top: 60px;
+}
+
+li.mrli {
+    width: 700px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 40px;
+    float:  left;
+    opacity: 0.4;
+    transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    box-shadow: 0px 5px 20px 0px rgba(204, 204, 204, 0.5), 0px -5px 20px 0px rgba(204, 204, 204, 0.5), 5px 0px 20px 0px rgba(204, 204, 204, 0.5), -5px 0px 20px 0px rgba(204, 204, 204, 0.5);
+}
+
+.mrtitle {
+    font-size: 26px;
+    height:  30px;
+    line-height:  30px;
+}
+
+.mrtitle a{
+    color: #333;
+}
+
+ul.mediareportul {
+    overflow: hidden;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.mrbt {
+    height:  30px;
+    line-height: 30px;
+}
+
+.mrlogo img {
+    max-height: 30px;
+}
+
+.mrdate {
+    float:  left;
+    font-size: 16px;
+}
+
+.mrlogo {
+    float:  right;
+}
+
+.mrinfo {
+    height:  100px;
+    margin-top:  40px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 25px;
+    overflow: hidden;
+}
+.liactive{
+    opacity: 1 !important;
+}
+.lt{
+    height: 320px;
+    position: absolute;
+    top: 150px;
+    background: url(../img/toprev.png) no-repeat right;
+    right: 50%;
+    transform: translateX(-430px);
+    width: 2000px;
+    z-index: 10;
+    cursor: pointer;
+}
+.gt{
+    height: 320px;
+    position: absolute;
+    top: 150px;
+    background: url(../img/tonext.png) no-repeat left;
+    left: 50%;
+    transform: translateX(430px);
+    width: 2000px;
+    z-index: 10;
+    cursor: pointer;
+}
+ul.mrdotul {
+    width: 980px;
+    margin: 0 auto;
+    height:  20px;
+    text-align:  center;
+    letter-spacing: 10px;
+}
+
+li.dot {
+    display:  inline-block;
+    margin:  0;
+    padding:  0;
+    height:  10px;
+    width:  10px;
+    background: #bbb;
+    border-radius: 10px;
+    transition: width 1s;
+    -moz-transition: width 1s;
+    -webkit-transition: width 1s;
+    -o-transition: width 1s;
+}
+
+.dotactive{
+    width: 40px !important;
+}
+
+.onelogos {
+    width: 25%;
+    height: 120px;
+    text-align: center;
+    float: left;
+    user-select: none;
+}

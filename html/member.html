@@ -1,0 +1,542 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>成员</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+
+<link href="Public/Home/css/memberV3.css" rel="stylesheet" type="text/css">
+
+<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/laydate/default/laydate.css" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/layer/default/layer.css" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/code.css" media="all">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+</head>
+<body style="background-color:#ebeef5;">
+	
+<div class="in-header" style="background: none repeat scroll 0% 0% #455b8c;">
+    <a id="return-course" href="index.html" class="return">
+        <i></i>
+        <span>java与大数据</span>
+    </a>
+    <div class="nav gWidth" id="third-nav">
+          <a href="https://www.ketangpai.com/Attence/index/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html">考勤</a>
+          <a href="https://www.ketangpai.com/StudentsV2/index/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html" class="active">成员</a>   
+      </div>
+    <div style="text-align: center;font-size: 18px;color: #fff;display: none;line-height: 70px;" id="alongheader">
+        考勤首页
+    </div>
+    <ul class="nav-menu-right">
+        <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide" style="display: none;">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>        <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="" alt="用户" title="用户" data-end="1">
+			</a>
+	<div class="user-info hide" style="display: none;">
+		<ul>
+			<li>
+				<a class="link setting" href="https://www.ketangpai.com/User/setting.html">个人设置</a>
+			</li><li>
+				<a class="link wenkudown" href="https://www.ketangpai.com/User/setting.html#wenkudown">文库下载</a>
+			</li><li>
+				<a class="link myvip" href="https://www.ketangpai.com/VipActivity/setting.html">我的VIP</a>
+			</li><li>
+				<a class="link logout" href="https://www.ketangpai.com/User/logout.html">退出账户</a>
+			</li>        </ul>
+    </div>
+</li>    </ul>
+</div>
+
+<script type="text/javascript">
+    seajs.use('jquery',function(ex){
+        try{
+            if(self!=top){
+                $('.nav-menu-right').css('display','none');
+                $('#third-nav').css('display','none');
+                $('#return-course.return').css('display','none');
+                $('#alongheader').css('display','block')
+            }
+        }catch(err){}
+    });
+
+</script>
+<div class="member-page cWidth">
+   
+    <div class="member-cont clearfix">
+        <div class="m-l-box fl">
+            <div class="invite-box">
+                <h3>学生加课码</h3>
+                <div class="invite clearfix">
+                                            <span class="fl" data-abc="76M59D">68S2LC</span>                    <a href="javascript:;" class="opt fr"></a>
+                    <div class="invite-opt" style="display: none;">
+                                                    <a href="javascript:;" class="start hide2">启用</a>
+                            <a href="javascript:;" class="stop">停用</a>
+                            <a href="javascript:;" class="reset">重置</a>                    </div>
+                </div>
+            </div>
+            <div class="group-box">
+                
+            </div>
+        </div>
+
+        <div class="m-r-box fl">
+            <div class="all-list">
+                <div class="title">
+                    <div class="all-title clearfix">
+                        <h3 class="fl" style="width: 100%;">
+                        	<div class="fl">全部学生（学生<span>21</span>）</div>
+                        	<div class="fr limitnum help-info-tips" data-tips="设定班级最大的加课人数，超过这个数之后，其他学生无法加入该班级">
+                        		<a href="javascript:;" class="kcheckbox">人数限制</a><span>&nbsp;</span> 
+                        	</div> 
+                        </h3>
+                        <a href="javascript:;" class="fr invite-tea" style="display: none;"><i>+</i>添加助教/老师</a>
+                    </div>
+                    <div class="group-title clearfix hide">
+                        <h3 class="fl">二小组<span>（30）</span></h3>
+                        <a href="javascript:;" class="fr edit-member">添加成员</a>
+                    </div>
+                </div>
+                <ul class="batchstart"><style type="text/css">
+        .batchstart .btn_delete_checked,.batchstart .btn_message_checked,.batchstart .delete_check,.batchstart .delete_hidden{display: inline-block; }
+        .batchstart .btn_batch{display: none;}
+        .batchdelete{height: 70px;border-bottom: 1px dashed #ccc;line-height: 70px;padding: 0 30px;}
+        .delete_check{height: 17px;width: 17px;display: inline-block;vertical-align: middle;background:url(Public/Home/img/check.png) no-repeat;background-size: 90% auto;background-position: center;float: left;height: 100%;margin-right: 20px; cursor: pointer;display: none;}
+        .delete_checked{background-image: url(Public/Home/img/checked.png)}
+        .btn_batch{font-size: 14px;color: #999;padding-left: 20px;background:url(Public/Home/img/batch.png) no-repeat;background-position: left center;}
+        .delete_hidden{display: none;}
+        .btn_sort_homecont{float: right;padding-left: 20px;background:url(Public/Home/img/sortdown.png) no-repeat;background-position: left center;color: #666}
+        .btn_delete_checked{
+            width: 100px;height: 30px;background:#328eeb;display: inline-block;color: #fff;vertical-align: middle;line-height: 30px;border-radius: 3px;text-align: center;font-size: 12px;margin-left: 10px;display: none;
+        }
+        .btn_delete_checked.disabled,.btn_message_checked.disabled{
+            background:#ddd;
+            opacity:1;
+        }
+        .btn_message_checked{
+            width: 100px;height: 30px;background:#328eeb;display: inline-block;color: #fff;vertical-align: middle;line-height: 30px;border-radius: 3px;text-align: center;font-size: 12px;margin-left: 10px;display: none;
+        }
+        .btn_message_checked.disabled:active,.btn_delete_checked.disabled:active{
+            background:#ddd;
+        }
+        .btn_message_checked:active,.btn_delete_checked:active{
+            background:#328eeb;
+        }
+    </style>
+    <div class="batchdelete">
+        <a href="javascript:;" class="btn_batch">批量管理</a>
+        <span class="check_all delete_check "></span>
+        <span class="delete_hidden">全部</span>
+        <a href="javascript:;" class="btn_delete_checked disabled">删除成员</a>
+        <a href="javascript:;" class="btn_message_checked disabled">群发私信</a>
+    </div>
+
+
+    
+    <li data-id="MDAwMDAwMDAwMLOcy5mIqbtrhrVyoQ">
+        <span class="delete_check  delete_list"></span>
+		<p class="studentavatar"><img src="./成员_files/24.png" data-src="/Public/Common/img/40/24.png" class="avatar" data-end="1"></p>
+        <p class="stuno" title="2015015512">2015015512</p>
+        <p class="name" title="李小花">李小花</p>
+        <p class="mail" title="1432183002@qq.com">1432183002@qq.com</p>
+		<p class="natureclass" title=""></p>
+        <div class="opt">
+            <div class="opt-item" style="display: none;">
+                <a href="javascript:;" class="edit-card">编辑名片</a>
+                <a href="javascript:;" class="call-btn">私信</a>
+                <a href="javascript:;" class="total-btn">统计</a>
+                <a href="javascript:;" class="del-member">删除成员</a>
+            </div>
+        </div>
+        <p class="groupName" title=""></p>
+    </li>
+    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="member-search hide">
+        <div class="search-title">
+            <h3>搜索结果--<span>123</span></h3>
+        </div>
+        <ul>
+
+        </ul>
+    </div>
+</div>
+<!--新建分组弹窗-->
+<div class="pop-new-2 new-class-pop" id="new-group">
+    <div class="title">
+        <h3>新建分组</h3>
+    </div>
+    <div class="input-box">
+        <span>组名：</span>
+        <input type="text" placeholder="请输入组名">
+    </div>
+    <div class="pop-btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure">确定</a>
+    </div>
+</div>
+<!--重命名分组弹窗-->
+<div class="pop-new-2 new-class-pop" id="edit-group">
+    <div class="title">
+        <h3>重命名分组</h3>
+    </div>
+    <div class="input-box">
+        <span>组名：</span>
+        <input type="text" placeholder="请输入组名">
+    </div>
+    <div class="pop-btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">确定</a>
+    </div>
+</div>
+<!--删除分组-->
+<div class="little-pop" id="del-group">
+    <h3 class="title">确定要删除 "<span></span>"吗？</h3>
+    <p class="re-words">删除分组后，该组学生需重新选组。</p>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">确定</a>
+    </div>
+</div>
+<!--从小组移除-->
+<div class="little-pop" id="remove-student">
+    <h3 class="title">确定从本组移除“<span></span>”吗？</h3>
+    <p class="re-words">注：该学生历史的『小组作业』将会更新（成绩及文档）</p>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure active">确定</a>
+    </div>
+</div>
+
+<div class="bg"></div>
+<div class="lxr-box">
+    <div class="all-box fl">
+        <div class="search-box">
+            <i></i>
+            <input type="text" placeholder="搜索名称、学号">
+        </div>
+        <div class="choose-div">
+            <div class="search-result">
+                <p class="tips">以下成员还未加入分组</p>
+                <div class="res-list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end-box fl">
+        <div class="title">
+            <h2 class="fl">已选择<span>0</span></h2>
+            <a href="javascript:;" class="cancel"></a>
+        </div>
+        <div class="end-div">
+            <div class="end-list">
+
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="javascript:;" class="close">取消</a>
+            <a href="javascript:;" class="sure">确定</a>
+        </div>
+    </div>
+</div>
+
+<!--导入通知-->
+<div class="dr-pop" id="dr-pop">
+    <div class="pop-title">
+        <h3>导入成员</h3>
+        <a href="javascript:;" class="close"></a>
+        <div class="dr-from">
+            <a href="javascript:;" class="import2 active">从班级导入</a>
+        </div>
+    </div>
+    <div class="pop-cont clearfix" style="height: 435px;">
+        
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure">导入</a>
+    </div>
+</div>
+<script type="text/html" id="tpl-import-part">
+    {{if !lists||!lists.length}}
+    <p class="no">没有其他班级可供导入</p>
+    {{else}}
+    <div class="class-item fl import2-item" id="viewer-container-courselists">
+        
+    </div>
+    <div class="class-cont fr">
+        
+    </div>
+    {{/if}}
+</script>
+<script type="text/html" id="tpl-import-member">
+{{if lists.length==0}}
+<p class="no">该班级没有成员</p>
+{{else}}
+<div class="title">{{if incoursecount>0}}<i class="checkbox" value="{{lists.length}}"></i>{{/if}}已选 <span>0</span>/{{lists.length}}</div>
+<div class="content memberlist">
+<ul class="cont-box clearfix" id="viewer-container-course-memberlist">
+{{each lists as n i}}
+<li class="cont-list {{if n.incourse===1}}disabled{{/if}}" data-id="{{n['id']}}">
+    <a class="select" title="{{n.stno}}{{n.username}}"></a>
+    {{if n.incourse===0}}<i class="checkbox"></i>{{/if}}
+    <img class="avatar" src="{{n.avatar}}">
+    <span class="stno text-overflow" {{if n.isre}}style="color:rgb(218,89,45);"{{/if}}>{{n.stno}}</span>
+    <span class="username text-overflow">{{n.username}}</span>
+</li>
+{{/each}}
+</ul>
+</div>
+{{/if}}
+</script>
+
+<script type="text/html" id="tpl-import-course">
+<ul>
+    {{each lists as c}}
+    <li data-id="{{c['id']}}">
+        <a href="javascript:;" title="{{c['coursename']}}">
+            <i></i>
+            <span>{{c['coursename']}}</span>
+        </a>
+    </li>
+    {{/each}}
+</ul>
+</script>
+
+<!--添加一个分组-->
+<script type="text/html" id="tpl-oneGroup">
+    <li data-id="{{id}}">
+        <span title="{{groupname}}">{{groupname}}</span>
+        <b>（0）</b>
+        <div class="opt fr">
+            <div class="opt-item">
+                <a href="javascript:;" class="cmm-btn">重命名</a>
+                <a href="javascript:;" class="del-btn">删除</a>
+            </div>
+        </div>
+    </li>
+</script>
+<!--分组列表-->
+<script type="text/html" id="tpl-groupList">
+	<li class="teacherTeam active" style="font-weight:bold;">教学团队（<i>{{teacherCount}}</i>）</li>
+    <li class="all">全部学生（<i>{{studentCount}}</i>）</li>
+    <div class="groupdetailbox">
+        <a href="/StudentsV2/grouplist/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html" class="groupdetaillink">学生分组</a>
+    </div>
+</script>
+
+<!--助教老师模板-->
+<script type="text/html" id="tpl-teacherList">
+    {{each lists as i a}}
+    <li class="teacher" data-assistantid="{{i['assistant_id']}}" data-uid="{{i['uid']}}">
+        <img src="{{i.avatar}}" alt="">
+        <p class="teaName"><span title="{{i['username']}}">{{i['username']}}</span></p>
+        <p class="mail" title="{{i['email']}}">{{i['email']}}</p>
+        {{if a==0}}
+        <p class="assistant_sign" title="（管理员）">（管理员）</p>
+        {{else}}
+        <p class="assistant_sign" title="（老师/助教）">（老师/助教）</p>
+        {{/if}}
+        <div class="opt">
+            <div class="opt-item">
+                <a href="javascript:;" class="calls">私信</a>
+                <a href="javascript:;" class="dels">删除</a>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<!--添加一个助教-->
+<script type="text/html" id="tpl-addTeacher">
+    <li class="teacher" data-assistantid="{{assistant_id}}">
+        <img src="{{avatar}}" alt="">
+        <p class="teaName"><span title="{{username}}">{{username}}</span></p>
+        <p class="mail" title="{{email}}">{{email}}</p>
+        <p class="assistant_sign" title="（老师）">（老师）</p>
+        <a href="javascript:;" class="del"></a>
+    </li>
+</script>
+<!--全部学生-->
+<script type="text/html" id="tpl-allStudent">
+    {{each lists as l}}
+    <li data-id="{{l['id']}}">
+        <span class="delete_check  delete_list"></span>
+		<p class="studentavatar"><img src='/Public/Home/img/lodding.gif' data-src="{{l['avatar']}}" class="avatar" /></p>
+        <p class="stuno" title="{{l['stno']}}" {{if l.isre}}style="color:rgb(218,89,45);"{{/if}}>{{l['stno']}}</p>
+        <p class="name" title="{{l['username']}}">{{l['username']}}</p>
+        <p class="mail" title="{{l['email']}}">{{l['email']}}</p>
+		<p class="natureclass" title="{{l['natureclass']}}">{{l['natureclass']}}</p>
+        <div class="opt">
+            <div class="opt-item">
+                <a href="javascript:;" class="edit-card">编辑名片</a>
+                <a href="javascript:;" class="call-btn">私信</a>
+                <a href="javascript:;" class="total-btn">统计</a>
+                <a href="javascript:;" class="del-member">删除成员</a>
+            </div>
+        </div>
+        <p class="groupName" title="{{l['groupname']}}">{{l['groupname']}}</p>
+    </li>
+    {{/each}}
+</script>
+
+<!--小组学生-->
+<script type="text/html" id="tpl-groupStudent">
+    <style type="text/css">
+        .batchstart .btn_delete_checked,.batchstart .btn_message_checked,.batchstart .delete_check,.batchstart .delete_hidden{display: inline-block; }
+        .batchstart .btn_batch{display: none;}
+        .batchdelete{height: 70px;border-bottom: 1px dashed #ccc;line-height: 70px;padding: 0 30px;}
+        .delete_check{height: 17px;width: 17px;display: inline-block;vertical-align: middle;background:url(/Public/Home/img/check.png) no-repeat;background-size: 90% auto;background-position: center;float: left;height: 100%;margin-right: 20px; cursor: pointer;display: none;}
+        .delete_checked{background-image: url(/Public/Home/img/checked.png)}
+        .btn_batch{font-size: 14px;color: #999;padding-left: 20px;background:url(/Public/Home/img/batch.png) no-repeat;background-position: left center;}
+        .delete_hidden{display: none;}
+        .btn_sort_homecont{float: right;padding-left: 20px;background:url(/Public/Home/img/sortdown.png) no-repeat;background-position: left center;color: #666}
+        .btn_delete_checked{
+            width: 100px;height: 30px;background:#328eeb;display: inline-block;color: #fff;vertical-align: middle;line-height: 30px;border-radius: 3px;text-align: center;font-size: 12px;margin-left: 10px;display: none;
+        }
+        .btn_delete_checked.disabled,.btn_message_checked.disabled{
+            background:#ddd;
+            opacity:1;
+        }
+        .btn_message_checked{
+            width: 100px;height: 30px;background:#328eeb;display: inline-block;color: #fff;vertical-align: middle;line-height: 30px;border-radius: 3px;text-align: center;font-size: 12px;margin-left: 10px;display: none;
+        }
+        .btn_message_checked.disabled:active,.btn_delete_checked.disabled:active{
+            background:#ddd;
+        }
+        .btn_message_checked:active,.btn_delete_checked:active{
+            background:#328eeb;
+        }
+    </style>
+    <div class="batchdelete">
+        <a href="javascript:;" class="btn_batch">批量管理</a>
+        <span class="check_all delete_check "></span>
+        <span class="delete_hidden">全部</span>
+        <a href="javascript:;" class="btn_message_checked disabled" >群发私信</a>
+    </div>
+    {{each data as l}}
+    <li data-id="{{l['id']}}">
+        <span class="delete_check  delete_list"></span>
+		<p class="studentavatar"><img src='/public/home/img/lodding.gif' data-src="{{l['avatar']}}" class="avatar" /></p>
+        <p class="stuno" title="{{l['stno']}}">{{l['stno']}}</p>
+        <p class="name" title="{{l['username']}}">{{l['username']}}</p>
+        <p class="mail" title="{{l['email']}}">{{l['email']}}</p>
+		<p class="natureclass" title="{{l['natureclass']}}">{{l['natureclass']}}</p>
+        <div class="opt">
+            <div class="opt-item">
+                <a href="javascript:;" class="edit-card">编辑名片</a>
+                <a href="javascript:;" class="call-btn">私信</a>
+                <a href="javascript:;" class="total-btn">统计</a>
+                <a href="javascript:;" class="remove-btn">从本组移除</a>
+            </div>
+        </div>
+        <div class="leader">
+        {{if l['type']==1}}
+            <a href="javascript:;" class="setLeader hide2">设为组长</a>
+            <a href="javascript:;" class="delLeader">取消组长</a>
+        {{/if}}
+        {{if l['type']!=1}}
+            <a href="javascript:;" class="setLeader">设为组长</a>
+            <a href="javascript:;" class="delLeader hide2">取消组长</a>
+        {{/if}}
+        </div>
+        {{if l['type']==1}}
+        <p class="isLeader">组长</p>
+        {{/if}}
+        {{if l['type']!=1}}
+        <p class="isLeader hide2">组长</p>
+        {{/if}}
+    </li>
+    {{/each}}
+</script>
+<!--联系人列表-->
+<script type="text/html" id="tpl-lxr">
+    {{each data as l}}
+    <p data-id="{{l['id']}}">
+		<span>{{l['username']}}({{l['stno']}})</span>
+		<i></i>
+	</p>
+    {{/each}}
+</script>
+<!--选择后列表-->
+<script type="text/html" id="tpl-lxrend">
+    {{each data as l}}
+    <p data-id="{{l['id']}}">
+		<span>{{l['username']}}({{l['stno']}})</span>
+		<a href="javascript:;" class="cancel"></a>
+	</p>
+    {{/each}}
+</script>
+<!--添加一个人-->
+<script type="text/html" id="tpl-lxrone">
+    <p data-id="{{id}}">
+		<span>{{name}}</span>
+		<a href="javascript:;" class="cancel"></a>
+	</p>
+</script>
+<!--成员变动-->
+<script type="text/html" id="tpl-change">
+    {{if lists==null||lists.length==0}}
+    <p style="font-size:14px;color:#aaa;line-height:280px;text-align:center;">暂无成员退课</p>
+    {{else}}
+    {{each lists as l}}
+    <li>
+        <p class="text-overflow" title="{{l.username}}（{{l.stno}}）">{{l.username}}（{{l.stno}}）</p>
+        <span>{{if l.updatetime==null}}无时间记录{{else}}{{year_month_day l.updatetime}} {{hour_min l.updatetime}}{{/if}}</span>
+    </li>
+    {{/each}}
+    {{/if}}
+</script>
+
+	
+<a href="javascript:;" class="back-to-top" style="display: inline;"></a>
+
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.feedback();});</script>	
+<script>
+    seajs.use('/html/Public/Home/js/memberV3.js',function(ex){
+        ex.memberAll();
+    });
+</script>
+
+	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
+
+</body>
+</html>

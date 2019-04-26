@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student</title>
+
+</head>
+
+<body>
+<img id="img" style="width:1300px;height: 600px">
+    
+  <script type="text/javascript">
+      var ws = new WebSocket("ws://localhost:8083/teachersocket");
+     ws.binaryType = "arraybuffer";
+ //建立 web socket 连接成功触发事件
+     ws.onopen = function() {
+         ws.send("I'm studnet");
+     };
+ // 接收服务端数据时触发事件
+     ws.onmessage = function (evt) { 
+       console.log(evt.data);
+         var bytes = new Uint8Array(evt.data);
+         var data = "";
+         var len = bytes.byteLength;
+         for (var i = 0; i < len; ++i) {
+             data += String.fromCharCode(bytes[i]);
+         }
+         var img = document.getElementById("img");
+         img.src = "data:image/png;base64,"+window.btoa(data);
+     };
+ // 断开 web socket 连接成功触发事件
+     ws.onclose = function(e) {
+         console.log("断开连接原因："+"错误码"+e.code + "断开原因" + e.reason + "是否正常断开" + e.wasClean);
+     };
+ //  web socket 连接失败触发事件
+     ws.onerror = function(err) {
+         console.log("Error: " + err);
+     };
+
+   function dataURItoBlob(dataURI) {
+        // convert base64/URLEncoded data component to raw binary data held in a string
+        var byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1]);
+        else
+            byteString = unescape(dataURI.split(',')[1]);
+
+        // separate out the mime component
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        // write the bytes of the string to a typed array
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+        }
+
+        return new Blob([ia], {type:mimeString});
+    }
+
+  </script>
+</body>
+
+</html>

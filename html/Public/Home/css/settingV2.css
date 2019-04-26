@@ -1,0 +1,843 @@
+.setting-page{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border: 1px solid #c8c8c8;
+    padding-bottom: 60px;
+    background: #FFFFFF;
+}
+.uc-avatar.face-icon{
+    position: relative;
+}
+.uc-avatar.face-icon img{
+    border-radius: 50%;
+}
+.uc-avatar.face-icon .marks{
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    font-size: 0;
+    width: 60px;
+}
+.uc-avatar.face-icon .marks>a{
+    display: inline-block;
+    width: 30px;
+    height: 14px;
+    background: url("/Public/Common/img/vip.png") no-repeat;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.uc-avatar.face-icon .change-avatar:hover{
+    opacity: 1;
+}
+.uc-avatar.face-icon .change-avatar{
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    margin-left: -36px;
+    border-radius: 50%;
+    width: 73px;
+    height: 73px;
+    color: #FFF;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    line-height: 73px;
+    opacity: 0;
+    transition:all .5s ease;
+}
+.s-header{
+    height: 60px;
+    margin-top: 15px;
+    border-top: 1px solid #dcdcdc;
+}
+.s-header .h-nav{
+    font-size: 0;
+    text-align: center;
+}
+.s-header .h-nav a{
+    font-size: 14px;
+    margin-left: 145px;
+    line-height: 60px;
+    color: #aaa;
+}
+.s-header .h-nav a:first-child{
+    margin-left: 0;
+}
+.s-header .h-nav a:hover{
+    color: #2d2d2d;
+}
+.s-header .h-nav a.active{
+    color: #4D90FE;
+}
+
+.item-change{
+    min-height: 600px;
+}
+.item-change .setting-item,
+.item-change .notice-item{
+    padding: 20px 40px 0 40px;
+}
+.item-change .setting-item .options .title{
+    font-size: 14px;
+    color: #333333;
+    border-bottom: 1px solid #DCDCDC;
+    padding-bottom: 20px;
+    line-height: 1;
+}
+.item-change .setting-item .options{
+    margin-top: 20px;
+}
+.item-change .setting-item .options ul{
+    padding-top: 10px;
+}
+.item-change .setting-item .options ul li{
+    height: 32px;
+    margin-top: 10px;
+}
+.item-change .setting-item .options ul li p{
+    float: left;
+    min-width: 75px;
+    line-height: 32px;
+    color: #969696;
+}
+.item-change .setting-item .options ul li .edit-box{
+    float: left;
+}
+.item-change .setting-item .options ul li .yzm{
+    float: left;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #c8c8c8;
+    color: #595959;
+    font-size: 0;
+    border-radius: 3px;
+}
+.item-change .setting-item .options ul li .yzm .txtyzm{
+    height: 30px;
+    line-height: 30px\9;
+    display: inline-block;
+    vertical-align: top;
+    width: 76px;
+    padding: 0 14px;
+    font-size: 14px;
+}
+.item-change .setting-item .options ul li .yzm a{
+    display: inline-block;
+    border-left: 1px solid #DCDCDC;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 12px;
+    color: #818181;
+    width: 95px;
+}
+.item-change .setting-item .options ul li .yzm a.getIng{
+    color: #AAAAAA!important;
+    cursor: default;
+}
+.item-change .setting-item .options ul li .yzm a i{
+    font-style: normal;
+    cursor: default;
+}
+.item-change .setting-item .options ul li .yzm a:hover{
+    color: #4d90fe;
+}
+.item-change .setting-item .options ul li .edit-box span{
+    display: inline-block;
+    line-height: 32px;
+    color: #595959;
+}
+.item-change .setting-item .options ul li .edit-box .unbind{
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    border-radius: 3px;
+    color: #818181;
+    border: 1px solid #c8c8c8;
+    margin-left: 10px;
+}
+.item-change .setting-item .options ul li .edit-box .unbind:hover{
+    background: #e6e6e6;
+    color: #2D2D2D;
+}
+.item-change .setting-item .options ul li .edit-box .unbind:active{
+    border: 1px solid #969696
+}
+.item-change .setting-item .options ul li .edit-box .txts{
+    width: 172px;
+    height: 30px;
+    line-height: 30px\9;
+    border: 1px solid #c8c8c8;
+    color: #595959;
+    padding: 0 14px;
+    border-radius: 3px;
+    display: none;
+    font-size: 14px;
+}
+.item-change .setting-item .options ul li .edit-box .txts:focus{
+    border: 1px solid #4d90fe;
+}
+.item-change .setting-item .options ul li .edit-box b{
+    display: inline-block;
+    line-height: 32px;
+    color: #ff0000;
+    font-size: 12px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+.item-change .setting-item .options ul li>a{
+    float: right;
+    min-width: 56px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+    padding-left: 5px;
+	padding-right: 5px;
+}
+.item-change .setting-item .options ul li .edit-btn{
+    color: #818181;
+    border: 1px solid #c8c8c8;
+}
+.item-change .setting-item .options ul li .edit-btn.blue{
+    color: #4d90fe;
+    background: #FFFFFF;
+    border: 1px solid #4d90fe!important;
+}
+.item-change .setting-item .options ul li .edit-btn.blue:hover{
+    background: #4d90fe;
+    color: #FFFFFF;
+}
+.item-change .setting-item .options ul li .edit-btn:hover{
+    background: #e6e6e6;
+    color: #2D2D2D;
+}
+.item-change .setting-item .options ul li .edit-btn:active{
+    border: 1px solid #969696;
+}
+.p-exit-edit{
+    color: #4d90fe;
+    border: 1px solid #4d90fe;
+    float: right;
+    min-width: 56px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.item-change .setting-item .options ul li .exit-edit{
+    color: #4d90fe;
+    border: 1px solid #4d90fe;
+    display: none;
+}
+.item-change .setting-item .options ul li .exit-edit:hover{
+    background: #4d90fe;
+    color: #FFFFFF;
+}
+.item-change .setting-item .options .save-btn{
+    display: block;
+    margin-left: 75px;
+    width: 56px;
+    height: 26px;
+    border-radius: 3px;
+    background: #4d90fe;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 26px;
+    margin-top: 10px;
+}
+.item-change .setting-item .options div ul li .edit-box .txts{
+    display: inline-block;
+}
+.item-change .notice-item .title{
+    border-bottom: 1px solid #DCDCDC;
+    padding: 20px 0 20px;
+    line-height: 1;
+}
+.item-change .notice-item .title h2{
+    font-size: 14px;
+}
+.item-change .notice-item .title h3{
+    font-size: 14px;
+    font-weight: normal;
+}
+.item-change .notice-item ul li{
+    height: 50px;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 28px 0 22px;
+}
+.item-change .notice-item .l-box{
+    width: 498px;
+}
+.item-change .notice-item .l-box h3{
+    font-size: 14px;
+    color: #595959;
+    font-weight: normal;
+    line-height: 1;
+}
+.item-change .notice-item .l-box p{
+    font-size: 12px;
+    color: #AAAAAA;
+    margin-top: 16px;
+    line-height: 1;
+}
+.item-change .notice-item .r-box .switch-box{
+    width: 82px;
+    height: 26px;
+    position: relative;
+    margin-top: 10px;
+}
+.item-change .notice-item .r-box .switch-box span{
+    border: 1px solid #c8c8c8;
+    width: 80px;
+    height: 24px;
+    display: block;
+    line-height: 24px;
+    text-indent: 15px;
+    background: url("../img/settingicon.png") 50px -48px no-repeat #FFFFFF;
+}
+.item-change .notice-item .r-box .switch-box span:hover{
+    border: 1px solid #818181;
+}
+.item-change .notice-item .r-box .switch-box span.active{
+    background-position: 50px -72px;
+    background-color: #818181;
+    border: 1px solid #818181;
+    color: #FFFFFF;
+}
+.item-change .notice-item .r-box .switch-box div{
+    position: absolute;
+    left: 0px;
+    top: 24px;
+    border: 1px solid #818181;
+    width: 80px;
+    padding: 5px 0;
+    background: #FFFFFF;
+    display: none;
+}
+.item-change .notice-item .r-box .switch-box div a{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    text-indent: 15px;
+    color: #2D2D2D;
+}
+.item-change .notice-item .r-box .switch-box div a.active{
+    background: url("../img/settingicon.png") 50px 0px no-repeat;
+}
+.item-change .notice-item .r-box .switch-box div a.active:hover{
+    background-position: 50px -24px;
+}
+.item-change .notice-item .r-box .switch-box div a:hover{
+    background-color: #4d90fe;
+    color: #FFFFFF;
+}
+.item-change .t-tips{
+    line-height: 30px;
+    color: #AAAAAA;
+    margin-top: 30px;
+    padding-bottom: 60px;
+}
+.operation-userinfo{
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+.operation-userinfo .line-element,.operation-userinfo .line-link{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+.mask-layer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    filter: alpha(opacity:30);
+    z-index: 9;
+}
+.setting-layer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 374px;
+    height: 416px;
+    margin-left: -187px;
+    margin-top: -208px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+.settingclose{
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    background: url(/Public/Common/img/icon-setting-close.png) 0 0 no-repeat;
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+.settingclose:hover{
+    background-position: 0 -36px;
+}
+.qrcode{
+    padding-top: 70px;
+}
+span.bind-wechatuid{
+    display: block;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 14px;
+    color: #5a5a5a;
+}
+.wechat-bindsuccess-icon{
+    background: url(/Public/Common/img/icon-setting-wechat-bindsuccess.png) no-repeat;
+    width: 82px;
+    height: 82px;
+    margin: 10px auto 0px auto;
+    display: block;
+}
+.wechat-bindsuccess-txt{
+    display: block;
+    font-size: 18px;
+    color: #2d2d2d;
+    text-align: center;
+    padding: 20px 0px 60px 0px;
+}
+.wechat-bindsuccess-p{
+    text-align: center;
+    font-size: 14px;
+    color: #5b5b5b;
+    line-height: 2;
+}
+
+#remove_bind{
+    padding-left: 0;
+    padding-top: 0;
+}
+#remove_bind h3{
+    border-bottom: none;
+}
+.remove-bind-tip{
+    padding-left: 28px;
+    padding-right: 28px;
+    border-bottom: 1px #ececec solid;
+    padding-bottom: 24px;
+}
+.remove-bind-tip li{
+    font-size: 14px;
+    color: #2d2d2d;
+    line-height: 2;
+    background: url(/Public/Common/img/icon-removebind-listimg.png) -3px 10px no-repeat;
+    padding-left: 13px;
+}
+
+
+#faceUploader{
+    padding-left: 0;
+    padding-top: 0;
+}
+.faceUploaderPlus{
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 80px;
+    color: #78787A;
+}
+.uploader-container{
+    padding: 10px 30px;
+}
+.frame{
+    width: 300px;
+    height: 300px;
+    border: 5px #D1D1D1 solid;
+    border-radius: 3px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.frame img{
+    display: block;
+    overflow:hidden;
+    position:absolute;
+    top: 50%;
+    left: 0;
+    -ms-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+#preview{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 1px #D1D1D1 solid;
+    overflow: hidden;
+    margin-left: 20px;
+    border-radius: 80px;
+}
+#preview img{
+    border: 0;
+}
+
+.cx-tj{
+    width: 15px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.cx-tj .cj-btn{
+    display: block;
+    height: 14px;
+
+    width: 14px;
+    background: url(/Public/Home/img/icon-v.png) center center no-repeat;
+    background-size: 14px;
+    color: #818181;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
+.cx-tj .tj-tips{
+    background: #FFFED3;
+    height: 36px;
+    line-height: 36px;
+    position: absolute;
+    width: 330px;
+    top: -10px;
+    left: 32px;
+    border-radius: 3px;
+    font-size: 0;
+    display: none;
+}
+.cx-tj .tj-tips i{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 8px;
+    border-style: dashed solid dashed dashed;
+    border-color: transparent #FFFED3 transparent transparent;
+    position: absolute;
+    left: -16px;
+    top: 10px;
+}
+.cx-tj .tj-tips span{
+    padding-left: 15px;
+    font-size: 14px;
+    margin-right: 20px;
+    color: #94463f;
+}
+.cx-tj .tj-tips a{
+    font-size: 14px;
+    color: #357ae8;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.cx-tj .tj-tips a:hover{
+    color: #4d90fe;
+}
+
+.unbind-box{
+    padding-left: 30px;
+    padding-top: 25px;
+}
+.unbind-box .title {
+    font-weight: normal;
+    color: #5A5A5A;
+    font-size: 18px;
+}
+.unbind-box .title span{
+    display: inline-block;
+    max-width: 125px;
+    color: #4d90fe;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+}
+.unbind-box .re-words{
+    margin-top: 25px;
+    color: #2D2D2D;
+}
+.unbind-box .btns
+{
+    margin-top: 28px;
+}
+
+.tel-validate{
+    width: 340px;
+    background: #FFFFFF;
+    z-index: 10;
+    padding: 30px 30px 0;
+    display: none;
+}
+.tel-validate .title{
+    margin-bottom: 30px;
+}
+.tel-validate .title h3{
+    font-weight: normal;
+    color: #595959;
+    font-size: 16px;
+    line-height: 1;
+}
+.tel-validate .title a{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 28px;
+    top: 28px;
+    background: url(/Public/Home/img/close.png) left top no-repeat;
+    border-radius: 3px;
+}
+.tel-validate .title a:hover{
+    background-position: left bottom;
+}
+.tel-validate .title a:active{
+    background-color: #DCDCDC;
+}
+.tel-validate .yzm-box .input {
+    position: relative;
+    height: 56px;
+    border-bottom: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.tel-validate .yzm-box .input.focus{
+    border-bottom: 2px solid #4d90fe;
+}
+.tel-validate .yzm-box .input.error{
+    border-bottom: 2px solid #ff0000;
+}
+.tel-validate .yzm-box .input span {
+    width: 70px;
+    height: 56px;
+    line-height: 56px;
+    color: #969696;
+    font-size: 16px;
+    float: left;
+}
+.tel-validate .yzm-box .input input {
+    width: 130px;
+    float: left;
+    height: 54px;
+    line-height: 54px\9;
+    font-size: 16px;
+}
+.tel-validate .yzm-box .get-yzm {
+    float: right;
+    width: 126px;
+    height: 36px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 36px;
+    border: 1px solid #DCDCDC;
+    background: #F2F2F2;
+    border-radius: 3px;
+    color: #818181;
+    margin-top: 25px;
+}
+.tel-validate .yzm-box .get-yzm.nod{
+    color: #AAAAAA!important;
+    background: #F2F2F2!important;
+    border: 1px solid #DCDCDC!important;
+    cursor: default;
+}
+.tel-validate .yzm-box .get-yzm:hover{
+    color: #4d90fe;
+    background: #e6e6e6;
+}
+.tel-validate .yzm-box .get-yzm:active{
+    border: 1px solid #c8c8c8;
+}
+.tel-validate .words{
+    line-height: 30px;
+}
+.tel-validate .words span{
+    color: #FF9933;
+}
+.tel-validate .button{
+    background: #357AE8;
+    color: #FFF;
+    display: block;
+    border-radius: 5px;
+    behavior: url(/Public/Common/PIE.htc);
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    width: auto;
+    margin-top: 30px;
+}
+.tel-validate .button:hover{
+    background: #4D90FE;
+}
+.tel-validate .button:active{
+    height: 48px;
+    box-shadow: 0px 0px 0px 1px #4D90FE;
+    border: solid 1px #FFF;
+}
+.tel-validate .error-tips{
+    position: absolute;
+    font-size: 12px;
+    color: #ff0000;
+    top: -6px;
+    white-space: nowrap;
+}
+.wenkudownlist{
+}
+.wenkudownlist .change-box{
+    padding: 22px 0;
+    border-bottom: 1px solid #dcdcdc;
+}
+.wenkudownlist .change-box .item{
+    text-align: center;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    width: 345px;
+    margin: 0 auto;
+    height: 34px;
+}
+.wenkudownlist .change-box .item a{
+    display: inline-block;
+    font-size: 12px;
+    width: 115px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    color: #2d2d2d;
+}
+.wenkudownlist .change-box .item a.active{
+    position: relative;
+    height: 36px;
+    line-height: 34px;
+    background: #4d90fe;
+    color: #ffffff!important;
+    top: -1px;
+}
+.wenkudownlist .change-box .item a:hover{
+    color: #4D90FE;
+}
+.wenkudownlist .change-box .item a:first-child.active{
+    left: -1px;
+    border-radius: 3px 0 0 3px;
+}
+.wenkudownlist .change-box .item a:last-child.active{
+    left: 1px;
+    border-radius: 0 3px 3px 0;
+}
+/**/
+.jifenTitle{
+    padding: 20px 15px 10px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.jifenDuiBtn{}
+.jifenDuiBtn.btn.btn-positive{
+    height: 24px;
+    line-height: 24px;
+    width: 100px;
+    font-size: 14px;
+}
+.jifenDuiBtn.btn.btn-positive:active{
+    height: 22px;
+    line-height: 22px;
+    width: 98px;
+}
+.jifenCont{
+    
+}
+.jifenCont li{
+    margin:0 15px;
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px dashed #dcdcdc;
+    overflow: hidden;
+}
+.jifenCont li:last-child{
+    border-bottom: 0;
+}
+.jifenCont li span{
+    display: inline-block;
+    vertical-align: middle;
+}
+.jifenCont li span.txt{
+    max-width: 180px;
+    font-size: 14px;
+    float: left;
+}
+.jifenCont li span.time{
+    font-size: 12px;
+    float: right;
+    color: #aaa;
+}
+.jifenCont li.readed span.txt{
+    color: #aaa;
+}
+
+
+.switch-box{
+    width: 82px;
+    height: 26px;
+    position: relative;
+    margin-top: 10px;
+}
+.switch-box span{
+    border: 1px solid #c8c8c8;
+    width: 80px;
+    height: 24px!important;
+    line-height: 24px!important;
+    text-indent: 15px;
+    background: url("/Public/Home/img/settingicon.png") 50px -48px no-repeat #FFFFFF;
+    display: block;
+}
+.switch-box span:hover{
+    border: 1px solid #818181;
+}
+.switch-box span.active{
+    background-position: 50px -72px;
+    background-color: #818181;
+    border: 1px solid #818181;
+    color: #FFFFFF;
+}
+.switch-box div{
+    position: absolute;
+    left: 0px;
+    top: 24px;
+    border: 1px solid #818181;
+    width: 80px;
+    padding: 5px 0;
+    background: #FFFFFF;
+    display: none;
+}
+.switch-box div a{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    text-indent: 15px;
+    color: #2D2D2D;
+}
+.switch-box div a.active{
+    background: url("/Public/Home/img/settingicon.png") 50px 0px no-repeat;
+}
+.switch-box div a.active:hover{
+    background-position: 50px -24px;
+}
+.switch-box div a:hover{
+    background-color: #4d90fe;
+    color: #FFFFFF;
+}

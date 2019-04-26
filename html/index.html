@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>Student</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/indexLogin.js"></script>
+
+<link href="Public/Common/css/main.css" rel="stylesheet" type="text/css">
+
+<link href="Public/Home/css/homepage.css" rel="stylesheet" type="text/css">
+
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+<body>
+	<div id="indextop" class="header header2 header-theme-none">
+    <div class="logo fl">
+        <a href="index.html" class="active" style="margin-top: 0px"><img src="Public/Common/img/logo2.png" alt="" style="height:65px"></a>
+    </div>
+    <div class="nav fl">
+        <a href="index.html" class="active">首页</a>
+        <div id="solutiontop" style="float:left;height: 60px;overflow: hidden;">
+            <a target="_blank" style="cursor: pointer;">解决方案</a>
+            <ul id="solutionul">
+                <div style="height:10px;"></div>
+                <li class="solutionli"><a href="https://www.ketangpai.com/index/aplus.html">申请机构版</a></li>
+                <li class="solutionli"><a href="https://www.ketangpai.com/index/localprivate.html">本地化部署</a></li>
+                <div style="height:10px;"></div>
+            </ul>
+        </div>
+            </div>
+    <style>
+        #solutiontop:hover{
+            height: auto !important;
+        }
+        #solutionul{
+            overflow: hidden;
+            clear: both;
+            background: white;
+            width: 120px;margin: 5px;
+            box-shadow: 0px 0px 5px 1px rgba(80,80,80,0.4);
+            position: relative;
+            z-index: 20;
+        }
+        .solutionli a{
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            color: #333 !important;
+            padding: 0 10px !important;
+            height: 40px !important;
+            line-height: 40px !important;
+        }
+        .solutionli{
+            height: 40px;
+        }
+    </style>
+    <div class="log-reg fr">
+        <a href="login.html" class="login">登录</a>
+        <a href="register.html" class="regist">注册</a>
+    </div>
+        <div class="jr-ktp hide">
+        <a href="javascript:;" onclick="toMainIndex()">
+            <span>进入课堂派</span>
+            <i></i>
+        </a>
+    </div>
+    </div>	
+<div class="hide">
+    <a href="index.html">
+        <img src="./简单好用的互动课堂管理工具_files/04.jpg" alt="课堂派" title="课堂派" width="121" height="75">
+    </a>
+</div>
+<div class="home-page">
+	    <div class="section1">
+       <div class="banner_logo">中国领先的互动课堂管理平台</div>
+       <div class="cWidth">
+           <a href="register.html" class="reg-btn">免费注册</a>
+       </div>
+    </div>    <div class="section2">
+        <div class="cWidth">
+            <div class="word">
+                <h3>节省超40%教学时间</h3>
+                <p>0秒收集作业，支持50多种文档直接在线批阅，多维度快速了解学生作业情况<br>便捷批量已阅学生作业，有效节省了教学时间</p>
+            </div>
+            <div class="sx-box">
+                <div class="sx-bg"></div>
+                <div class="fk1">
+                    <img src="./简单好用的互动课堂管理工具_files/fk1.jpg">
+                </div>
+                <div class="fk2"></div>
+                <div class="fk3">
+                    <img src="./简单好用的互动课堂管理工具_files/fk2.jpg">
+                </div>
+                <div class="fk4"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section3" style="background:url(Public/Home/img/hudong.jpg) no-repeat center top;">
+        <div class="cWidth clearfix">
+            <div class="word">
+                <h3>颠覆乏味的PPT授课，与课堂互动无缝融合</h3>
+                <p>老师随时在PPT中插入互动试题，讨论题目</p>
+                <p>将学生“听课”与“参与互动”两种状态无缝融合</p>
+                <p>大屏幕实时统计学生参与互动的数据</p>
+                <p>弹幕与抢答，让课堂科技瞬间感爆棚</p>
+            </div>
+        </div>
+    </div>
+    <div class="section4">
+        <div class="cWidth clearfix">
+            <div class="word" style="max-width:400px;">
+                <h3>作业查重杜绝抄袭</h3>
+                <p>提供站内查重</p>
+                <p>快速给出最大相似度</p>
+                <p>轻松过滤搭便车行为。</p>
+            </div>
+            <div class="lang">
+                <img src="./简单好用的互动课堂管理工具_files/cc.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="section5">
+        <div class="cWidth clearfix">
+            <div class="word" style="max-width:500px;">
+                <h3>人脸识别辅助完成考勤</h3>
+                <p>学生通过面部识别快速参加考勤</p>
+                <p>老师无需担心虚假签到</p>
+                <p>活体检测帮老师定位不在课上签到的学生</p>
+            </div>
+            <div class="lang">
+                <img src="Public/gps.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="section6">
+        <div class="cWidth">
+            <h3>为您提供了教学管理的一切</h3>
+            <div class="all">
+                <div class="onelogo" id="zaixiankaoqin">
+                    <div class="toplogo"></div>
+                    <div class="bottext">在线考勤</div>
+                </div>
+                <div class="onelogo" id="jilubiaoxian">
+                    <div class="toplogo"></div>
+                    <div class="bottext">记录表现</div>
+                </div>
+                <div class="onelogo" id="zuoyetongji">
+                    <div class="toplogo"></div>
+                    <div class="bottext">作业统计</div>
+                </div>
+                <div class="onelogo" id="kejiangongxiang">
+                    <div class="toplogo"></div>
+                    <div class="bottext">课件共享</div>
+                </div>
+                <div class="onelogo" id="chengjihuizong">
+                    <div class="toplogo"></div>
+                    <div class="bottext">成绩汇总</div>
+                </div>
+                <div class="onelogo" id="kechengtaolun">
+                    <div class="toplogo"></div>
+                    <div class="bottext">课程讨论</div>
+                </div>
+                <div class="onelogo" id="banjigonggao">
+                    <div class="toplogo"></div>
+                    <div class="bottext">班级公告</div>
+                </div>
+                <div class="onelogo" id="zhujiaoxiezhu">
+                    <div class="toplogo"></div>
+                    <div class="bottext">助教协助</div>
+                </div>
+                <!-- <img src="/Public/Home/img/all.jpg"> -->
+            </div>
+        </div>
+    </div>
+    
+</div>
+	<div class="footer">
+    <div class="cWidth">
+        <div class="nav clearfix">
+            <a href="https://www.ketangpai.com/index/abouts.html">关于我们</a>
+            <a href="https://www.ketangpai.com/index/contact.html">联系我们</a>
+            <a href="https://www.ketangpai.com/index/service.html">服务条款</a>
+            <a href="https://www.ketangpai.com/index/older.html" target="_blank">浏览器下载</a>
+            <a href="https://www.ketangpai.com/index/updateDynamics">更新动态</a>
+        </div>
+        <p>Copyright © 2014 ketangpai.com All Rights Reserved. 京ICP备14023276号-4</p>
+    </div>
+</div>
+	
+<script type="text/javascript">
+    seajs.use('../html/Public/Home/js/main.js',function(ex){
+        ex.homeAll();
+    });
+</script>
+
+	<script type="text/javascript">seajs.use('../html/Public/Home/js/thirdheader.js',function(ex){ex.headerActive();});</script>
+
+</body></html>

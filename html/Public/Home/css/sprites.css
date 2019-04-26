@@ -1,0 +1,1253 @@
+@CHARSET "UTF-8";
+.icon, .icon-type-s, .icon-type-m, .icon-type-l {
+  display: inline-block;
+  *zoom:1;
+  text-align: center;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  background-image: url(/Public/Common/img/all-icon.png);
+  width: 25px;
+  height: 25px;
+}
+
+.icon-preview-file {
+  background-image: url(/Public/Common/img/all-icon.png)!important;
+  width: 25px!important;
+  height: 25px!important;
+}
+
+/*[class^="icon-m"]{
+width: 30px;
+height: 30px;
+}
+*/
+/* small all-icons*/
+.icon-share {
+  background-position: 0 0;
+}
+.file-item:hover .icon-share {
+  background-position: -25px 0;
+}
+.icon-share.shared, .file-item:hover .icon-share.shared {
+  background-position: -50px 0;
+}
+.icon-comment {
+  background-position: 0 -25px;
+}
+.file-item:hover .icon-comment {
+  background-position: -25px -25px;
+}
+.icon-comment.commented, .file-item:hover .icon-comment.commented, .icon-comment:focus, .icon-comment:active,
+.file-item:hover .icon-comment:focus, .file-item:hover .icon-comment:active {
+  background-position: -50px -25px;
+}
+.icon-context {
+  background-position: 0 -50px;
+}
+.file-item:hover .icon-context, .user-detail:hover .icon-context {
+  background-position: -25px -50px;
+}
+.icon-context:focus, .icon-context:active,
+.file-item:hover .icon-context:focus, .file-item:hover .icon-context:active,
+.user-detail:hover .icon-context:focus, .user-detail:hover .icon-context:active {
+  background-position: -50px -50px;
+}
+
+.icon-rename, .icon-edit-file {
+  background-position: 0 -77px;
+  height: 20px;
+}
+.icon-reply {
+  background-position: 0 -100px;
+}
+.icon-delete-comment {
+  background-position: 0 -125px;
+}
+.icon-delete-password {
+  background-position: -25px -125px;
+}
+.icon-edit {
+  background-position: 0 -150px;
+}
+.icon-pencil {
+  background-position: -25px -150px;
+}
+.icon-add-contacts {
+  background-position: 0 -175px;
+}
+.icon-common-folder {
+  background-position: 0 -200px;
+}
+.icon-item-count {
+  background-position: -75px -325px;
+  height: 15px;
+  width: 15px;
+}
+.icon-tag-folder {
+  background-position: -25px -200px;
+}
+.icon-tag {
+  background-position: -50px -200px;
+}
+.icon-tag-add {
+  background-position: -25px -925px;
+}
+.icon-tag-add.disabled {
+  background-position: -150px -925px;
+}
+.icon-tag-empty {
+  background-position: -25px -225px;
+}
+.icon-received {
+  background-position: 0 -225px;
+}
+.icon-all-files {
+  background-position: -25px -250px;
+}
+.icon-all-files-blue {
+  background-position: -125px -725px;
+  display: none;
+}
+.icon-trash {
+  background-position: 0 -250px;
+}
+.icon-trash-grey {
+  background-position: -25px -250px;
+}
+.icon-group {
+  background-position: -50px -250px;
+}
+.icon-recently {
+  background-position: -125px -575px;
+}
+.icon-share-self {
+  background-position: -125px -600px;
+}
+.icon-contact-person {
+  background-position: -125px -625px;
+}
+.icon-department {
+  background-position: -125px -750px;
+}
+.icon-company-collaborator {
+  background-position: -150px -350px;
+}
+.icon-external-collaborator {
+  background-position: -150px -375px;
+}
+
+.icon-delete {
+  background-position: 0 -273px;
+}
+.icon-remove {
+  background-position: 0 -300px;
+}
+.icon-remove.hover {
+  background-position: -25px -300px;
+}
+.icon-remove:hover, .icon-remove.hover:hover {
+  background-position: -50px -300px;
+  cursor: pointer;
+}
+.icon-remove-link {
+  background-position: -25px -275px;
+}
+.icon-remove-primary {
+  background-position: -50px -275px;
+}
+.icon-remove-primary:hover {
+  background-position: -75px -275px;
+  cursor: pointer;
+}
+.icon-refresh {
+  background-position: -25px -275px;
+  background-position: -75px -300px;
+}
+.icon-search {
+  background-position: 0 -327px;
+}
+.icon-remove-search {
+  background-position: -50px -625px;
+}
+.icon-remove-search:hover {
+  background-position: -75px -625px;
+}
+.icon-select {
+  background-position: -25px -325px;
+}
+.icon-collab-person {
+  background-position: -50px -350px;
+}
+.icon-collab-group {
+  background-position: -75px -350px;
+}
+.icon-collab-department {
+  background-position: -150px -775px;
+}
+.icon-upload {
+  background-position: 0 -356px;
+  height: 18px;
+}
+.icon-upload-black {
+  background-position: -100px -975px;
+}
+.icon-new {
+  background-position: 0 -380px;
+  height: 18px;
+}
+.icon-new-white {
+  background-position: -25px -380px;
+  height: 18px;
+}
+.icon-plus {
+  background-position: -100px -1000px;
+}
+.icon-arrow-down-newfile {
+  background-position: -100px -1025px;
+}
+.icon-gridview {
+  background-position: 0 -400px;
+}
+.icon-gridview.active, .icon-gridview:hover {
+  background-position: -25px -400px;
+}
+.icon-listview {
+  background-position: 0 -424px;
+}
+.icon-listview.active, .icon-listview:hover {
+  background-position: -25px -424px;
+}
+.icon-checkbox {
+  background-position: 0 -450px;
+}
+.icon-checkbox.checked {
+  background-position: -25px -450px;
+}
+.icon-checkbox-dark {
+  background-position: -50px -450px;
+}
+.icon-checkbox-dark.checked {
+  background-position: -75px -450px;
+}
+.icon-checkbox.disabled {
+  background-position: 0 -825px;
+}
+.icon-checkbox.checked.disabled {
+  background-position: -25px -825px;
+}
+.icon-common {
+  background-position: 0 -475px;
+}
+.icon-close {
+  background-position: 0 -505px;
+}
+.icon-close:hover {
+  background-position: -25px -505px;
+}
+.icon-close-small {
+  width: 16px;
+  height: 16px;
+  background-position: -75px -500px;
+}
+.icon-close-small:hover {
+  background-position: -50px -525px;
+}
+.icon-breadcrumb {
+  background-position: -58px -332px;
+  height: 10px;
+  width: 10px;
+}
+.icon-favorite {
+  background-position: 0 -478px;
+  height: 20px;
+}
+.icon-favorite.active {
+  background-position: -25px -478px;
+}
+.icon-edit-tag {
+  background-position: -50px -477px;
+  height: 20px;
+}
+.icon-pill-remove {
+  background-position: -50px -500px;
+}
+.icon-pill-remove:hover {
+  background-position: -75px -500px;
+}
+.icon-tag-remove {
+  background-position: -50px -525px;
+}
+.icon-tag-remove-white, .tag-dialog .tag-list .tag i {
+  background-position: -75px -525px;
+}
+
+.icon-page-prev {
+  background-position: 0 -525px;
+}
+.icon-page-prev:hover {
+  background-position: 0 -550px;
+}
+.icon-page-next {
+  background-position: -25px -525px;
+}
+.icon-page-next:hover {
+  background-position: -25px -550px;
+}
+
+.icon-expand-down {
+  background-position: -50px -550px;
+}
+.icon-expand-down.icon-collapse-up, .icon-collapse-up {
+  background-position: -75px -550px;
+}
+.icon-link-arrow {
+  background-position: -50px -575px;
+}
+.icon-function {
+  background-position: -75px -575px;
+}
+.icon-lock {
+  background-position: 0 -650px;
+}
+.icon-tooltip {
+  background-position: 0 -675px;
+}
+.icon-tooltip-hover,
+.icon-tooltip:hover {
+  background-position: -25px -675px;
+}
+.icon-tooltip-active {
+  background-position: -50px -675px;
+}
+.icon-tooltip-active-hover,
+.icon-tooltip-active:hover {
+  background-position: -75px -675px;
+}
+.icon-arrow-down {
+  background-position: -25px -650px;
+}
+.icon-arrow-down.icon-arrow-up {
+  background-position: -50px -650px;
+}
+.icon-sort-down {
+  background-position: 0 -575px;
+}
+.sort-switch a:hover .icon-sort-down {
+  background-position: -25px -575px;
+}
+.icon-sort-up {
+  background-position: 0 -600px;
+}
+.sort-switch a:hover .icon-sort-up {
+  background-position: -25px -600px;
+}
+
+.icon-radio {
+  background-position: 0 -725px;
+}
+.icon-radio.checked {
+  background-position: -25px -725px;
+}
+.icon-add-file {
+  background-position: 0 -700px;
+}
+.icon-calendar {
+  background-position: -25px -700px;
+}
+.icon-add-white {
+  background-position: -50px -700px;
+}
+.icon-link-white {
+  background-position: -50px -375px;
+}
+.icon-collab-tree {
+  background-position: -75px -700px;
+}
+.icon-collab-ellipsis {
+  width: 50px;
+  background-position: -100px -700px;
+}
+.icon-cloud-upload {
+  background-position: -270px 0;
+  width: 70px;
+  height: 50px;
+}
+.icon-empty-trash {
+  background-position: -270px -160px;
+  width: 100px;
+  height: 100px;
+}
+.icon-empty-tag {
+  background-position: -390px -380px;
+  width: 110px;
+  height: 110px;
+}
+.icon-empty-search {
+  background-position: -270px -270px;
+  width: 110px;
+  height: 110px;
+}
+.icon-empty-list {
+  background-position: -270px -380px;
+  width: 95px;
+  height: 100px;
+}
+.icon-empty-personal {
+  background-position: -400px -725px;
+  width: 105px;
+  height: 100px;
+}
+.icon-empty-message {
+  background-position: -270px -610px;
+  width: 100px;
+  height: 100px;
+}
+.icon-empty-user {
+  background-position: -390px -500px;
+  width: 105px;
+  height: 100px;
+}
+.icon-empty-group-folder {
+  background-position: -390px -270px;
+  width: 110px;
+  height: 110px;
+}
+.icon-empty-department-folder {
+  background-position: -390px -160px;
+  width: 110px;
+  height: 110px;
+}
+.icon-clock-expired {
+  background-position: -270px -710px;
+  width: 100px;
+  height: 100px;
+}
+.icon-error-grey {
+  background-position: -390px -910px;
+  width: 100px;
+  height: 100px;
+}
+.icon-empty-group {
+  background-position: -390px -620px;
+  width: 132px;
+  height: 85px;
+}
+.icon-empty-collection {
+  background-position: -390px -60px;
+  width: 110px;
+  height: 110px;
+}
+.icon-notify-close {
+  background-position: -75px -250px;
+}
+.icon-notify-close:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* IE8 and lower */
+}
+.icon-hide-phone {
+  background-position: -150px -950px;
+}
+
+.icon-tree-arrow-right {
+  background-position: 0 -750px;
+}
+.icon-tree-arrow-down {
+  background-position: -50px -750px;
+}
+.icon-dropdown-arrow {
+  background-position: -100px -750px
+}
+
+.icon-tree-collapse {
+  background-position: -150px -750px;
+}
+.icon-tree-expand {
+  background-position: -175px -750px;
+}
+
+.icon-comment-voice {
+  width: 105px;
+  height: 50px;
+  background-position: -50px -825px;
+  cursor: pointer;
+}
+.icon-comment-voice.unread {
+  width: 120px;
+}
+
+.icon-success-result {
+  background-position: -270px -810px;
+  width: 96px;
+  height: 100px;
+}
+.icon-error-result {
+  background-position: -270px -910px;
+  width: 96px;
+  height: 100px;
+}
+
+.icon-question {
+  background-position: 0 -950px;
+}
+.icon-dotted-arrow {
+  background-position: -25px -950px;
+}
+
+/* file list icon */
+.icon-file-share {
+ background-position: 0 -975px;
+}
+.icon-file-share.shared {
+  background-position: 0 -1025px;
+}
+.icon-file-comment {
+  background-position: -25px -975px;
+}
+.icon-file-comment.commented {
+  background-position: -25px -1025px;
+}
+.icon-file-download {
+  background-position: -50px -975px;
+}
+.icon-file-arrow-down {
+  background-position: -75px -975px;
+}
+.icon-file-personal {
+  background-position: -50px -925px;
+}
+.icon-file-collab {
+  background-position: -125px -925px;
+}
+.icon-file-all {
+  background-position: -100px -925px;
+}
+.icon-tabs-collab {
+  background-position: -75px -925px;
+}
+.icon-file-locked {
+  background-position: -100px -900px;
+}
+.icon-file-department {
+  background-position: -125px -775px;
+}
+
+/* message module */
+.icon-unread-badge {
+  background-position: -75px -775px;
+}
+.icon-all-message {
+  background-position: 0 -775px
+}
+.icon-starred-message {
+  background-position: 0 -800px
+}
+.icon-unstarred {
+  background-position: -25px -800px
+}
+.icon-starred {
+  background-position: -50px -800px
+}
+.icon-expire-clock {
+  background-position: -50px -775px
+}
+.icon-review-complete {
+  background-position: -25px -775px;
+}
+
+/* message type icon */
+.icon-msg {
+  width: 36px;
+  height: 36px;
+}
+.icon-msg-comment {
+  background-position: -180px 0;
+}
+.icon-msg-collab {
+  background-position: -180px -36px;
+}
+.icon-msg-share_link {
+  background-position: -180px -72px;
+}
+.icon-msg-review {
+  background-position: -180px -108px;
+}
+.icon-msg-review-sign {
+  background-position: -180px -180px;
+}
+.icon-msg-group {
+  background-position: -180px -144px;
+}
+.icon-msg-department {
+  background-position: -180px -216px;
+}
+.icon-msg-collection {
+  background-position: -180px -580px;
+}
+.icon-review-legend {
+  width: 64px;
+  height: 64px;
+  background-position: -192px -256px;
+}
+.icon-review-legend-sign {
+  width: 64px;
+  height: 64px;
+  float: left;
+  background-position: -192px -450px;
+}
+.icon-share-legend {
+  width: 64px;
+  height: 64px;
+  background-position: -192px -320px;
+}
+.icon-group-legend {
+  width: 64px;
+  height: 64px;
+  background-position: -192px -384px;
+}
+.icon-department-legend {
+  width: 64px;
+  height: 64px;
+  background-position: -192px -512px;
+}
+.icon-collection-legend {
+  width: 54px;
+  height: 54px;
+  background-position: -192px -616px;
+}
+
+/*user manage*/
+.icon-edit-user {
+  background-position: 0 -850px;
+}
+.icon-delete-user {
+  background-position: -25px -850px;
+}
+
+/*enterprise setting*/
+.icon-invoice-apply {
+  background-position: 0 -900px;
+}
+
+/*icon sync*/
+.icon-sync {
+  background-position: 0 -925px;
+}
+
+/*icon guide*/
+.icon-add-input {
+  background-position: -50px -875px;
+}
+
+/* preview module  */
+.icon-preview {
+  width: 25px;
+  height: 25px;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* IE8 and lower */
+}
+#previewContainer button:hover .icon-preview,
+#previewContainer a:hover .icon-preview,
+#previewContainer li:hover .icon-preview {
+  opacity: 1;
+  filter: alpha(opacity=100); /* IE8 and lower */
+}
+#previewContainer button[disabled] .icon-preview {
+  opacity: 0.3;
+  filter: alpha(opacity=30); /* IE8 and lower */
+}
+.icon-preview-review {
+  background-position: -100px 0
+}
+.icon-preview-share {
+  background-position: -100px -25px
+}
+.icon-preview-download {
+  background-position: -100px -50px
+}
+.icon-preview-up {
+  background-position: -100px -75px
+}
+.icon-preview-more {
+  background-position: -100px -100px
+}
+.icon-preview-delete {
+  background-position: -100px -125px
+}
+.icon-preview-prop {
+  background-position: -100px -150px
+}
+.icon-preview-comments {
+  background-position: -100px -175px
+}
+.icon-preview-prev {
+  background-position: -100px -200px
+}
+.icon-preview-next {
+  background-position: -100px -225px
+}
+.icon-preview-close {
+  background-position: -100px -250px;
+  background-image: url(/Public/Common/img/all-icon.png) !important;
+  width: 25px;
+  height: 25px;
+}
+.icon-preview-zoomOut {
+  background-position: -100px -275px
+}
+.icon-preview-zoomIn {
+  background-position: -100px -300px
+}
+.icon-preview-rotate-right {
+  background-position: -100px -325px
+}
+.icon-preview-rotate-left {
+  background-position: -100px -350px
+}
+.icon-preview-pres {
+  background-position: -100px -375px
+}
+.icon-preview-vp-prev {
+  background-position: -100px -400px
+}
+.icon-preview-vp-next {
+  background-position: -100px -425px
+}
+.icon-preview-hp-prev {
+  background-position: -100px -450px
+}
+.icon-preview-hp-next {
+  background-position: -100px -475px
+}
+.icon-preview-refresh {
+  background-position: -100px -550px
+}
+.icon-preview-edit {
+  background-position: -100px -575px
+}
+.icon-preview-locked {
+  background-position: -75px -400px
+}
+
+.icon-preview-hd {
+  width: 28px;
+  background-position: -100px -600px
+}
+.hd .icon-preview-hd {
+  background-position: -100px -625px
+}
+
+.icon-preview-toggle {
+  width: 20px;
+  background-position: -105px -525px
+}
+#previewContainer button.open .icon-preview-toggle {
+  background-position: -105px -500px
+}
+
+.icon-login-user {
+  background-position: -25px -75px;
+}
+.icon-login-pswd {
+  background-position: -50px -75px;
+}
+.icon-login-user.focus {
+  background-position: -25px -100px;
+}
+.icon-login-pswd.focus {
+  background-position: -50px -100px;
+}
+
+.icon-share-download {
+  background-position: -25px -875px;
+}
+.icon-share-download:hover {
+  background-position: 0 -875px;
+}
+
+.icon-small-circle {
+  background-position: -56px -733px;
+  width: 14px;
+  height: 8px;
+}
+
+/* context menu icons*/
+.icon-menu-invite-collab {
+  background-position: -125px -325px;
+}
+.icon-menu-share {
+  background-position: -125px 0;
+}
+.icon-menu-review {
+  background-position: -125px -25px;
+}
+.icon-menu-comment {
+  background-position: -125px -50px;
+}
+.icon-menu-preview {
+  background-position: -125px -75px;
+}
+.icon-menu-edit {
+  background-position: -125px -100px;
+}
+.icon-menu-download {
+  background-position: -125px -125px;
+}
+.icon-menu-update-version {
+  background-position: -125px -150px;
+}
+.icon-menu-locked {
+  background-position: -150px -900px;
+}
+.icon-menu-tags {
+  background-position: -125px -175px;
+}
+.icon-menu-favorite {
+  background-position: -125px -200px;
+}
+.icon-menu-move-copy {
+  background-position: -125px -225px;
+}
+.icon-menu-delete {
+  background-position: -125px -250px;
+}
+.icon-menu-rename {
+  background-position: -125px -275px;
+}
+.icon-menu-properties {
+  background-position: -125px -300px;
+}
+.icon-menu-restore {
+  background-position: -125px -350px;
+}
+.icon-menu-change-owner {
+  background-position: -150px -325px;
+}
+/*user manage action list*/
+.icon-action-reinvite {
+  background-position: -125px -375px;
+}
+.icon-action-resize {
+  background-position: -125px -400px;
+}
+.icon-action-set-restriction {
+  background-position: -125px -425px;
+}
+.icon-action-set-as-admin {
+  background-position: -125px -450px;
+}
+.icon-action-delete {
+  background-position: -125px -250px;
+}
+.icon-action-properties {
+  background-position: -125px -475px;
+}
+.icon-action-member {
+  background-position: -125px -500px;
+}
+.icon-action-group {
+  background-position: -125px -525px;
+}
+.icon-action-invite-from-external {
+  background-position: -125px -675px;
+}
+.icon-menu-sync {
+  background-position: -125px -550px;
+}
+
+/*change plan dialog*/
+.icon-plan-account {
+  background-position: -150px 0;
+}
+.icon-plan-storage {
+  background-position: -150px -25px;
+}
+.icon-plan-version {
+  background-position: -150px -50px;
+}
+.icon-plan-external-collab {
+  background-position: -150px -75px;
+}
+.icon-plan-account-white {
+  background-position: -150px -100px;
+}
+.icon-plan-storage-white {
+  background-position: -150px -125px;
+}
+.icon-plan-version-white {
+  background-position: -150px -150px;
+}
+.icon-plan-box-white {
+  background-position: -150px -175px;
+}
+
+.icon-legend-company {
+  background-position: -50px -175px;
+}
+.icon-legend-plan {
+  background-position: -25px -175px;
+}
+.icon-legend-space {
+  background-position: -75px -175px;
+}
+
+.icon-plan-l {
+  width: 36px;
+  height: 36px;
+}
+.icon-plan-l-account {
+  background-position: -216px -72px;
+}
+.icon-plan-l-storage {
+  background-position: -216px -108px;
+}
+.icon-plan-l-version {
+  background-position: -216px -144px;
+}
+.icon-plan-l-external-collab {
+  background-position: -216px -180px;
+}
+
+.icon-clock-small {
+  width: 36px;
+  height: 36px;
+  background-position: -144px -1044px;
+}
+
+/* file type icons - samll */
+.icon-type-s, .icon-type-m, .icon-type-l {
+  background-image: url(../images/type-icons_346b991.png);
+}
+
+.icon-type-s {
+  width: 20px;
+  height: 20px;
+}
+.icon-type-s-collab-folder {
+  background-position: -80px 0;
+}
+.icon-type-s-collab-link-folder {
+  background-position: -100px 0;
+}
+.icon-type-s-folder {
+  background-position: -80px -20px;
+}
+.icon-type-s-doc, .icon-type-s-docx {
+  background-position: -80px -40px;
+}
+.icon-type-s-ppt, .icon-type-s-pptx {
+  background-position: -80px -60px;
+}
+.icon-type-s-xls, .icon-type-s-xlsx {
+  background-position: -80px -80px;
+}
+.icon-type-s-jpg, .icon-type-s-png {
+  background-position: -80px -100px;
+}
+.icon-type-s-pdf {
+  background-position: -80px -120px;
+}
+.icon-type-s-image {
+  background-position: -80px -140px;
+}
+.icon-type-s-default {
+  background-position: -80px -160px;
+}
+.icon-type-s-psd {
+  background-position: -80px -180px;
+}
+.icon-type-s-cad,
+.icon-type-s-dwg,
+.icon-type-s-dwf {
+  background-position: -80px -200px;
+}
+.icon-type-s-text {
+  background-position: -80px -220px;
+}
+.icon-type-s-html {
+  background-position: -80px -240px;
+}
+.icon-type-s-video {
+  background-position: -80px -260px;
+}
+.icon-type-s-audio {
+  background-position: -80px -280px;
+}
+.icon-type-s-external-collab-folder {
+  background-position: -80px -300px;
+  /*background-position: -80px 0;*/
+}
+.icon-type-s-csv {
+  background-position: -80px -340px;
+}
+.icon-type-s-ai {
+  background-position: -80px -360px;
+}
+.icon-type-s-department-folder {
+  background-position: -80px -380px;
+}
+.icon-type-s-ydoc {
+  background-position: -80px -400px;
+}
+.icon-type-s-yxls {
+  background-position: -80px -420px;
+}
+.icon-type-s-visio,
+.icon-type-s-vsd,
+.icon-type-s-vdx,
+.icon-type-s-vsdx,
+.icon-type-s-vsdm,
+.icon-type-s-vdw {
+  background-position: -80px -480px;
+}
+.icon-type-s-mpp {
+  background-position: -80px -500px;
+}
+.icon-type-s-rvt {
+  background-position: -80px -520px;
+}
+
+/* file type icons - middle */
+.icon-type-m {
+  width: 36px;
+  height: 36px;
+}
+.icon-type-m-collab-folder {
+  background-position: 0 0;
+}
+.icon-type-m-folder {
+  background-position: 0 -36px;
+}
+.icon-type-m-doc, .icon-type-m-docx {
+  background-position: 0 -72px;
+}
+.icon-type-m-ppt, .icon-type-m-pptx {
+  background-position: 0 -108px;
+}
+.icon-type-m-xls, .icon-type-m-xlsx {
+  background-position: 0 -144px;
+}
+.icon-type-m-jpg, .icon-type-m-png,.icon-type-m-psd, .icon-type-m-psd {
+  background-position: 0 -180px;
+}
+.icon-type-m-pdf {
+  background-position: 0 -216px;
+}
+.icon-type-m-image {
+  background-position: 0 -252px;
+}
+.icon-type-m-default {
+  background-position: 0 -288px;
+}
+.icon-type-m-psd {
+  background-position: 0 -324px;
+}
+.icon-type-m-cad,
+.icon-type-m-dwf,
+.icon-type-m-dwg {
+  background-position: 0 -360px;
+}
+.icon-type-m-text {
+  background-position: 0 -396px;
+}
+.icon-type-m-html {
+  background-position: 0 -432px;
+}
+.icon-type-m-video {
+  background-position: 0 -468px;
+}
+.icon-type-m-audio {
+  background-position: 0 -504px;
+}
+.icon-type-m-external-collab-folder {
+  background-position: 0 -540px;
+  /*background-position: 0 0;*/
+}
+.icon-type-m-csv {
+  background-position: 0 -612px;
+}
+.icon-type-m-ai {
+  background-position: -36px 0;
+}
+.icon-type-m-department-folder {
+  background-position: -36px -36px;
+}
+.icon-type-m-ydoc {
+  background-position: -36px -72px;
+}
+.icon-type-m-yxls {
+  background-position: -36px -108px;
+}
+.icon-type-m-visio,
+.icon-type-m-vsd,
+.icon-type-m-vdx,
+.icon-type-m-vsdx,
+.icon-type-m-vsdm,
+.icon-type-m-vdw {
+  background-position: -36px -144px;
+}
+.icon-type-m-mpp {
+  background-position: -36px -180px;
+}
+.icon-type-m-rvt {
+  background-position: -36px -216px;
+}
+
+/* file type icons - large */
+.icon-type-l {
+  width: 68px;
+  height: 68px;
+}
+.icon-type-l-collab-folder {
+  background-position: -204px 0;
+}
+.icon-type-l-folder {
+  background-position: -204px -68px;
+}
+.icon-type-l-doc, .icon-type-l-docx, .icon-type-l-ydoc {
+  background-position: -204px -136px;
+}
+.icon-type-l-ppt, .icon-type-l-pptx {
+  background-position: -204px -204px;
+}
+.icon-type-l-xls, .icon-type-l-xlsx, .icon-type-l-yxls {
+  background-position: -204px -272px;
+}
+.icon-type-l-pdf {
+  background-position: -204px -340px;
+}
+.icon-type-l-image {
+  background-position: -204px -408px;
+}
+.icon-type-l-default {
+  background-position: -204px -476px;
+}
+.icon-type-l-psd {
+  background-position: -272px -0px;
+}
+.icon-type-l-cad,
+.icon-type-l-dwf,
+.icon-type-l-dwg {
+  background-position: -272px -68px;
+}
+.icon-type-l-text {
+  background-position: -272px -136px;
+}
+.icon-type-l-html {
+  background-position: -272px -204px;
+}
+.icon-type-l-video {
+  background-position: -272px -272px;
+}
+.icon-type-l-audio {
+  background-position: -272px -340px;
+}
+.icon-type-l-external-collab-folder {
+  background-position: -272px -408px;
+  /*background-position: -204px -0;*/
+}
+.icon-type-l-csv {
+  background-position: -204px -544px;
+}
+.icon-type-l-ai {
+  background-position: -272px -544px;
+}
+.icon-type-l-department-folder {
+  background-position: -340px 0;
+}
+.icon-type-l-ydoc {
+  background-position: -340px -68px;
+}
+.icon-type-l-yxls {
+  background-position: -340px -136px;
+}
+.icon-type-l-visio,
+.icon-type-l-vsd,
+.icon-type-l-vdx,
+.icon-type-l-vsdx,
+.icon-type-l-vsdm,
+.icon-type-l-vdw {
+  background-position: -340px -204px;
+}
+.icon-type-l-mpp {
+  background-position: -340px -272px;
+}
+.icon-type-l-rvt {
+  background-position: -340px -340px;
+}
+
+/* mobile icons */
+.icon-ios {
+  width: 36px;
+  height: 36px;
+  background-position: -216px 0;
+}
+.icon-android {
+  width: 36px;
+  height: 36px;
+  background-position: -216px -36px;
+}
+.icon-windows {
+  width: 36px;
+  height: 36px;
+  background-position: -180px -1044px;
+}
+.icon-mac {
+  width: 36px;
+  height: 36px;
+  background-position: -180px -1080px;
+}
+
+/* home icons */
+.icon-unfold {
+  background-position: -50px -550px;
+}
+.icon-fold {
+  background-position: -75px -550px;
+}
+
+/* open tita icons */
+.icon-open-all {
+  background-position: -125px -975px;
+}
+.icon-open-favorite {
+  background-position: -150px -975px;
+}
+.icon-open-tag {
+  background-position: -175px -975px;
+}
+.icon-open-trash {
+  background-position: -200px -975px;
+}
+.icon-dropdown-arrow2 {
+  background-position: -225px -975px;
+}
+.icon-open-tag-add {
+  background-position: -225px -1000px;
+}
+/* complaint icon */
+.icon-complaint {
+  background-position: -213px -684px;
+  width: 31px;
+  height: 31px;
+}
+.icon-complaint:hover {
+  background-position: -213px -724px;
+  width: 31px;
+  height: 31px;
+}
+
+.icon-empty-share {
+    background-position: -275px -1010px;
+    width: 100px;
+    height: 100px;
+}
+
+.icon-help-tips {
+	background: url(/Public/Home/img/wen.png) right top no-repeat;
+	height: 30px;
+    line-height: 30px;
+    width: 20px;
+}

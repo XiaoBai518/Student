@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>设置</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+<link href="Public/Home/css/settingV2.css" rel="stylesheet" type="text/css">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/imgareaselect/imgareaselect-animated.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/layer/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+</head>
+<body class="bge">
+	<div class="nav nav-default clearfix">
+    <ul class="nav-menu-left">
+        <li class="nav-menu-item" style="margin-top:10px">
+            <a href="index.html"><img src="Public/Common/img/logo2.png" alt="" style="height:45px"></a>
+        </li>
+        <li class="nav-menu-item">
+            <a href="javascript:;" class="active" onclick="toMainIndex()">课堂</a>
+        </li>
+    </ul>
+    <ul class="nav-menu-right">
+        <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>        <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="#" alt="用户" title="用户">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="userSetting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        
+        </ul>
+    </div>
+</li>    </ul>
+        <div class="leftcon">
+        <div class="nav-top">
+            <a a href="javascript:;" onclick="toMainIndex()">课堂</a>
+                        <span class="line"></span>
+        </div>
+    </div></div>	
+    <div class="uc-layer-top self">
+        <div class="uc-avatar face-icon">
+            <img id="user-avatar" src="#" alt="asdas">
+            <a href="javascript:;" class="change-avatar avatar upload">更改头像</a>
+            <div class="marks">
+                                            </div>
+        </div>
+        <h1 id="uc-name" class="uc-name"></h1>
+        <div class="s-header">
+            <div class="h-nav">
+                <a href="javascript:;" style="pointer-events:none"><h1>个人资料</h1></a>
+            </div>
+        </div>
+    </div>
+    <div class="setting-page cWidth">
+        
+        <div class="item-change">
+            <div class="setting-item">
+                <div class="options basic">
+                    <h3 class="title">基本资料</h3>
+                    <ul>
+                        <li>
+                            <p>姓名：</p>
+                            <div class="edit-box">
+                                <span id="edit-name"></span>
+                                <input type="text" class="txts" name="name" placeholder="请输入姓名">
+                            </div>
+                                                            <a href="javascript:;" class="edit-btn">编辑资料</a>
+                                <a href="javascript:;" class="exit-edit">放弃编辑</a>                        </li>
+                        <li>
+                            <p>学号：</p>
+                                                        <div class="edit-box">
+                                <span id="edit-stno"></span>
+                                <input type="text" name="stno" class="txts" placeholder="请输入学号">
+                            </div>
+                        </li>
+                        <li>
+                            <p>学校：</p>
+                            <div class="edit-box">
+                                <span id="edit-school"></span>
+                                <input type="text" name="school" class="txts" placeholder="请输入学校">
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="save-btn hide2">保存</a>
+                </div>
+                <div class="options rolechange">
+                    <h3 class="title">身份角色</h3>
+                    <ul>
+                        <li>
+                            <p>角色：</p>
+                            <div class="edit-box">
+                                <span id="edit-role"></span>
+                                <div class="radio1 hide2" style="float:left;margin-right:15px;">
+                                	<input checked="true" type="radio" name="userrole" value="0" id="userrole1">学生                                </div>
+                                <div class="radio2 hide2" style="float:left;">
+                                	<input type="radio" name="userrole" value="1" id="userrole2">老师                            	</div>
+                            </div>
+                            <a href="javascript:;" class="edit-btn">变更身份</a>
+                            <a href="javascript:;" class="exit-edit">放弃变更</a>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="save-btn hide2">变更</a>
+                </div>
+                <div class="options account">
+                    <h3 class="title">账号设置</h3>
+                    <ul>
+                        <li>
+                            <p>邮箱：</p>
+                            <div class="edit-box">
+                                <span id="edit-email"></span>
+                            </div>
+                            <!-- <a href="javascript:;" class="edit-btn change-mail">修改</a> -->             
+                        </li>
+                   
+                    </ul>
+                </div>
+                <div class="options pass">
+                    <h3 class="title">密码</h3>
+                    <ul>
+                        <li>
+                            <p>密码：</p>
+                            <div class="edit-box">
+                                <span >***********</span>
+                            </div>
+                            <a href="javascript:;" class="edit-btn">更换密码</a>
+
+                        </li>
+                    </ul>
+                    <div class="password hide">
+                        <ul>
+                            
+                            <li>
+                                <p>新密码：</p>
+                                <div class="edit-box">
+                                    <input type="password" name="newpass" class="txts" placeholder="请输入新密码">
+                                    <a href="javascript:;" class="p-exit-edit" style="margin-left: 555px;">放弃编辑</a>
+                                </div>
+                            </li>
+                            <li>
+                                <p>确认密码：</p>
+                                <div class="edit-box">
+                                    <input type="password" name="surepass" class="txts" placeholder="确认密码">
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="javascript:;" class="save-btn">保存</a>
+                    </div>
+                </div>
+                 <div class="options FaceData">
+                    <h3 class="title">面部信息（用户签到和登录）</h3>
+                    <ul>
+                        <li>
+                            <p>面部信息：</p>
+                            <div class="edit-box">
+                                <span id="edit-face"></span>
+                         
+
+                            </div>
+                            <a href="javascript:;" class="edit-btn">变更信息</a>
+                        </li>
+                    </ul>
+                </div>
+
+ <style type="text/css">
+ 	.del-pop .btns {
+    width: 99.9%;
+    padding: 24px 0 22px;
+    text-align: right;
+    margin: 0;
+    background: #F6F6F6;
+    font-size: 0;
+    border-top: 1px solid #dcdcdc;
+    height: 38px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: inline-block;
+	}
+	.del-pop .btns a {
+    display: inline-block;
+    width: 84px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 3px;
+}
+.del-pop .btns .cancel {
+    color: #818181;
+    background: #FFF;
+    margin-right: 15px;
+}
+.del-pop .btns .cancel:hover{
+    background: #fe0000!important;
+    color: #FFFFFF!important;
+}
+ </style>
+<!--面部信息采集-->
+<div class="del-pop" id="Face-attend" data-type="2">
+    <div class="pop-title">
+        <h3 >面部信息收集</h3>
+        <a href="javascript:;" class="close"></a>
+    </div>
+    <div class="content" style=" padding-top: 72px;">
+        <div class="opt clearfix" style=" margin: 0 30px;">
+            <p style="text-align: center;font-size: 16px;line-height: 1;">请正视摄像头，自动完成采集</p>
+        </div>
+        <div class="Face-box">
+            <div style="width:250px; height:250px;float:right;display: none">
+                 <canvas id="canvas" width="250"  height="250"></canvas>
+            </div>
+            <div style="margin:auto;width: 250px;">
+                <video id="video" autoplay playsinline style="display: inline;width:250px; height:250px;"></video>
+                <img id="target" style="display:inline;"/>
+            </div>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">放弃</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+    <!--头像裁剪上传-->
+    <div class="little-pop" id="faceUploader">
+        <h3 class="word">设置头像</h3>
+        <form action="https://www.ketangpai.com/User/setting.html" method="post" enctype="multipart/form-data" id="formAddHandlingFee" name="formAddHandlingFee">
+            <div class="uploader-container clearfix">
+                <div class="frame">
+                    <a href="javascript:;" class="faceUploaderPlus" id="filePicker">+</a>
+                    <img class="uploaderFace" id="photo" src="https://www.ketangpai.com/User/setting.html">
+                </div>
+                <div id="preview">
+                    <img id="view_photo" src="" border="0" width="100">
+                </div>
+                <input id="upload" type="file" name="file" class="hide">
+            </div>
+            <div class="btns">
+                <a href="javascript:;" class="cancel">取消</a>
+                <a href="javascript:;" class="sure active">确定</a>
+            </div>
+        </form>
+    </div>
+
+<a href="javascript:;" class="back-to-top" style="display: none;"></a>
+
+<link href="Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+    <script type="text/html" id="tpl-faceUploader">
+        <div id="picture"><img id="faceUploader" alt="请上传头像" src="{{data.src}}" width="400" /></div>
+    </script>
+    <script>
+        seajs.use('/html/Public/Home/js/settingV2.js',function(ex){ex.all();});
+        seajs.use('/html/Public/Home/js/setFace.js',function(ex){ex.all();});
+    </script>
+
+
+	<script type="text/javascript">seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.mainHeaderActive();});</script>
+
+</body></html>

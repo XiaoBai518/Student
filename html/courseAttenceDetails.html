@@ -1,0 +1,486 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>考勤</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+<link rel="stylesheet" href="Public/Home/css/coursewarev3.css">
+<link href="Public/Home/css/attencedetailv3.css" rel="stylesheet" type="text/css">
+
+
+<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/laydate/default/laydate.css" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/layer/default/layer.css" media="all">
+<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/code.css" media="all">
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
+
+</head>
+<body style="background-color:#fff;">
+<div id="course-header"   class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
+    <div class="nav nav-clear clearfix">
+        <ul class="nav-menu-left">
+            <li class="nav-menu-item">
+                <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
+                <i style="display: inline-block;width: 27px;height: 18px;background: url(Public/Common/img/return.png) left top no-repeat;position: relative;top: 5px;"></i>
+        <span style="font-size: 20px;color: #FFF;line-height: 24px;vertical-align: middle;">课堂</span>
+    </a>
+            </li>
+        </ul>
+    	<ul class="nav-menu-right">
+            <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="/html/Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>            <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="" alt="用户" title="用户">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="https://www.ketangpai.com/User/setting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        
+        </ul>
+    </div>
+</li>        </ul>
+    </div>
+        <div class="topm cl">
+            <h1 id="courseName"></h1>
+                <div class="codetip">使用以下邀请码邀请学生加课</div>            
+                    <div class="box-box">
+                        <div class="sele" id="course-code-select" >
+                    	       <div  id="courseCode"class="codetext" style="margin-left:25px;"></div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+    <div class="banner cl">
+        <div class="in-header" style="background: none repeat scroll 0% 0% #455b8c;">
+            <ul class="nav-menu-left hide" style="display: none;">
+                <li class="nav-menu-item">
+                    <a class="side-button" href="javascript:;"><img src="Public/Common/img/ktp1_09.png" alt=""></a>
+                </li>
+            </ul>
+            <div id="third-nav" class="nav gWidth">
+                 <a href="courseVideo.html"><img src="Public/Common/img/datachart.png">互动</a>
+                <a id="mymember" href="courseMember.html" ><img src="Public/Common/img/ktp1_24.png">成员</a>
+                <a href="courseAttence.html" class="active"><img src="Public/Common/img/ktp1_19.png">考勤</a>
+                <a href="#" ><img src="Public/Common/img/ktp1_26.png">公告</a>     
+            </div>
+        </div>
+    </div>
+
+
+        <link rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/layui.css" media="all">
+        <script type="text/javascript">
+    seajs.use('jquery',function(ex){
+        try{
+            if(self!=top){
+                $('.nav-menu-right').css('display','none');
+                $('#third-nav').css('display','none');
+                $('#return-course.return').css('display','none');
+                $('#alongheader').css('display','block')
+            }
+        }catch(err){}
+    });
+
+</script>
+<div class="data-page">
+    <div style="position: fixed;width: 200px;height: 100%;box-sizing: border-box;z-index: 1;">
+    <div class="overflow" style="border: 3px solid pink;width: 200px;">
+        <div class="attend_nav">
+            <ul class="nav_attenddatelists">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="padding: 0 0 0 200px;">
+            <!-- 某一次考勤的详情 -->
+            <div style="box-sizing: border-box;padding: 30px 0 30px 40px;">
+                <div class="attend_adetailmain">
+                    <div class="attend_admhd">
+                        <div class="admhdtop" style="position: relative;">
+                            
+                            <!-- <a href="javascript:;" class="btn_root">管理</a> -->
+                            <a href="javascript:;" class="btn_root"></a>
+
+                            <ul style="">
+                                <li>重命名</li>
+                                <li>删除</li>
+                            </ul>
+                            <a href="javascript:;" class="btn_dl_single"></a>
+                            <div class="admhd_dis">
+
+    <p class="admhd_name textoverflow">----</p>
+    <p class="admhd_date textoverflow">---- &nbsp;&nbsp;&nbsp;----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----</p></div>
+                            <div class="admhd_peoplenum">
+                                <p class="admhd_peoplenumtop">
+                                    <span style="font-size: 32px;">--</span>
+                                    人                               </p>
+                                <p class="admhd_peoplenumfont">
+                                    出勤                              </p>
+                            </div>
+                            <div class="admhd_rate">
+                                <p class="admhd_ratetop">
+                                    <span style="font-size: 32px;">--</span>
+                                    %
+                                </p>
+                                <p class="admhd_ratefont">
+                                    出勤率                             </p>
+                            </div>
+                        </div>
+                        <div class="admhdtab">
+                            <div class="attend_suspicious">
+                                <a href="javascript:;" class="btn_suspicious" style="display: inline;">可疑代签</a>
+                                <span class="suspicious_num" style="display: none;">0</span>
+                            </div>
+                            <ul>
+                                <li class="attend_tab on" data-state="100">全部(<span class="attend_tab_count">20</span>)</li>
+                                <li class="attend_tab " data-state="0">出勤(<span class="attend_tab_attendcount">0</span>)</li>
+                                <li class="attend_tab " data-state="1">旷课(<span class="attend_tab_offcount">20</span>)</li>
+                            </ul>
+                        </div>
+                        <div class="adnhdsort">
+                            <div class="attend_date_member ">
+                                <a href="javascript:;" class="btn_sort btn_sort_member" data-sort="username">成员</a>
+                                <a href="javascript:;" class="btn_sort btn_sort_stunum" data-sort="stno">学号</a>
+                            </div>
+                            <div class="attend_date_state">
+                                <a href="javascript:;" class="btn_sort btn_sort_state down" data-sort="state">考勤情况</a>
+                            </div>
+                            <div class="attend_date_logtime">
+                                <a href="javascript:;" class="btn_sort btn_sort_logtime" data-sort="studentattence_createtime">签到时间</a>
+                            </div>
+                            <div class="attend_date_ip">
+                                <a href="javascript:;" class="btn_sort btn_sort_ip" data-sort="ip">IP</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="attend_date_lists">
+
+                    </ul>
+                </div>
+            </div>
+</div>
+
+<script type="text/html" id="lay-suspicious">
+    <div style="height: 275px;width: 100%;box-sizing: border-box;padding:10px 20px 20px 30px;font-size: 14px;">
+        <div class="overflow" style="height:100%;width:100%;">
+            <div style="height: 100%;padding: 17px 13px 17px 0;position: relative;top: -17px;overflow: auto;width: 100%;" id="suspicious_lists">
+                <%include("tmp-suspicious")%>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="lay-changestate">
+    <p style="padding:20px 30px 0 30px;font-size:16px;line-height:50px;">变更 <span style="font-weight: 600;margin: 0 5px;font-size: 20px;">“<%=stuname%>”</span> 出勤状态</p>
+    <div style="text-align:center;width:100%;padding:30px 0 50px 0;" id="btn_changestate">
+        <span data-state="0" class="<%= state==0?'on':'' %>" >出勤 <img src="/Public/Home/img/attencev3/ok.png"></span>
+        <span data-state="1"  class="<%= state==1?'on':'' %>" style="margin-left:10px; margin-right:10px;">旷课<img src="/Public/Home/img/attencev3/off.png"></span>
+        <span data-state="2" class="<%= state==2?'on':'' %>"  style=" margin-right:10px;">迟到<img src="/Public/Home/img/attencev3/late.png"></span>
+    </div>
+</script>
+<script type="text/html" id="lay-changelog">
+    <div style="height: 250px;overflow: hidden;width: 540px;">
+        <div style="height: 250px;padding: 17px 5px 17px 0;position: relative;width: 548px;overflow: auto;top: -17px;">
+            <div style="padding-bottom: 20px;">
+                <%  var length = lists.length;
+                if(length==0){%>
+                    <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">没有变更记录</p>
+                <%}else{%>
+                    <% for(var i = length-1;i>=0 ;i--){ %>
+                        <p style="height: 50px;padding: 0 30px ;line-height: 50px;">
+                            <span  style="display: inline-block;width:140px;margin-right: 20px; "><%=ymdhm(lists[i].createtime*1000)%></span>
+                            <%  var attendstateimg='';
+                            switch(lists[i].state){
+                                case '0':attendstateimg = '/Public/Home/img/attencev3/ok.png';break;
+                                case '1':attendstateimg = '/Public/Home/img/attencev3/off.png';break;
+                                case '2':attendstateimg = '/Public/Home/img/attencev3/late.png';break;
+                                case '3':attendstateimg = '/Public/Home/img/attencev3/parse.png';break;
+                                case '4':attendstateimg = '/Public/Home/img/attencev3/parse1.png';break;
+                                case '5':attendstateimg = '/Public/Home/img/attencev3/parse2.png';break;
+                                case '6':attendstateimg = '/Public/Home/img/attencev3/parse2.png';break;
+                                case '7':attendstateimg = '/Public/Home/img/attencev3/zaotui.png';break;
+                            }   %>
+                            <span style="display: inline-block;width:100px;margin-right: 20px;font-size: 12px;color: #999;text-align: center;"><img src="<%=attendstateimg%>"></span>
+                            <span  style="display: inline-block;width:150px;margin-right: 20px; "><%=lists[i].op.username%></span>
+                        </p>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="tmp-suspicious">
+<%  var length = ppLists.length;
+    if(length==0){%>
+        <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">没有可疑代签</p>
+    <%}else{%>
+        <% for(var i = 0;i<length;i++){ %>
+            <div style="border: 1px solid #ccc;border-top: none;border-left: none;margin-bottom: 10px;">
+            <%for(var j = 0;j<ppLists[i].length;j++){%>
+                    <%  var attendstateimg='';
+                    switch(ppLists[i][j].state){
+                        case '0':attendstateimg = '/Public/Home/img/attencev3/ok.png';break;
+                        case '1':attendstateimg = '/Public/Home/img/attencev3/off.png';break;
+                        case '2':attendstateimg = '/Public/Home/img/attencev3/late.png';break;
+                        case '3':attendstateimg = '/Public/Home/img/attencev3/parse.png';break;
+                        case '4':attendstateimg = '/Public/Home/img/attencev3/parse1.png';break;
+                        case '5':attendstateimg = '/Public/Home/img/attencev3/parse2.png';break;
+                        case '6':attendstateimg = '/Public/Home/img/attencev3/parse3.png';break;
+                        case '7':attendstateimg = '/Public/Home/img/attencev3/zaotui.png';break;
+                    }   %>
+                    <div style="margin-top: 5px;" class="suspicious_list" data-id="<%=ppLists[i][j].uid%>" style="position: relative;overflow: hidden;">
+                        <img src="<%=ppLists[i][j].avatar%>" class="img_date_people_head" >
+                        <span class=" textoverflow" style="width: 120px;display: inline-block;font-size: 12px;color: #333;vertical-align: middle;" title="<%=ppLists[i][j].username%>"><%=ppLists[i][j].username%></span>
+                        <span class="attend_date_member_num textoverflow" title="<%=ppLists[i][j].stno%>"><%=ppLists[i][j].stno%></span>
+                        <span style="display: inline-block;width: 100px;text-align: center;line-height: 32px;position: relative;">
+                            <img src="<%=attendstateimg%>" style="vertical-align: middle;" class="img_attendstate_img">
+                        </span>
+                        <span style="font-size: 14px;color: #999;display: inline-block;" class="textoverflow:hidden;">同设备多账号登录</span>
+                    </div>
+                <%}%>
+            </div>
+        <%}%>
+    <%}%>
+</script>
+<script type="text/html" id="tmp-head">
+<%  var attend='';
+        switch(attendtype){
+            case 1:attend = '数字考勤';break;
+            case 2:attend = '人脸考勤';break;
+        }   %>
+
+    <p class="admhd_name textoverflow"><%=attendname%></p>
+    <p class="admhd_date textoverflow"><%=year_month_day2(createtime)%> &nbsp;&nbsp;&nbsp;<%=hour_min(createtime)%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=attend%></p>
+</script>
+<!-- 侧边栏 -->
+<script type="text/html" id="tmp-navlist">
+<%  var length = list.length;
+if(length==0){%>
+    <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">没有考勤记录</p>
+<%}else{%>
+    <% for(key in list){ %>
+        <li class="nav_attenddatelist">
+            <span class="nav_data textoverflow"><%=getyearmonthfromkey(key)%></span><span class="nav_down"></span>
+            <dl class="nav_attendnamelists">
+                <% for(var j = 0;j<list[key].length;j++) { %>
+                <dt class="textoverflow nav_attendnamelist" 
+                    data-id="<%=list[key][j].id%>" data-type = '<%=list[key][j].type%>' data-time="<%=list[key][j].createTime%>"
+                ><%=list[key][j].title%></dt>
+                <% } %>
+            </dl>
+        </li>
+    <%}%>
+<%}%>
+</script>
+<script type="text/html" id="tpl-map-cont">
+    <div class="map-cont clearfix" data-id="<%=id%>">
+        <div class="fl">
+            <h3><span title="<%=stno%>"></span><b title="<%=username%>:<%=stno%>"><%=username%></b></h3>
+            <p><%if (reason){%><%=reason%><%}else{%>签到正常<%}%></p>
+        </div>
+        <a href="javascript:;" class="fr states"  data-state="<%=attence.state%>"  onclick="getOneInfo(this)" data-maps="<%if(maps!=null){%>1<%}else{%>0<%}%>">
+          <%if (!attence){%>
+            <span class="no"></span>
+          <%}else{%>
+            <%if (attence.state==0){%>
+            <span class="ok"></span>
+            <%}else if (attence.state==1){%>
+            <span class="no"></span>
+            <%}else if (attence.state==2){%>
+            <span class="late"></span>
+            <%}else if (attence.state==3){%>
+            <span class="late"></span>
+            <%}else if (attence.state==4){%>
+            <span class="parse1"></span>
+            <%}else if (attence.state==5){%>
+            <span class="parse2"></span>
+            <%}else if (attence.state==6){%>
+            <span class="parse3"></span>
+            <%}else{%>
+            <span class="zaotui"></span>
+            <%}%>
+          <%}%>
+        </a>
+    </div>
+</script>
+<!-- 学生考勤列表 -->
+<script type="text/html" id="tmp-attendstulist">
+<%  var length = lists.length;
+if(length==0){%>
+    <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">没有考勤记录</p>
+<%}else{%>
+<%for(var i = 0;i<length;i++){%>
+    <%  var attendstateimg='';
+        switch(lists[i].state){
+            case 0:attendstateimg = 'Public/Home/img/ok.png';break;
+            case 1:attendstateimg = 'Public/Home/img/off.png';break;
+         
+        }   %>
+    <li class="attend_date_list" data-id="<%=lists[i].uid%>">
+        <div class="attend_date_member textoverflow">
+            
+            <%if(checkimgload(lists[i].uid)){%>
+                <img  src="<%=lists[i].user.iconPath%>" class="img_date_people_head" data-end="1">
+            <%}else{%>
+                <img data-src="<%=lists[i].user.iconPath%>" src="Public/Home/img/attencev3/lodding.gif" class="img_date_people_head" data-id="<%=lists[i].uid%>">
+            <%}%>
+            <span class="attend_date_member_name textoverflow" title="<%=lists[i].user.username%>"><%=lists[i].user.username%></span>
+            <span class="attend_date_member_num textoverflow" title="<%=lists[i].user.stno%>"><%=lists[i].user.stno%></span>
+        </div>
+        <div class="attend_date_state "  style="position: relative;">
+            <a href="javascript:;" class="btn_changeattendstate">
+                <img src="<%=attendstateimg%>">
+            </a>
+            
+        </div>
+        <div class="attend_date_logtime textoverflow">
+            <%=year_month_day(createtime)%>&nbsp;&nbsp;&nbsp;&nbsp;<%=hour_min(createtime)%>
+        </div>
+        <div class="attend_date_ip textoverflow" style="color: #666;">
+            <% if(lists[i].ip){ %>
+                <%=lists[i].ip%>
+            <%}else{%>
+                    <span style="color: #999;">IP:未获取</span>
+            <%}%>
+        </div>
+        <!-- <%if(lists[i].locationstate==0 ){%>
+            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #357ae8;">
+                <img src="/Public/Home/img/attencev3/gpstrue.png" class="attend_dategpsimg">正常          </div>
+        <%}%>
+        <%if(lists[i].locationstate==1 ){%>
+            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #ff8c38;">
+                <img src="/Public/Home/img/attencev3/gpsfalse.png" class="attend_dategpsimg">较远         </div>
+        <%}%>
+        <%if(lists[i].locationstate==null||lists[i].locationstate==2 ){%>
+            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #999;">
+                未开启         </div>
+        <%}%>
+        <%if(lists[i].locationstate==3 ){%>
+            <div class="flaseGPS100 attend_date_gps textoverflow" style="font-size: 12px;color: #999;" title="用户没有签到">
+                --
+            </div>
+        <%}%>
+        <div class="attend_date_change textoverflow" style="color: #666;font-size: 12px;">
+            <%=lists[i].logCount%>
+        </div> -->
+    </li>
+<%}}%>
+</script>
+<script type="text/html" id="tpl-map-suspecial">
+    <p style="height: 50px;border-bottom: 1px solid #ccc;padding: 0 20px;line-height: 50px;">
+        异常签到    </p>
+    <p style="height: 50px;line-height: 50px;color: #999;padding: 0 20px;">
+        <span style="width: 120px;display: inline-block;">姓名(<span class="map_sus_cont">--</span>)</span>
+        <span>定位情况</span>
+    </p>
+    <div style="overflow: hidden;height: 463px;">
+        <div style="height: 100%;padding: 17px 5px 17px 0;position: relative;width: 308px;overflow: auto;top: -17px;">
+            <div style="padding-bottom: 20px;">
+                <p class="map_sus0" style="display: none;height: 300px;line-height: 300px;font-size: 25px;text-align: center;color: #ccc;">没有异常签到</p>
+                <%for(var i= 0;i<dis.lists.length;i++){%>
+                    <%if(dis.lists[i].reason!=null){%>
+                    <p class="map_sus_list map_sus_lists" style="cursor: pointer;height: 45px;line-height: 45px;padding: 0 20px;" data-id="<%=i%>">
+                        <span style="display: inline-block;width:100px; color: #333;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;margin-right: 20px;"><%=dis.lists[i].username%></span>
+                        <span style="display: inline-block;vertical-align: middle;width:110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; "> <%=dis.lists[i].reason%></span>
+                    </p>
+                    <%}%>
+                <%}%>
+                <%for(var i= 0;i<nogps.lists.length;i++){%>
+                    <p class="map_sus_lists" style="cursor: pointer;height: 45px;line-height: 45px;padding: 0 20px;" >
+                        <span style="display: inline-block;width:100px; color: #333;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;margin-right: 20px;"><%=nogps.lists[i].username%></span>
+                        <span style="display: inline-block;vertical-align: middle;width:110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: red; ">未开启</span>
+                    </p>
+                <%}%>
+                
+            </div>
+        </div>
+            
+    </div>
+</script>
+<script type="text/html"></script>
+<script type="text/html" id="tpl-student-map">
+    <div class="map-cont clearfix" data-id="<%=uid%>" style="">
+        <div class="fl">
+            <h3>
+                <span title="<%=stno%>"><%=stno%></span>
+                <b title="<%=username%>"><%=username%></b>
+            </h3>
+        </div>
+        <a href="javascript:;" class="fr states" onclick="getOneInfo(this)" data-state="<%=state%>">
+            <%if (state==0){%>
+            <span class="ok"></span>
+            <%}else if (state==1){%>
+            <span class="no"></span>
+            <%}else if (state==2){%>
+            <span class="late"></span>
+            <%}else if (state==3){%>
+            <span class="parse"></span>
+            <%}else if (state==4){%>
+            <span class="parse1"></span>
+            <%}else if (state==5){%>
+            <span class="parse2"></span>
+            <%}else if (state==6){%>
+            <span class="parse3"></span>
+            <%}else{%>
+            <span class="zaotui"></span>
+            <%}%>
+        </a>
+    </div>
+</script>
+
+</div>
+    
+    
+<script type="text/javascript">
+    seajs.use('/html/Public/Home/js/attencedetailV3.js',function(ex){ex.init();});
+</script>
+
+
+<script src="Public/Common/js/lib/layui/layui-v2.0.0/layui/layui.all.js"></script>
+<script type="text/javascript">
+	seajs.use('/html/Public/Home/js/coursewarev3.js');
+</script>
+<a href="javascript:;" class="back-to-top"></a>
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
+
+</body></html>
