@@ -1365,7 +1365,7 @@ define(function(require,exports,module){
     };
     //变更考勤状态
     exports.attenceApi_updateState = function(studentid,attenceid,state,callback){
-    	var data = {studentid:studentid,attenceid:attenceid,state:state};
+    	var data = {uid:studentid,attenceId:attenceid,state:state};
    	 	$.ajax({
    	 		type: "GET",
    	 		url: exports.APIURL+"/AttenceApi/updateState",
@@ -1586,6 +1586,20 @@ define(function(require,exports,module){
     			}
    	 		}
    	 	});
+    };
+    exports.attenceApi_Facecheckin = function(id,studentid,callback){
+      var data = {id:id,studentid:studentid};
+      $.ajax({
+        type: "POST",
+        url: exports.APIURL+"/AttenceApi/checkin",
+        data: data,
+        dataType: "json",
+        success: function(data){
+          if(callback){
+            callback(data);
+          }
+        }
+      });
     };
     //获取所有未结束的考勤列表
     exports.attenceApi_getNotFinishAttenceList = function(callback){
@@ -3213,7 +3227,7 @@ define(function(require,exports,module){
     /**********************班级公告接口****************************/
     //列出所有的通告
     exports.notifyApi_lists = function(courseid,callback){
-    	var data = {courseid:courseid};
+    	var data = {courseId:courseid};
    	 	$.ajax({
    	 		type: "GET",
    	 		url: exports.APIURL+"/NotifyApi/lists",
@@ -3264,9 +3278,24 @@ define(function(require,exports,module){
    	 		}
    	 	});
     };
+    //学生阅读
+    exports.notifyApi_readNotify = function(id,callback){
+      var data = {id:id};
+      $.ajax({
+        type: "GET",
+        url: exports.APIURL+"/NotifyApi/readNotify",
+        data: data,
+        dataType: "json",
+        success: function(data){
+        if(callback != null){
+          callback(data);
+        }
+        }
+      });
+    };
     //添加公告
-    exports.notifyApi_addNotify = function(courseid,title,content,attachment,callback){
-    	var data = {courseid:courseid,title:title,content:content,attachment:attachment};
+    exports.notifyApi_addNotify = function(courseid,teacherid,title,content,callback){
+    	var data = {courseId:courseid,teacherId:teacherid,title:title,content:content};
    	 	$.ajax({
    	 		type: "POST",
    	 		url: exports.APIURL+"/NotifyApi/addNotify",

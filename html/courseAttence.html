@@ -100,7 +100,7 @@
                  <a href="courseVideo.html"><img src="Public/Common/img/datachart.png">互动</a>
                 <a id="mymember" href="courseMember.html" ><img src="Public/Common/img/ktp1_24.png">成员</a>
                 <a href="courseAttence.html" class="active"><img src="Public/Common/img/ktp1_19.png">考勤</a>
-                <a href="#" ><img src="Public/Common/img/ktp1_26.png">公告</a>     
+                <a href="courseAnnounceMent.html" ><img src="Public/Common/img/ktp1_26.png">公告</a>     
             </div>
         </div>
     </div>
@@ -135,15 +135,7 @@
             </div>
             <div class="attend_headright">
                 <div class="dlchartbox">
-                    <a href="javascript:;" class="btn-download" id="downloadAttenceReport" data-href="/Export/attence/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html">下载报表</a>
-                    <ul class="dlul">
-                        <li class="dlli">
-                            <a href="javascript:;" class="dlall">下载全部</a>
-                        </li>
-                        <li class="dlli">
-                            <a href="javascript:;" class="dlbytime">按时间下载</a>
-                        </li>
-                    </ul>
+                    <a href="javascript:;" class="btn-download" id="downloadAttenceReport" onclick="getStudentJson()">下载报表</a>
                 </div>
                 <a href="javascript:;" class="btn-createattend">新建考勤</a>
             </div>
@@ -228,7 +220,7 @@
             <div class="attend_mainleft">
                 <p class="attend_mlhead">
                     <span>考勤历史</span><span style="margin:0 10px;font-size: 12px;" id="attence_count">3次</span>
-                    <a href="/attence/coursedata/courseid/MDAwMDAwMDAwMLOspZiGz7Ns.html" class="btn-data">数据统计</a>
+                    <a href="coursedate.html" class="btn-data" >数据统计</a>
                 </p>
                 <div class="overflow" style="height: 420px">
                     <div class="attend_attendlists">
@@ -330,25 +322,7 @@
         <a href="javascript:;" class="sure active">结束</a>
     </div>
 </div>
-<!--新建GPS考勤-->
-<!--<div class="del-pop" id="gps-attend" data-type="2">
-    <div class="pop-title">
-        <h3>GPS考勤</h3>
-        <a href="javascript:;" class="close"></a>
-    </div>
-    <div class="content">
-        <div class="sign-count">
-            <span>已签到：</span>
-            <i class="ing"></i>
-            <i class="line">/</i>
-            <i class="total"></i>
-        </div>
-    </div>
-    <div class="btns">
-        <a href="javascript:;" class="cancel">放弃</a>
-        <a href="javascript:;" class="sure active">结束</a>
-    </div>
-</div> -->
+
 
 <!--放弃弹窗-->
 <div class="little-pop" id="abandon-attend">
@@ -463,207 +437,15 @@
         <% } %>
     <% } %>
 </script>
-<!--考勤详情-->
-<script type="text/html" id="tpl-p-detail">
-    <div class="p-detail" id="p-detail" data-type="<%=type%>">
-        <div class="d-title">
-            <div class="item fl">
-                <a href="javascript:;" class="active">考勤总览</a>
-                <%if(isVip||(!isVip&&isUseGPS==1)){%>
-                <a href="javascript:;">异常签到</a>
-               <%}%>
-            </div>
-            <a href="javascript:;" class="close fr"></a>
-        </div>
-        <div class="cont">
-            <div class="total-cont">
-                <div class="choose-div">
-                    <div class="choose-title">
-
-                    </div>
-                </div>
-                <div class="list">
-
-                </div>
-            </div>
-            <%if(isVip||(!isVip&&isUseGPS==1)){%>
-            <div class="error-cont hide">
-                <div class="choose-div">
-                    <div class="choose-title">
-                        <a href="javascript:;" class="active">异常签到(<i>0</i>)</a>
-                        <a href="javascript:;">未开启GPS(<i>0</i>)</a>
-                        <a href="javascript:;">可疑代签(<i>0</i>)</a>
-                        <a href="javascript:;">GPS地图定位</a>
-                    </div>
-                </div>
-                <div class="list exlist">
-
-                </div>
-                <div class="list noGPSlist">
-
-                </div>
-                <div class="list pplist">
-
-                </div>
-                <div class="map" id="container">
-
-                </div>
-            </div>
-            <%}%>
-        </div>
-        <div class="close-box">
-            <%if(type>0){ %>
-                <%if(isVip==1){%>
-                    <p class="has-vip fl">已默认获取异常考勤</p>
-                
-                <%}else{%>
-                    <%if (isUseGPS==0){%>
-                    <a href="javascript:;" class="get-error-btn fl">获取异常考勤列表</a>
-                    <%}%>
-                    <%if (isUseGPS==1){%>
-                    <p class="get-vip fl">已获取异常考勤</p>
-                    <%}%>
-                <%}%>
-            <%}%>
-            <a href="javascript:;" class="close fr">关闭</a>
-        </div>
-    </div>
-</script>
-<script type="text/html" id="tpl-GPSlist">
-    <%if (lists.length){%>
-    <ul>
-    <%for(var i = 0;i<lists.length;i++){ %>
-    <li data-id="<%=lists[i].uid%>">
-        <i><%=toDou( i+1 )%></i>
-        <p class="names"><span><%=lists[i].stno%></span><b><%=lists[i].username%></b></p>
-        <a href="javascript:;" data-state="<%=lists[i].state%>">
-            <%if (lists[i].state==0){%>
-            <span class="ok"></span>
-            <%}else if (lists[i].state==1){%>
-            <span class="no"></span>
-            <%}else if (lists[i].state==2){%>
-            <span class="late"></span>
-            <%}else{%>
-            <span class="parse"></span>
-            <%}%>
-        </a>
-    </li>
-    <%}%>
-    <%}else{%>
-        <p style="text-align: center; line-height: 200px; color: #595959">该考勤状态下无成员</p>
-    <%}%>
-    </ul>
-</script>
-<script type="text/html" id="tpl-GPSlist2">
-    <%if (exArray.length){%>
-    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生位置可疑，您可参考此列表修改学生考勤状态。</p>
-    <ul>
-        <%for(var i= 0;i<exArray.length;i++){%>
-        <li data-id="<%=exArray[i].id%>">
-            <i><%=toDou(i+1)%></i>
-            <p class="names"><span><%=exArray[i].stno%></span><b><%=exArray[i].username%></b></p>
-            <p class="offset"><%=exArray[i].reason%></p>
-            <a href="javascript:;" data-state="<%=exArray[i].state%>">
-                <%if (exArray[i].state==0){%>
-                <span class="ok"></span>
-                <%}else if (exArray[i].state==1){%>
-                <span class="no"></span>
-                <%}else if (exArray[i].state==2){%>
-                <span class="late"></span>
-                <%}else{%>
-                <span class="parse"></span>
-                <%}%>
-            </a>
-        </li>
-       
-        <%}%>
-        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">无异常签到成员</p>
-        <%}%>
-    </ul>
-</script>
 
 
-<script type="text/html" id="tpl-GPSlist3">
-    <%if (noGPSArray!=null&&noGPSArray.length){%>
-    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生'未开启GPS'，您可参考此列表修改学生考勤状态。</p>
-    <ul>
-        <%for(var i=0;i<noGPSArray;i++){%>
-        <li data-id="<%=noGPSArray[i].id%>">
-            <i><%=toDou (i+1)%></i>
-            <p class="names"><span><%=noGPSArray[i].stno%></span><b><%=noGPSArray[i].username%></b></p>
-            <p class="offset"><%=noGPSArray[i].reason%></p>
-            <a href="javascript:;" data-state="<%=noGPSArray[i].state%>">
-                <%if (noGPSArray[i].state==0){%>
-                <span class="ok"></span>
-                <%}else if (noGPSArray[i].state==1){%>
-                <span class="no"></span>
-                <%}else if (noGPSArray[i].state==2){%>
-                <span class="late"></span>
-                <%}else{%>
-                <span class="parse"></span>
-                <%}%>
-            </a>
-        </li>
-        <%}%>
-        <%}else{%>
-        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">所有成员签到都开启了GPS</p>
-        <%}%>
-    </ul>
-</script>
-
-<script type="text/html" id="tpl-pp-lists">
-    <%if (ppLists!=null && ppLists.length){%>
-    <p style="margin-bottom: 14px;color: #94463f;">以下签到学生的IP和微信都一样，可能是代签，老师可以进行确认。</p>
-        <%for(var i=0;i<ppLists.length;i++){%>
-        <ul style="margin-bottom: 20px;">
-        <%for(var j=0;j<pp.length;j++){%>
-        <li data-id="<%=pp[j].id%>">
-            <i><%=toDou (i+1)%></i>
-            <p class="names"><span><%=pp[j].stno%></span><b><%=pp[j].username%></b></p>
-            <p class="offset">签到IP：<%=pp[i]['attence']['ip']%></p>
-            <a href="javascript:;" data-state="<%=pp[j].state%>">
-                <%if(pp[j].state==0){%>
-                <span class="ok"></span>
-                <%}else if (pp[j].state==1){%>
-                <span class="no"></span>
-                <%}else if (pp[j].state==2){%>
-                <span class="late"></span>
-                <%}else{%>
-                <span class="parse"></span>
-                <%}%>
-            </a>
-        </li>
-        <%}%>
-        </ul>
-        <%}%>
-   <%}else{%>
-        <p class="null-a" style="text-align: center; line-height: 200px; color: #595959">没有发现代替签到的情况</p>
-    <%}%>
-</script>
 
 
-<script type="text/html" id="tpl-attence-change-dialog">
-<div class="attenceChangeDialog">
-    <ul>
-        <li class="<%if (index==0){%>active<%}%>">
-            <i class="ok"></i>
-            <i class="tips">出勤</i>
-        </li>
-        <li class="<%if (index==1){%>active<%}%>">
-            <i class="no"></i>
-            <i class="tips">旷课</i>
-        </li>
-        <li class="<%if (index==2){%>active<%}%>">
-            <i class="late"></i>
-            <i class="tips">迟到</i>
-        </li>
-        <li class="<%if (index==3){%>active<%}%>">
-            <i class="parse"></i>
-            <i class="tips">请假</i>
-        </li>
-    </ul>
-</div>
-</script>
+
+
+
+
+
 
 <!--进入若有考勤未完成-->
 <div class="little-pop" id="have-attend">
@@ -673,71 +455,7 @@
         <a href="javascript:;" class="sure active">查看详情</a>
     </div>
 </div>
-<!--考勤详情-->
-<script type="text/html" id="tpl-p-detail">
-    <div class="p-detail" id="p-detail" data-type="<%=type%>">
-        <div class="d-title">
-            <div class="item fl">
-                <a href="javascript:;" class="active">考勤总览</a>
-                <%if (isVip||(!isVip&&isUseGPS==1)){%>
-                <a href="javascript:;">异常签到</a>
-                <%}%>
-            </div>
-            <a href="javascript:;" class="close fr"></a>
-        </div>
-        <div class="cont">
-            <div class="total-cont">
-                <div class="choose-div">
-                    <div class="choose-title">
 
-                    </div>
-                </div>
-                <div class="list">
-
-                </div>
-            </div>
-            <%if (isVip||(!isVip&&isUseGPS==1)){%>
-            <div class="error-cont hide">
-                <div class="choose-div">
-                    <div class="choose-title">
-                        <a href="javascript:;" class="active">异常签到(<i>0</i>)</a>
-                        <a href="javascript:;">未开启GPS(<i>0</i>)</a>
-                        <a href="javascript:;">可疑代签(<i>0</i>)</a>
-                        <a href="javascript:;">GPS地图定位</a>
-                    </div>
-                </div>
-                <div class="list exlist">
-
-                </div>
-                <div class="list noGPSlist">
-
-                </div>
-                <div class="list pplist">
-
-                </div>
-                <div class="map" id="container">
-
-                </div>
-            </div>
-            <%}%>
-        </div>
-        <div class="close-box">
-            <%if (type>0){ %>
-            <%if (isVip==1){%>
-                <p class="has-vip fl">已默认获取异常考勤</p>
-            <%}else{%>
-                <%if (isUseGPS==0){%>
-                <a href="javascript:;" class="get-error-btn fl">获取异常考勤列表</a>
-                <%}%>
-                <%if (isUseGPS==1){%>
-                <p class="get-vip fl">已获取异常考勤</p>
-                <%}%>
-            <%}%>
-            <%}%>
-            <a href="javascript:;" class="close fr">关闭</a>
-        </div>
-    </div>
-</script>
 <div class="check-pop">
 </div>
 <script type="text/html" id="tpl-students">
@@ -811,7 +529,134 @@
     <a href="javascript:;">请假(<%=stat.pleaseCount%>)</a>
     <a href="javascript:;">早退({{stat.zaotuiCount}})</a>
 </script>
+    
+    <script type="text/javascript"> 
+        function getStudentJson()
+        {
 
+        var APIURL = "http://localhost:8080";
+        var courseid = localStorage["cid"];
+          var data = {courseId:courseid}
+         $.ajax({
+               type: "GET",
+               url: APIURL+"/AttenceApi/downloadExcel",
+               data: data,
+               dataType: "json",
+               success: function(data){
+                var date = new Date();
+                date= date.toLocaleString( );
+                JSONToExcelConvertor(data,date);
+            }
+        });
+        }
+
+
+       //json数据转excel
+   //json数据转excel
+    function JSONToExcelConvertor(JSONData, FileName) {
+        //先转化json
+        var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
+        var excel = '<table>';
+        var row = "<tr>";
+        //设置表头
+
+        console.log("JSONData[0]:")
+        console.log(JSONData.data[0])
+       
+        var keys = Object.keys(JSONData.data[0]);
+         console.log("keys:")
+          console.log(keys)
+        keys.forEach(function (item) {
+            switch(item) {
+                 case 'username': {
+                    item = '姓名';
+                    row += "<td>" + item + '</td>';
+                    break;
+                }
+                case 'stno': {
+                    item = '学号';
+                    row += "<td>" + item + '</td>';
+                    break;
+                }
+                case 'attenceCount': {
+                    item = '考勤次数';
+                    row += "<td>" + item + '</td>';
+                    break;
+                }
+                case 'absenceCount': {
+                    item = '缺勤次数';
+                    row += "<td>" + item + '</td>';
+                    break;
+                }
+            }
+            
+        });
+        var keys = JSONData.title;
+         console.log("keys:")
+          console.log(keys)
+        keys.forEach(function (item) {
+                    row += "<td>" + item + '</td>';
+        });
+        //换行
+        excel += row + "</tr>";
+        //设置数据
+        for (var i = 0; i < arrData.data.length; i++) {
+            var row = "<tr>";
+            for (var index in arrData.data[i]) {
+                if(index == "state") {
+                    for(var j in arrData.data[i].state) {
+                         row += '<td>' + arrData.data[i].state[j] + '</td>';
+                    }
+                }else {
+                    row += '<td>' + arrData.data[i][index] + '</td>';
+                }
+                
+            }
+            excel += row + "</tr>";
+        }
+
+        excel += "</table>";
+
+        var excelFile = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:x='urn:schemas-microsoft-com:office:excel' xmlns='http://www.w3.org/TR/REC-html40'>";
+        excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8">';
+        excelFile += '<meta http-equiv="content-type" content="application/vnd.ms-excel';
+        excelFile += '; charset=UTF-8">';
+        excelFile += "<head>";
+        excelFile += "<!--[if gte mso 9]>";
+        excelFile += "<xml>";
+        excelFile += "<x:ExcelWorkbook>";
+        excelFile += "<x:ExcelWorksheets>";
+        excelFile += "<x:ExcelWorksheet>";
+        excelFile += "<x:Name>";
+        excelFile += "{worksheet}";
+        excelFile += "</x:Name>";
+        excelFile += "<x:WorksheetOptions>";
+        excelFile += "<x:DisplayGridlines/>";
+        excelFile += "</x:WorksheetOptions>";
+        excelFile += "</x:ExcelWorksheet>";
+        excelFile += "</x:ExcelWorksheets>";
+        excelFile += "</x:ExcelWorkbook>";
+        excelFile += "</xml>";
+        excelFile += "<![endif]-->";
+        excelFile += "</head>";
+        excelFile += "<body>";
+        excelFile += excel;
+        excelFile += "</body>";
+        excelFile += "</html>";
+
+        var uri = 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(excelFile);
+
+        var link = document.createElement("a");
+        link.href = uri;
+
+        link.style = "visibility:hidden";
+        link.download = FileName + ".xls";
+
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    </script>
 <script>
     seajs.use('/html/Public/Home/js/attendanceV3.js',function(ex){
         ex.init();

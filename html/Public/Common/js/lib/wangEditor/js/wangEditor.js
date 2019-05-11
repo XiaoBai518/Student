@@ -5824,7 +5824,7 @@ _e(function (E, $) {
         var script = document.createElement("script");
         script.type = "text/javascript";
         script.id = "highlight";
-        script.src = "/Public/Common/js/lib/wangEditor/js/lib/highlight.min.js";
+        script.src = "/html/Public/Common/js/lib/wangEditor/js/lib/highlight.min.js";
         document.body.appendChild(script);
     }
     

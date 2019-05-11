@@ -1,12 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html>
-<head>
+<head> 
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="X-UA-Compatible" content="IE=9">
 <title>公告</title>
 <meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
 <meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
 <link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
 <link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
 <link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
@@ -18,23 +20,18 @@
 <script src="Public/Common/js/config/config.js"></script>
 <script src="Public/Home/js/myJS.js"></script>
 
+<link href="Public/Home/css/announce.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="Public/Home/css/coursewarev3.css">
-<link rel="stylesheet" href="Public/Home/css/announce.css">
-<link id="layuicss-laydate" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/laydate/default/laydate.css" media="all">
-<link id="layuicss-layer" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/layer/default/layer.css" media="all">
-<link id="layuicss-skincodecss" rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/modules/code.css" media="all">
 <link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
-<link rel="stylesheet" href="Public/Common/js/lib/layer/skin/ding/style.css" id="layui_layer_PublicCommonjsliblayerskindingstylecss" style="">
-
+<link id="layuicss-https:wwwketangpaicomPublicCommonjsliblayuilayuiv3cssmoduleslayerstylecss" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/layer/style.css" media="all">
 </head>
-<body style="background-color:#f6ebef;">
+<body style="background-color:#ebeef5;">
 	
-<div id="course-header" data-id="MDAwMDAwMDAwMLOspZiGz7Ns" data-sys="0" class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
+<div id="course-header"  class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
     <div class="nav nav-clear clearfix">
         <ul class="nav-menu-left">
             <li class="nav-menu-item">
-                 <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
+                <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
                 <i style="display: inline-block;width: 27px;height: 18px;background: url(Public/Common/img/return.png) left top no-repeat;position: relative;top: 5px;"></i>
         <span style="font-size: 20px;color: #FFF;line-height: 24px;vertical-align: middle;">课堂</span>
     </a>
@@ -64,7 +61,7 @@
     </div>
 </li>            <li class="nav-menu-item user">
 	<a id="user" href="javascript:;">
-		<img class="avatar" src="" alt="李雅" title="李雅">
+		<img class="avatar" src="" alt="用户" title="用户">
 			</a>
 	<div class="user-info hide">
 		<ul>
@@ -82,8 +79,8 @@
             <h1 id="courseName"></h1>
                 <div class="codetip">使用以下邀请码邀请学生加课</div>            
                     <div class="box-box">
-                        <div class="sele" id="course-code-select" data-abc="76M59D">
-                    	       <div id="courseCode" class="codetext" style="margin-left:25px;"></div>
+                        <div class="sele" id="course-code-select" >
+                    	       <div  id="courseCode"class="codetext" style="margin-left:25px;"></div>
                         </div>
                     </div>
         </div>
@@ -96,49 +93,81 @@
                     <a class="side-button" href="javascript:;"><img src="Public/Common/img/ktp1_09.png" alt=""></a>
                 </li>
             </ul>
-            <div id="third-nav" class="nav gWidth">
-                 <a href="courseVideo.html" ><img src="Public/Common/img/datachart.png">互动</a>
-                <a id="mymember" href="javascript:;" onclick=""><img src="Public/Common/img/ktp1_24.png">成员</a>
-                <a href="#"><img src="Public/Common/img/ktp1_19.png">考勤</a>
-                <a href="#" class="active"><img src="Public/Common/img/ktp1_19.png">公告</a>    
+             <div id="third-nav" class="nav gWidth">
+                 <a href="courseVideoStudent.html"><img src="Public/Common/img/datachart.png">互动</a>
+                <a id="mymember" href="courseMemberStudent.html" ><img src="Public/Common/img/ktp1_24.png">同学</a>
+                <a href="courseAnnounceMentStudent.html" class="active"><img src="Public/Common/img/ktp1_26.png">公告</a>     
             </div>
         </div>
     </div>
-
-
-        <link rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/layui.css" media="all">
-<div class="data-page">
+    <div class="banner2"></div>
+    <div class="bg"></div>
+<div class="data-page"></div>
    
-        <div class="cWidth">
-         <div class="send-an" data-step="1" data-intro="点击此处发布公告给全班学生，通知会以微信方式推送到每个学生" style="display: block;">
-            <a href="javascript:;">发布公告</a>
-        </div>
-    </div>
-    <div class="empty-box hide" style="display: block;margin-left: 150px;">
-            <div class="box" style="height: 185px">
-                <h3 style="margin-top:25px">点击上方按钮，您可以发布新公告。</h3>
-                <p>发布班级公告后，即刻推送到学生端。</p>
-              
+        <div class="announce-page editor-page">
+    <div class="cWidth">
+        <div class="empty-box hide" style="display: none;">
+            <div class="box" style=" height: 185px">
+                <h2 style="margin-top:35px;">目前还没有新的公告</h2>
+                
             </div>
         </div>
- 
+        <div class="announce-box">
+            <ul id="viewer-container-lists">
+
+			</ul>
+        </div>
+    </div>
 </div>
 
+<!--各种弹窗-->
 
 
 
 
 
-<script src="Public/Common/js/lib/layui/layui-v2.0.0/layui/layui.all.js"></script>
-<script type="text/javascript">
-	seajs.use('/html/Public/Home/js/coursewarev3.js');
+<script type="text/html" id="tpl-anList">
+    <li data-id="{{id}}">
+		{{include 'tpl-announce-cont-box'}}
+    </li>
 </script>
-<script>
-seajs.use('/html/Public/Home/js/announce.js');
+
+<script type="text/html" id="tpl-announce-cont-box">
+        <div class="announce-cont-box" data-id="{{id}}">
+            <div class="title clearfix" >
+               <h3><a href="javascript:;" class="myclick" >{{title}}</a></h3> 
+            </div>
+            <div class="time" style="height:30px;">
+                <span style="font-weight: bolder;">发布人：</span><span>{{userName}}</span>   
+                <span style="font-weight: bolder;margin-left: 20px;">发布时间：</span><span>{{createTime}}</span>
+            </div>
+			<a href="javascript:;" class="myclick" >
+            <div class="announce-cont">
+                <div class="word">
+                    <div class="p">{{#content}}</div>
+                </div>
+            </div>
+			</a>
+			<div class="comment-new" style="margin-left: -1px;margin-top: 10px;">
+                <a href="javascript:;" class="myclick" >
+                    <span><b>{{readCount}}</b>人已读</span>
+                </a>
+                &emsp;&emsp;&emsp;
+        		<!-- <a href="/Notify/info/id/{{id}}.html">
+                    <span><b>{{discussCount}}</b>条评论</span>
+                    {{if discussNewCount>0}}<i>{{discussNewCount}}</i>{{/if}}
+        		</a> -->
+    		</div>
+        </div>
 </script>
 <a href="javascript:;" class="back-to-top"></a>
+
 <link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+
+<script>
+seajs.use('/html/Public/Home/js/announce.js',function(ex){ex.announceAll();});
+</script>
+
 	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
 
-</body>
-</html>
+</body></html>

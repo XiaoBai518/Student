@@ -138,7 +138,7 @@ define(function(require,exports,module){
 	__LOCAL.locationstate2 = {};
 	exports.get_attendstulist = function(attenceid){
 		$('#mouhu_search').val('');
-		var attenceid = localStorage['attenceid'];
+		var attenceid = (attenceid?attenceid:localStorage['attenceid']);
 		API.AttenceV2Api_getAttenceStudentLists(attenceid,localStorage['cid'],function(data){
 
 			// //map中的未签到
@@ -162,7 +162,6 @@ define(function(require,exports,module){
 				__LOCAL.attendstulist.createtime = $('.nav_attendnamelist.on').data('time');
 				__LOCAL.attendstulist.attendname = $('.nav_attendnamelist.on').text();
 				__LOCAL.attendstulist.attendtype = parseInt($('.nav_attendnamelist.on').data('type'));
-				console.log(__LOCAL.attendstulist)
 				exports.draw_attendstulist();
 				exports.databinding();
 				exports.draw_head();
@@ -181,9 +180,7 @@ define(function(require,exports,module){
 		$('.admhd_dis').html(template('tmp-head',__LOCAL.attendstulist))
 	}
 	exports.draw_attendstulist = function(attendstulist){
-
 		$('.attend_date_lists').html(template('tmp-attendstulist',attendstulist?attendstulist:__LOCAL.attendstulist));
-		// console.log()
 		if($('.nav_attendnamelist.on').data('type')==0||$('.nav_attendnamelist.on').data('type')==3){
 			$('.btn_suspicious').css('display','none');
 			$('.attend_date_list .attend_date_gps').html('--');
@@ -191,11 +188,7 @@ define(function(require,exports,module){
 		}else{
 			$('.btn_suspicious').css('display','inline');
 		}
-
-		
-
 			loadimg();
-
 
 	}
 	//单向数据绑定
@@ -257,9 +250,12 @@ define(function(require,exports,module){
 	}
 	//绘制学生列表的时候看当前选择的出勤状态作帅选
 		function drawstulistbystate(state){
-			if(state == '100') 
-				{exports.draw_attendstulist();}
+			if(state == '100') {
+					exports.draw_attendstulist();
+					
+				}
 			else if(state == 3){
+				
 				var array = __LOCAL.attendstulist.lists;
 				var newarray = []
 				for(var i = 0;i<array.length;i++){
@@ -269,8 +265,10 @@ define(function(require,exports,module){
 				}
 				exports.draw_attendstulist({lists:newarray});
 			}
-			else 
-				{exports.draw_attendstulist({lists:ArrayUtil.getByKeyValue(__LOCAL.attendstulist.lists,'state',state)});}
+			else {
+				
+				exports.draw_attendstulist({lists:ArrayUtil.getByKeyValue(__LOCAL.attendstulist.lists,'state',state)});
+			}
 		}
 
 	exports.domthing = function(){
@@ -503,6 +501,7 @@ define(function(require,exports,module){
 				skin:'layer-ext-ding00',
 				area:['700px','auto'],
 				content:template('lay-changestate',json),
+				scrollbar: false,
 				btn:['变更','取消'],
 				success:function(layero){
 	                this.layero = layero;
@@ -513,6 +512,8 @@ define(function(require,exports,module){
 				yes:function(i){
 					var attenceid = $('.nav_attendnamelist.on').data('id');
 					var changestate = $('#btn_changestate span.on').data('state');
+					
+
 					//console.log(id)
 					//console.log(attenceid)
 					//console.log(changestate)
@@ -521,16 +522,19 @@ define(function(require,exports,module){
 						
 						if(data.status == 1){
 							plugin.openMsg('变更成功',0)
-							ArrayUtil.alertByKeyValue(__LOCAL.attendstulist.lists,'uid',id,'state',changestate+'');
+							
+							ArrayUtil.alertByKeyValue(__LOCAL.attendstulist.lists,'uid',id,'state',changestate);
 							//console.log(ArrayUtil.getValueByKeyValue(__LOCAL.attendstulist.lists,'uid',id,'logCount'))
 							ArrayUtil.alertByKeyValue(__LOCAL.attendstulist.lists,'uid',id,'logCount',parseInt(ArrayUtil.getValueByKeyValue(__LOCAL.attendstulist.lists,'uid',id,'logCount'))+1);
 							exports.databinding();
-							for(var i = 0;i<__LOCAL.attendstulist.ppLists.length;i++){
-									ArrayUtil.alertByKeyValue(__LOCAL.attendstulist.ppLists[i],'uid',id,'state',changestate+'');
-								}
+							// for(var i = 0;i<__LOCAL.attendstulist.ppLists.length;i++){
+							// 		ArrayUtil.alertByKeyValue(__LOCAL.attendstulist.ppLists[i],'uid',id,'state',changestate+'');
+							// 	}
 							//exports.draw_attendstulist();
 							var state = $('.attend_tab.on').data('state');
 							drawstulistbystate(state);
+							
+							exports.draw_attendstulist(__LOCAL.attendstulist);
 							
 						}
 					})

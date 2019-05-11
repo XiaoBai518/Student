@@ -107,7 +107,7 @@
 
 
         <link rel="stylesheet" href="Public/Common/js/lib/layui/layui-v2.0.0/layui/css/layui.css" media="all">
-        <script type="text/javascript">
+<script type="text/javascript">
     seajs.use('jquery',function(ex){
         try{
             if(self!=top){
@@ -138,13 +138,13 @@
                         <div class="admhdtop" style="position: relative;">
                             
                             <!-- <a href="javascript:;" class="btn_root">管理</a> -->
-                            <a href="javascript:;" class="btn_root"></a>
+                            <!-- <a href="javascript:;" class="btn_root"></a> -->
 
-                            <ul style="">
+                            <!-- <ul style="">
                                 <li>重命名</li>
                                 <li>删除</li>
                             </ul>
-                            <a href="javascript:;" class="btn_dl_single"></a>
+                            <a href="javascript:;" class="btn_dl_single"></a> -->
                             <div class="admhd_dis">
 
     <p class="admhd_name textoverflow">----</p>
@@ -200,21 +200,12 @@
             </div>
 </div>
 
-<script type="text/html" id="lay-suspicious">
-    <div style="height: 275px;width: 100%;box-sizing: border-box;padding:10px 20px 20px 30px;font-size: 14px;">
-        <div class="overflow" style="height:100%;width:100%;">
-            <div style="height: 100%;padding: 17px 13px 17px 0;position: relative;top: -17px;overflow: auto;width: 100%;" id="suspicious_lists">
-                <%include("tmp-suspicious")%>
-            </div>
-        </div>
-    </div>
-</script>
 <script type="text/html" id="lay-changestate">
     <p style="padding:20px 30px 0 30px;font-size:16px;line-height:50px;">变更 <span style="font-weight: 600;margin: 0 5px;font-size: 20px;">“<%=stuname%>”</span> 出勤状态</p>
     <div style="text-align:center;width:100%;padding:30px 0 50px 0;" id="btn_changestate">
-        <span data-state="0" class="<%= state==0?'on':'' %>" >出勤 <img src="/Public/Home/img/attencev3/ok.png"></span>
-        <span data-state="1"  class="<%= state==1?'on':'' %>" style="margin-left:10px; margin-right:10px;">旷课<img src="/Public/Home/img/attencev3/off.png"></span>
-        <span data-state="2" class="<%= state==2?'on':'' %>"  style=" margin-right:10px;">迟到<img src="/Public/Home/img/attencev3/late.png"></span>
+        <span data-state="0" class="<%= state==0?'on':'' %>" >出勤 <img src="Public/Home/img/ok.png"></span>
+        <span data-state="1"  class="<%= state==1?'on':'' %>" style="margin-left:10px; margin-right:10px;">旷课<img src="Public/Home/img/off.png"></span>
+        <span data-state="2" class="<%= state==2?'on':'' %>"  style=" margin-right:10px;">迟到<img src="Public/Home/img/late.png"></span>
     </div>
 </script>
 <script type="text/html" id="lay-changelog">
@@ -230,8 +221,8 @@
                             <span  style="display: inline-block;width:140px;margin-right: 20px; "><%=ymdhm(lists[i].createtime*1000)%></span>
                             <%  var attendstateimg='';
                             switch(lists[i].state){
-                                case '0':attendstateimg = '/Public/Home/img/attencev3/ok.png';break;
-                                case '1':attendstateimg = '/Public/Home/img/attencev3/off.png';break;
+                                case '0':attendstateimg = '/Public/Home/img/ok.png';break;
+                                case '1':attendstateimg = '/Public/Home/img/off.png';break;
                                 case '2':attendstateimg = '/Public/Home/img/attencev3/late.png';break;
                                 case '3':attendstateimg = '/Public/Home/img/attencev3/parse.png';break;
                                 case '4':attendstateimg = '/Public/Home/img/attencev3/parse1.png';break;
@@ -248,39 +239,7 @@
         </div>
     </div>
 </script>
-<script type="text/html" id="tmp-suspicious">
-<%  var length = ppLists.length;
-    if(length==0){%>
-        <p style="font-size:20px;text-align:center;margin:50px;color:#ccc;">没有可疑代签</p>
-    <%}else{%>
-        <% for(var i = 0;i<length;i++){ %>
-            <div style="border: 1px solid #ccc;border-top: none;border-left: none;margin-bottom: 10px;">
-            <%for(var j = 0;j<ppLists[i].length;j++){%>
-                    <%  var attendstateimg='';
-                    switch(ppLists[i][j].state){
-                        case '0':attendstateimg = '/Public/Home/img/attencev3/ok.png';break;
-                        case '1':attendstateimg = '/Public/Home/img/attencev3/off.png';break;
-                        case '2':attendstateimg = '/Public/Home/img/attencev3/late.png';break;
-                        case '3':attendstateimg = '/Public/Home/img/attencev3/parse.png';break;
-                        case '4':attendstateimg = '/Public/Home/img/attencev3/parse1.png';break;
-                        case '5':attendstateimg = '/Public/Home/img/attencev3/parse2.png';break;
-                        case '6':attendstateimg = '/Public/Home/img/attencev3/parse3.png';break;
-                        case '7':attendstateimg = '/Public/Home/img/attencev3/zaotui.png';break;
-                    }   %>
-                    <div style="margin-top: 5px;" class="suspicious_list" data-id="<%=ppLists[i][j].uid%>" style="position: relative;overflow: hidden;">
-                        <img src="<%=ppLists[i][j].avatar%>" class="img_date_people_head" >
-                        <span class=" textoverflow" style="width: 120px;display: inline-block;font-size: 12px;color: #333;vertical-align: middle;" title="<%=ppLists[i][j].username%>"><%=ppLists[i][j].username%></span>
-                        <span class="attend_date_member_num textoverflow" title="<%=ppLists[i][j].stno%>"><%=ppLists[i][j].stno%></span>
-                        <span style="display: inline-block;width: 100px;text-align: center;line-height: 32px;position: relative;">
-                            <img src="<%=attendstateimg%>" style="vertical-align: middle;" class="img_attendstate_img">
-                        </span>
-                        <span style="font-size: 14px;color: #999;display: inline-block;" class="textoverflow:hidden;">同设备多账号登录</span>
-                    </div>
-                <%}%>
-            </div>
-        <%}%>
-    <%}%>
-</script>
+
 <script type="text/html" id="tmp-head">
 <%  var attend='';
         switch(attendtype){
@@ -311,37 +270,7 @@ if(length==0){%>
     <%}%>
 <%}%>
 </script>
-<script type="text/html" id="tpl-map-cont">
-    <div class="map-cont clearfix" data-id="<%=id%>">
-        <div class="fl">
-            <h3><span title="<%=stno%>"></span><b title="<%=username%>:<%=stno%>"><%=username%></b></h3>
-            <p><%if (reason){%><%=reason%><%}else{%>签到正常<%}%></p>
-        </div>
-        <a href="javascript:;" class="fr states"  data-state="<%=attence.state%>"  onclick="getOneInfo(this)" data-maps="<%if(maps!=null){%>1<%}else{%>0<%}%>">
-          <%if (!attence){%>
-            <span class="no"></span>
-          <%}else{%>
-            <%if (attence.state==0){%>
-            <span class="ok"></span>
-            <%}else if (attence.state==1){%>
-            <span class="no"></span>
-            <%}else if (attence.state==2){%>
-            <span class="late"></span>
-            <%}else if (attence.state==3){%>
-            <span class="late"></span>
-            <%}else if (attence.state==4){%>
-            <span class="parse1"></span>
-            <%}else if (attence.state==5){%>
-            <span class="parse2"></span>
-            <%}else if (attence.state==6){%>
-            <span class="parse3"></span>
-            <%}else{%>
-            <span class="zaotui"></span>
-            <%}%>
-          <%}%>
-        </a>
-    </div>
-</script>
+
 <!-- 学生考勤列表 -->
 <script type="text/html" id="tmp-attendstulist">
 <%  var length = lists.length;
@@ -382,89 +311,8 @@ if(length==0){%>
                     <span style="color: #999;">IP:未获取</span>
             <%}%>
         </div>
-        <!-- <%if(lists[i].locationstate==0 ){%>
-            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #357ae8;">
-                <img src="/Public/Home/img/attencev3/gpstrue.png" class="attend_dategpsimg">正常          </div>
-        <%}%>
-        <%if(lists[i].locationstate==1 ){%>
-            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #ff8c38;">
-                <img src="/Public/Home/img/attencev3/gpsfalse.png" class="attend_dategpsimg">较远         </div>
-        <%}%>
-        <%if(lists[i].locationstate==null||lists[i].locationstate==2 ){%>
-            <div class="attend_date_gps textoverflow" style="font-size: 12px;color: #999;">
-                未开启         </div>
-        <%}%>
-        <%if(lists[i].locationstate==3 ){%>
-            <div class="flaseGPS100 attend_date_gps textoverflow" style="font-size: 12px;color: #999;" title="用户没有签到">
-                --
-            </div>
-        <%}%>
-        <div class="attend_date_change textoverflow" style="color: #666;font-size: 12px;">
-            <%=lists[i].logCount%>
-        </div> -->
     </li>
 <%}}%>
-</script>
-<script type="text/html" id="tpl-map-suspecial">
-    <p style="height: 50px;border-bottom: 1px solid #ccc;padding: 0 20px;line-height: 50px;">
-        异常签到    </p>
-    <p style="height: 50px;line-height: 50px;color: #999;padding: 0 20px;">
-        <span style="width: 120px;display: inline-block;">姓名(<span class="map_sus_cont">--</span>)</span>
-        <span>定位情况</span>
-    </p>
-    <div style="overflow: hidden;height: 463px;">
-        <div style="height: 100%;padding: 17px 5px 17px 0;position: relative;width: 308px;overflow: auto;top: -17px;">
-            <div style="padding-bottom: 20px;">
-                <p class="map_sus0" style="display: none;height: 300px;line-height: 300px;font-size: 25px;text-align: center;color: #ccc;">没有异常签到</p>
-                <%for(var i= 0;i<dis.lists.length;i++){%>
-                    <%if(dis.lists[i].reason!=null){%>
-                    <p class="map_sus_list map_sus_lists" style="cursor: pointer;height: 45px;line-height: 45px;padding: 0 20px;" data-id="<%=i%>">
-                        <span style="display: inline-block;width:100px; color: #333;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;margin-right: 20px;"><%=dis.lists[i].username%></span>
-                        <span style="display: inline-block;vertical-align: middle;width:110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap; "> <%=dis.lists[i].reason%></span>
-                    </p>
-                    <%}%>
-                <%}%>
-                <%for(var i= 0;i<nogps.lists.length;i++){%>
-                    <p class="map_sus_lists" style="cursor: pointer;height: 45px;line-height: 45px;padding: 0 20px;" >
-                        <span style="display: inline-block;width:100px; color: #333;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;vertical-align: middle;margin-right: 20px;"><%=nogps.lists[i].username%></span>
-                        <span style="display: inline-block;vertical-align: middle;width:110px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: red; ">未开启</span>
-                    </p>
-                <%}%>
-                
-            </div>
-        </div>
-            
-    </div>
-</script>
-<script type="text/html"></script>
-<script type="text/html" id="tpl-student-map">
-    <div class="map-cont clearfix" data-id="<%=uid%>" style="">
-        <div class="fl">
-            <h3>
-                <span title="<%=stno%>"><%=stno%></span>
-                <b title="<%=username%>"><%=username%></b>
-            </h3>
-        </div>
-        <a href="javascript:;" class="fr states" onclick="getOneInfo(this)" data-state="<%=state%>">
-            <%if (state==0){%>
-            <span class="ok"></span>
-            <%}else if (state==1){%>
-            <span class="no"></span>
-            <%}else if (state==2){%>
-            <span class="late"></span>
-            <%}else if (state==3){%>
-            <span class="parse"></span>
-            <%}else if (state==4){%>
-            <span class="parse1"></span>
-            <%}else if (state==5){%>
-            <span class="parse2"></span>
-            <%}else if (state==6){%>
-            <span class="parse3"></span>
-            <%}else{%>
-            <span class="zaotui"></span>
-            <%}%>
-        </a>
-    </div>
 </script>
 
 </div>

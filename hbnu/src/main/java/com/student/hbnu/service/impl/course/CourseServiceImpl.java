@@ -121,9 +121,14 @@ public class CourseServiceImpl {
 			if(cL==null) return new ArrayList<Course>();
 			else {
 				cL.forEach(c->{
-					List<Notify> n ;
-					n = this.notifyServiceImpl.getListsByCourseId(c.getId());
-					c.setHlist(n);
+					List<Notify> temp = this.notifyServiceImpl.getListsByCourseId(c.getId());
+					if(temp.size()>0) {
+						List<Notify> n = new ArrayList<Notify>();
+						n.add(this.notifyServiceImpl.getListsByCourseId(c.getId()).get(0));
+						
+						c.setHlist(n);
+					}
+					
 				});
 				return cL;
 			}

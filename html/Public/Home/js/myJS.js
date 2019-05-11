@@ -22,17 +22,23 @@ window.onload=function()
                      $("#user-avatar").attr("src",data.user.iconPath);
                      $("#uc-name").html(data.user.username);
                      $("#edit-name").html(data.user.username);
+
+                     if(data.user.role==1) $("#mystno").html("工号");
                      $("#edit-stno").html(data.user.stno);
+
                      $("#edit-school").html(data.user.school);
+
                      if(data.user.role==0)  $("#edit-role").html("学生");
                      else if(data.user.role==1)$("#edit-role").html("老师");
+
                      $("#edit-email").html(data.user.email);
                      $("#view_photo").attr("src",data.user.iconPath);
+                     
                      if(data.user.FaceData==0)  {
                         $("#edit-face").html("还没上传人脸数据");
-                         $(".options .FaceData").find("a").html("添加信息");
+                         $(".FaceData").find("a").html("添加信息");
                      }
-                     else if(data.user.role==1) $("#edit-face").html("已经上传人脸数据");
+                     else if(data.user.FaceData==1) $("#edit-face").html("已经上传人脸数据");
                      
                      
                   }
@@ -122,6 +128,10 @@ function toCourse(courseId) {
     localStorage['cid'] = courseId;
    location.href="/html/courseVideo.html"
 }
+function toCourseMember(courseId) {
+    localStorage['cid'] = courseId;
+   location.href="/html/courseMember.html"
+}
 function toCourseStudent(courseId) {
     localStorage['cid'] = courseId;
    location.href="/html/courseVideoStudent.html"
@@ -129,4 +139,12 @@ function toCourseStudent(courseId) {
 function toAttence(attenceId) {
     localStorage['attenceid'] = attenceId;
    location.href="/html/courseAttenceDetails.html"
+}
+function toAnnounce(courseId) {
+    localStorage['cid'] = courseId;
+   location.href="/html/courseAnnounceMent.html"
+}
+function toAnnounceStudent(courseId) {
+    localStorage['cid'] = courseId;
+   location.href="/html/courseAnnounceMentStudent.html"
 }

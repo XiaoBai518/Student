@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head> 
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<title>公告</title>
+<meta name="keywords" content="课堂派、LMS、PPT互动、课中互动、助教神器、老师神器、作业收发系统、作业批改、在线作业、杜绝作业作弊、本地化部署">
+<meta name="description" content="教学改革，互动课堂，你可以在这里，组织课中互动，PPT互动，快速发布作业、在线批阅作业、作业查重、统计成绩，随时与你的学生进行沟通，是老师，教务管理的好帮手。支持本地化部署。">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="https://www.ketangpai.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<link href="Public/Common/css/common.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/js/lib/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="Public/Common/css/emoji.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/previewfile.css" rel="stylesheet" type="text/css">
+<link href="Public/Home/css/sprites.css" rel="stylesheet" type="text/css">
+<script src="Public/Home/language/zh-cn.js"></script>
+<script src="Public/Common/js/sea.js" id="seajsnode"></script>
+<script src="Public/Common/js/config/config.js"></script>
+<script src="Public/Home/js/myJS.js"></script>
+
+<link href="Public/Home/css/announce.css" rel="stylesheet" type="text/css">
+
+<link charset="utf-8" rel="stylesheet" href="Public/Common/js/lib/webuploader-0.1.5/webuploader.css">
+<link id="layuicss-https:wwwketangpaicomPublicCommonjsliblayuilayuiv3cssmoduleslayerstylecss" rel="stylesheet" href="Public/Common/js/lib/layui/layuiv3/css/modules/layer/style.css" media="all">
+</head>
+<body style="background-color:#ebeef5;">
+	
+<div id="course-header"  class="topbox cl" style="background-image: url(//assets.ketangpai.com/theme/big/03.jpg);filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//assets.ketangpai.com/theme/big/03.jpg&#39;,sizingMethod=&#39;scale&#39;)">
+    <div class="nav nav-clear clearfix">
+        <ul class="nav-menu-left">
+            <li class="nav-menu-item">
+                <a id="return-course" href="javascript:;" class="return" onclick="toMainIndex()">
+                <i style="display: inline-block;width: 27px;height: 18px;background: url(Public/Common/img/return.png) left top no-repeat;position: relative;top: 5px;"></i>
+        <span style="font-size: 20px;color: #FFF;line-height: 24px;vertical-align: middle;">课堂</span>
+    </a>
+            </li>
+        </ul>
+    	<ul class="nav-menu-right">
+            <li class="nav-menu-item ico notice">
+	<a id="notice" 　href="javascript:;">
+        <img src="/html/Public/Common/img/ktp1_03.png" width="20" alt="通知">
+            </a>
+	<div class="notice-ct hide">
+		<span class="arr"></span>
+        <div class="th-bar">
+          <span class="tit fl">通知</span>
+          <div class="less fr">
+            <a id="messageset" href="https://www.ketangpai.com/User/setting.html#setting">设置</a>
+          </div>
+          <div class="less fr">
+            <a id="ignore-all" href="javascript:void(0);">忽略全部</a>
+          </div>
+        </div>
+                <p class="zw">暂无新通知</p>       <div class="bt-bar">
+       	<div class="more">
+       		<a class="link" href="https://www.ketangpai.com/Message/index.html">查看全部</a>
+       	</div>
+        </div>
+    </div>
+</li>            <li class="nav-menu-item user">
+	<a id="user" href="javascript:;">
+		<img class="avatar" src="" alt="用户" title="用户">
+			</a>
+	<div class="user-info hide">
+		<ul>
+			<li>
+				<a class="link setting" href="userSetting.html">个人设置</a>
+			</li>
+            <li>
+				<a class="link logout" href="javascript:;" onclick="logout()">退出账户</a>
+			</li>        
+        </ul>
+    </div>
+</li>        </ul>
+    </div>
+        <div class="topm cl">
+            <h1 id="courseName"></h1>
+                <div class="codetip">使用以下邀请码邀请学生加课</div>            
+                    <div class="box-box">
+                        <div class="sele" id="course-code-select" >
+                    	       <div  id="courseCode"class="codetext" style="margin-left:25px;"></div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    
+    <div class="banner cl">
+        <div class="in-header" style="background: none repeat scroll 0% 0% #455b8c;">
+            <ul class="nav-menu-left hide" style="display: none;">
+                <li class="nav-menu-item">
+                    <a class="side-button" href="javascript:;"><img src="Public/Common/img/ktp1_09.png" alt=""></a>
+                </li>
+            </ul>
+             <div id="third-nav" class="nav gWidth">
+                 <a href="courseVideo.html"><img src="Public/Common/img/datachart.png">互动</a>
+                <a id="mymember" href="courseMember.html" ><img src="Public/Common/img/ktp1_24.png">成员</a>
+                <a href="courseAttence.html" ><img src="Public/Common/img/ktp1_19.png">考勤</a>
+                <a href="courseAnnounceMent.html" class="active"><img src="Public/Common/img/ktp1_26.png">公告</a>     
+            </div>
+        </div>
+    </div>
+    <div class="banner2"></div>
+    <div class="bg"></div>
+<div class="data-page"></div>
+   
+        <div class="announce-page editor-page">
+    <div class="cWidth">
+        <div class="send-an" data-step="1" data-intro="点击此处发布公告给全班学生，通知会以微信方式推送到每个学生">
+            <a href="javascript:;">发布公告</a>
+        </div>
+        <div class="empty-box hide" style="display: none;">
+            <div class="box" style=" height: 185px">
+                <h3 style="margin-top:35px;">点击上方按钮，您可以发布新公告。</h3>
+                <p>发布班级公告后，即刻推送到学生端。</p>
+            </div>
+        </div>
+        <div class="announce-box">
+            <ul id="viewer-container-lists">
+
+			</ul>
+        </div>
+    </div>
+</div>
+
+<!--各种弹窗-->
+
+<!--导入通知-->
+<div class="dr-pop" id="dr-pop">
+    <div class="pop-title">
+        <h3>导入公告</h3>
+        <a href="javascript:;" class="close"></a>
+        <div class="dr-from">
+            <a href="javascript:;" class="import2 active">从班级导入</a>
+        </div>
+    </div>
+    <div class="pop-cont clearfix" style="height: 435px;">
+        
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="cancel">取消</a>
+        <a href="javascript:;" class="sure">导入</a>
+    </div>
+</div>
+<script type="text/html" id="tpl-import-part">
+    {{if !lists||!lists.length}}
+    <p class="no">班级中没有公告</p>
+    {{else}}
+    <div class="class-item fl import2-item" id="viewer-container-courselists">
+        
+    </div>
+    <div class="class-cont fr">
+        <ul class="cont-box clearfix" id="viewer-container-course-notifylist">
+        </ul>
+    </div>
+    {{/if}}
+</script>
+<script type="text/html" id="tpl-import-notify">
+{{if nlist.length==0}}
+<p class="no">班级中没有公告</p>
+{{/if}}
+{{each nlist as n}}
+<li class="cont-list" data-id="{{n['id']}}">
+	<h3>{{n['title']}}</h3>
+	<div class="p">{{resetdesc n['content']}}</div>
+    <p>编辑于 {{n['createtime']}}</p>
+	<i class="radio"></i>
+</li>
+{{/each}}
+</script>
+
+<script type="text/html" id="tpl-import-course">
+<ul>
+	{{each lists as c}}
+	<li data-id="{{c['id']}}">
+		<a href="javascript:;" title="{{c['coursename']}}">
+			<i></i>
+			<span>{{c['coursename']}}</span>
+		</a>
+	</li>
+	{{/each}}
+</ul>
+</script>
+
+<script type="text/html" id="tpl-file">
+<div class="file" data-id="{{fileid}}" id="file-ID-{{id}}">
+	<div class="file-icon fl">
+		<img src="{{ext}}">
+	</div>
+	<div class="file-cont fl">
+		<h3 class="file-name">
+			<a href="javascript:;" title="{{name}}">{{name}}</a>
+		</h3>
+		<div class="opt clearfix">
+			<p class="file-size fl">{{size}}</p>
+			<div class="meter-box fl">
+                <p class="fl">0%</p>
+                <div class="meter fl">
+                    <span style="width: 0%;"></span>
+                </div>
+            </div>
+		</div>
+	</div>
+	<a href="javascript:;" class="cancel"></a>
+</div>
+</script>
+
+<script type="text/html" id="tpl-sendbox">
+    <div class="send-box">
+        <div class="input-box">
+            <input type="text" placeholder="公告名称" class="txt1" value="{{title}}">
+            <div class="input-cont">
+                <textarea class="input-txt"  placeholder="公告简介（选填）如需回执，可以让学生在公告里评论回复，作为回执。通知会以微信的方式发送到全体师生。"></textarea>
+            </div>
+            <div class="annex-box">
+                {{each attachment as file}}
+                <div class="file" data-id="{{file['fileid']}}">
+                    <div class="file-icon fl fileext preview" data-url="{{file['rurl']}}" data-name="{{file['name']}}" data-popurl="{{file['popurl']}}" data-down="{{file['url']}}" data-ispic="{{file['isPic']}}" data-isvideo="{{file['isVideo']}}" data-isOnline="{{file['isOnline']}}">
+                        <img src="{{file['ext']}}" data-src="{{file.src}}">
+                    </div>
+                    <div class="file-cont fl">
+                        <h3 class="file-name">
+                            <a href="javascript:;" title="{{file['name']}}">{{file['name']}}</a>
+                        </h3>
+                        <div class="opt clearfix">
+                            <p class="file-size fl">{{file['size']}}</p>
+                            <div class="state fl">
+                                <a href="javascript:;" class="fail hide">上传失败</a>
+                                <a href="javascript:;" class="retry hide">重新上传</a>
+                                <a href="javascript:;" class="succ">已上传</a>
+                                <a href="javascript:;" class="ing hide">正在上传-<span>0%</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:;" class="cancel"></a>
+                </div>
+                {{/each}}
+            </div>
+            <div style="margin-top:1px"></div>
+        </div>
+        <div class="opt-cont">
+            <div class="opt-btn fr">
+                <a href="javascript:;" class="cancel">取消</a>
+                <a href="javascript:;" class="sure">确定</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="tpl-anList">
+    <li data-id="{{id}}">
+		{{include 'tpl-announce-cont-box'}}
+    </li>
+</script>
+
+<script type="text/html" id="tpl-announce-cont-box">
+        <div class="announce-cont-box">
+            <div class="title clearfix">
+               <h3><a href="javascript:;" onclick="">{{title}}</a></h3> 
+                <div class="opt">
+                    <a href="javascript:;" class="opt-btn"></a>
+                    <div class="opt-box2">
+						<!-- <a href="javascript:;" data-state="{{sort}}" class="top">{{if sort==0}}置顶{{else}}取消置顶{{/if}}</a> -->
+                        <a href="javascript:;" class="edit">编辑</a>
+                        <a href="javascript:;" class="del">删除</a>
+                    </div>
+                </div>
+            </div>
+            <div class="time">
+                <span>发布人：{{userName}}  发布时间：{{createTime}}</span>
+            </div>
+			<a href="/Notify/info/id/{{id}}.html">
+            <div class="announce-cont">
+                <div class="word">
+                    <div class="p">{{#content}}</div>
+                </div>
+            </div>
+			</a>
+			<div class="comment-new" style="margin-left: -1px;margin-top: 10px;">
+                <a href="/Notify/info/id/{{id}}.html">
+                    <span><b>{{readCount}}</b>人已读</span>
+                </a>
+                &emsp;&emsp;&emsp;
+        		<!-- <a href="/Notify/info/id/{{id}}.html">
+                    <span><b>{{discussCount}}</b>条评论</span>
+                    {{if discussNewCount>0}}<i>{{discussNewCount}}</i>{{/if}}
+        		</a> -->
+    		</div>
+        </div>
+</script>
+<a href="javascript:;" class="back-to-top"></a>
+
+<link href="/html/Public/Common/js/lib/simditor-1.0.3/styles/simditor.css" rel="stylesheet" type="text/css">
+
+<script>
+seajs.use('/html/Public/Home/js/announce.js',function(ex){ex.announceAll();});
+</script>
+
+	<script>seajs.use('/html/Public/Home/js/thirdheader.js',function(ex){ex.active();});</script>
+
+</body></html>

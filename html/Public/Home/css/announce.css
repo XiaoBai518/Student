@@ -251,14 +251,14 @@
     display: block;
     width: 34px;
     height: 34px;
-    background: url(/Public/Home/img/opt.png) left top no-repeat;
+    background: url(/html/Public/Home/img/opt.png) left top no-repeat;
     border-radius: 3px;
 }
 .announce-cont-box .title .opt .opt-btn:hover{
-    background: url(/Public/Home/img/opt.png) left bottom no-repeat;
+    background: url(/html/Public/Home/img/opt.png) left bottom no-repeat;
 }
 .announce-cont-box .title .opt .opt-btn.active{
-    background: url(/Public/Home/img/opt.png) left bottom no-repeat #dcdcdc;
+    background: url(/html/Public/Home/img/opt.png) left bottom no-repeat #dcdcdc;
 }
 .announce-cont-box .title .opt .opt-box2{
     position: absolute;

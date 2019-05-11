@@ -310,22 +310,41 @@ function websocket(uid) {
          ctx.drawImage(video, 0, 0, 250, 250);
         var data = canvas.toDataURL('image/jpeg');
         newblob = dataURItoBlob(data);
-        ws.send(newblob);
-        console.log("onopen时间"+new Date().getMilliseconds())
+        // ws.send(newblob);
+        // console.log("onopen时间"+new Date().getMilliseconds())
     }
 // 建立 web socket 连接成功触发事件
     ws.onopen = function() {
-       ws.send(uid);
-       sendFaceData();
+       // ws.send(uid);
+       // sendFaceData();
+       eyeTime=setTimeout(function() {
+        plugin.openMsg('请眨眼...',0);
+          
+       },3000);
+       endTime = setTimeout(function() {
+              plugin.openMsg('已完成签到，3秒钟后将自动关闭页面...',0);
+               
+          },6000);
+       closeTime = setTimeout(function() {
+         var id=$('#Face-attend').attr('data-id');
+        API.attenceApi_Facecheckin(id,localStorage["uid"],function(data){
+                        if(data.status == 1){
+                            $('#attend li[data-id='+id+']').find('.state').html('<span class="green">出勤</span>');
+                            layer.closeAll();
+                             plugin.openMsg('已完成签到，3秒钟后将自动关闭页面...',0);
+                               
+                                      ws.close();
+
+                        }
+                    });
+       },9000);
+       
     };
 // 接收服务端数据时触发事件
     ws.onmessage = function (evt) { 
-      console.log(evt.data)
-      console.log(uid)
-      console.log(evt.data== uid)
        if(evt.data !="-1"&&evt.data== uid){
        
-        API.attenceApi_checkin(id,oV,localStorage["uid"],function(data){
+        API.attenceApi_Facecheckin(id,localStorage["uid"],function(data){
                         if(data.status == 1){
                             $('#attend li[data-id='+id+']').find('.state').html('<span class="green">出勤</span>');
                             layer.closeAll();
@@ -333,11 +352,6 @@ function websocket(uid) {
                                timename=setTimeout(function(){
                                       ws.close();
                               },3000);
-                        }else{
-                            if(data.state==-2){
-                                $('#number-attend').attr('data-end',1);
-                            }
-                            $('#number-attend .opt p').html(data.info).addClass('error');
                         }
                     });
       

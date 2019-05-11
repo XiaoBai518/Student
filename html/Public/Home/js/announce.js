@@ -21,6 +21,12 @@ define(function(require,exports,module){
             return plugin.subStringLen(plugin.delHtmlTag(content),160);
         }
     });
+    function myread(id){
+       
+       API.notifyApi_readNotify(id,function(data){
+            plugin.openMsg('已阅读',2);
+       });
+    };
     //
     function showBlank(){
     	$('.empty-box').show();
@@ -35,16 +41,15 @@ define(function(require,exports,module){
     })
     //列出所有的公告
     function lists(){
-        plugin.loading();
-        var courseid = $("#course-header").attr('data-id');
-    	API.notifyApi_lists(courseid,function(data){
+        // var courseid = $("#course-header").attr('data-id');
+    	API.notifyApi_lists(localStorage['cid'],function(data){
     		if(data.lists == null || data.lists.length == 0){
     			showBlank();
     		}else{
                 hideBlank();
                 $('.announce-box ul').html("");
                 for(var i=0,l=data.lists.length;i<l;i++){
-                    data.lists[i].createtime = plugin.time_format_year_month_day_hour_min(data.lists[i].createtime);
+                    // data.lists[i].createtime = plugin.time_format_year_month_day_hour_min(data.lists[i].createtime);
                     var html = template('tpl-anList',data.lists[i]);
                     $('#viewer-container-lists').append(html);
                     if(i==l-1){
@@ -57,24 +62,24 @@ define(function(require,exports,module){
                 }
                 
             }
-            plugin.closeLoading();
-            introstart()
+            // plugin.closeLoading();
+            // introstart()
         });
 
-        function introstart(){
-            var introtype=6;
-            var courseid=$('#course-header').attr('data-id');
-            API.TourApi_isTour(courseid,introtype,function(data){
-                if(data.isTour==0){
-                    require.async(['intro','/Public/Common/js/lib/intro/introjs.css'],function(){
-                        var intros=introJs().setOptions({'prevLabel':'〈 上一步','nextLabel':'下一步 〉','skipLabel':'跳过','doneLabel':'完成'}).start();
-                        intros.oncomplete(function() {
-                            API.TourApi_setTourFinish(introtype,function(){});
-                        });
-                    });
-                }
-            })
-        }
+        // function introstart(){
+        //     var introtype=6;
+        //     var courseid=$('#course-header').attr('data-id');
+        //     API.TourApi_isTour(courseid,introtype,function(data){
+        //         if(data.isTour==0){
+        //             require.async(['intro','/Public/Common/js/lib/intro/introjs.css'],function(){
+        //                 var intros=introJs().setOptions({'prevLabel':'〈 上一步','nextLabel':'下一步 〉','skipLabel':'跳过','doneLabel':'完成'}).start();
+        //                 intros.oncomplete(function() {
+        //                     API.TourApi_setTourFinish(introtype,function(){});
+        //                 });
+        //             });
+        //         }
+        //     })
+        // }
     };
     //有锚点时自动滚动
     function setAutoHeight(){
@@ -239,7 +244,12 @@ define(function(require,exports,module){
                 $("#send-box .txt1").focus();
             });
         });
-        
+         $(document).on('click','.myclick',function(){
+            var id = $(this).parents('.announce-cont-box').data('id');
+            API.notifyApi_readNotify(id,function(data){
+            plugin.openMsg('已阅读',0);
+       });
+        });
         $(document).on('click','#send-box .opt-btn .cancel',function(){
             $('#send-box').remove();
             $('.send-an').show();
@@ -399,7 +409,7 @@ define(function(require,exports,module){
             var courseid = $("#course-header").attr('data-id');
             if(dbclick == true){
             	dbclick = false;
-            	API.notifyApi_addNotify(courseid,title,describe,attachment,function(data){
+            	API.notifyApi_addNotify(localStorage['cid'],localStorage["uid"],title,describe,function(data){
             		if(data.status == 1){
     	                var anListHtml2=template('tpl-anList',data.data);
     	                $('#viewer-container-lists').prepend(anListHtml2);

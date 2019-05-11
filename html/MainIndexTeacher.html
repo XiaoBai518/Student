@@ -397,22 +397,19 @@
         
 		<a class="kdmore" href="javascript:;" {{if i==0}}data-step="4"  data-intro="点击此图标；可以对班级进行管理，如：编辑、删除等操作"  data-position="right"{{/if}}></a>
 		<ul class="kdcgd">
-			{{if l.role==1}}
-			<li class="kdli1"><a href="javascript:;">编辑</a></li>
-			{{/if}}
-            <li class="kdli3"><a href="javascript:;">{{if l.role==0}}退课{{else if l.role==1}}删除{{/if}}</a></li>
+            <li class="kdli3"><a href="javascript:;">删除</a></li>
 		</ul>
     </dt>
 	<dd>
 		<ul>
-			<li class="off"><span>近期作业</span></li>
+			<li class="off"><span>近期公告</span></li>
 			{{each l['hlist'] as h}}
-				<li><span title="{{h['title']}}"><a href={{if h['type']==0}}"/Review/index/homeworkid/{{h['id']}}.html"{{else}}"/Review/groupindex/homeworkid/{{h['id']}}.html"{{/if}}>{{h['title']}}</a></span></li>
+				<li><span title="{{h['title']}}"><a href="javascript:;" onclick="toAnnounce({{l['id']}})">{{h['title']}}</a></span></li>
             {{/each}}
 		</ul>
         <div class="ddfoot clearfix">
             <span class="fl">邀请码：{{l.code}}</span>
-            <a href="/StudentsV2/index/courseid/{{l['id']}}.html" class="fr">
+            <a href="javascript:;" onclick="toCourseMember({{l['id']}})" class="fr">
                 <span class="hy" {{if i==0}}data-step="3"  data-intro="班级成员；点击可以快速查看成员详情"  data-position="right"{{/if}}>成员{{l['total']}}</span>
             </a>
         </div>

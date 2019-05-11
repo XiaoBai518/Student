@@ -522,30 +522,30 @@ define(function(require,exports,module){
          })();
 
 		 
-		 //归档管理(列出所有的归档)
-		 $(".ktcon1r ul li.ktli2, .guidangpaixutop .ktli2").click(function () {
-			 $(".guidangpaixu").show();
-			 $(".guidangpaixutop ul li").removeClass("on");
-			 $(".guidangpaixutop ul li").eq(1).addClass("on");
-			 $(".guidangpaixucon").hide();
-			 $(".guidangpaixucon").eq(1).show();
-			 $(".bg").show();
-			 $("#viewer-container-archiverlist .bb-div").html("");
-			 API.archiveApi_lists(function(data){
-				 if(data.lists.length > 0){
-					 for(var i=0;i<data.lists.length;i++){
-						 var archive = new Array();
-						 archive['a'] = data.lists[i];
-						 var html = template('tpl-archive',archive);
-						 $("#viewer-container-archiverlist .bb-div").append(html);
-						 scrollBar.scrollBar($('.guidangpaixucon.gd2'), $('.guidangpaixucon.gd2 .bb-div'));
-					 } 
-				 }else{
-					 var tplRender = '<div style="text-align:center;font-size:15px;margin-top: 40px;">暂无班级被归档</div>';
-					 $("#viewer-container-archiverlist .bb-div").append(tplRender);
-				 }
-			 });
-		 });
+		 // //归档管理(列出所有的归档)
+		 // $(".ktcon1r ul li.ktli2, .guidangpaixutop .ktli2").click(function () {
+			//  $(".guidangpaixu").show();
+			//  $(".guidangpaixutop ul li").removeClass("on");
+			//  $(".guidangpaixutop ul li").eq(1).addClass("on");
+			//  $(".guidangpaixucon").hide();
+			//  $(".guidangpaixucon").eq(1).show();
+			//  $(".bg").show();
+			//  $("#viewer-container-archiverlist .bb-div").html("");
+			//  API.archiveApi_lists(function(data){
+			// 	 if(data.lists.length > 0){
+			// 		 for(var i=0;i<data.lists.length;i++){
+			// 			 var archive = new Array();
+			// 			 archive['a'] = data.lists[i];
+			// 			 var html = template('tpl-archive',archive);
+			// 			 $("#viewer-container-archiverlist .bb-div").append(html);
+			// 			 scrollBar.scrollBar($('.guidangpaixucon.gd2'), $('.guidangpaixucon.gd2 .bb-div'));
+			// 		 } 
+			// 	 }else{
+			// 		 var tplRender = '<div style="text-align:center;font-size:15px;margin-top: 40px;">暂无班级被归档</div>';
+			// 		 $("#viewer-container-archiverlist .bb-div").append(tplRender);
+			// 	 }
+			//  });
+		 // });
 		 //课堂排序 归档管理关闭
 		 $(".guidangpaixu .guidangpaixutop .gdpcmore").click(function () {
 			 $(".guidangpaixu").hide();
@@ -713,90 +713,90 @@ define(function(require,exports,module){
 			 });
 		 });
 
-		 $(document).on('click','.jumptoclass',function(e){
-			e.preventDefault();
-			var cid = $(this).data('id');
-			var cname = $(this).text();
-			var _this = this;
-			API.CourseApi_confirmUserToCourse(cid,function(data){
-				if(data.status != 1){
-					plugin.openMsg(data.info,1);
-					return false;
-				}else{
-					API.CourseApi_checkMyInfo(cid,function(data){
-						if(data.state == 1){
-							location.href = $(_this).attr('href');
-						}else{
-							data.cname = cname;
-							var l = layer.open({
-								type: 1,
-								title: '补充个人信息',
-								closeBtn: true,
-								area:['400px'],
-								content: template('tpl-extra-info',data),
-								shift: 7,
-								moveType: 1,
-								success:function(d){
-									layui.laydate.render({
-										elem: '#needentrance',
-										max: 0,
-										done: function(value, date, endDate){
+		//  $(document).on('click','.jumptoclass',function(e){
+		// 	e.preventDefault();
+		// 	var cid = $(this).data('id');
+		// 	var cname = $(this).text();
+		// 	var _this = this;
+		// 	API.CourseApi_confirmUserToCourse(cid,function(data){
+		// 		if(data.status != 1){
+		// 			plugin.openMsg(data.info,1);
+		// 			return false;
+		// 		}else{
+		// 			API.CourseApi_checkMyInfo(cid,function(data){
+		// 				if(data.state == 1){
+		// 					location.href = $(_this).attr('href');
+		// 				}else{
+		// 					data.cname = cname;
+		// 					var l = layer.open({
+		// 						type: 1,
+		// 						title: '补充个人信息',
+		// 						closeBtn: true,
+		// 						area:['400px'],
+		// 						content: template('tpl-extra-info',data),
+		// 						shift: 7,
+		// 						moveType: 1,
+		// 						success:function(d){
+		// 							layui.laydate.render({
+		// 								elem: '#needentrance',
+		// 								max: 0,
+		// 								done: function(value, date, endDate){
 											   
-										}
-									});
-									d.find('.sureinfo').on('click',function(){
-										var spro = $('#needspecialty').val();
-										var sclass = $('#neednatureclass').val();
-										var sgrade = $('#needgrade').val();
-										var sdate = $('#needentrance').val();
-										var user = {}
-										if(data.setting.classno==1){
-											if(sclass!=''){
-												user.classno = sclass;
-											}else{
-												plugin.openMsg('请填写班级信息',1);
-												return false;
-											}
-										}
-										if(data.setting.enrolltime==1){
-											if(sdate!=''){
-												user.enrolltime = sdate;
-											}else{
-												plugin.openMsg('请填写入学时间',1);
-												return false;
-											}
-										}
-										if(data.setting.grade==1){
-											if(sgrade!=''){
-												user.grade = sgrade;
-											}else{
-												plugin.openMsg('请填写年级信息',1);
-												return false;
-											}
-										}
-										if(data.setting.major==1){
-											if(spro!=''){
-												user.major = spro;
-											}else{
-												plugin.openMsg('请填写专业信息',1);
-												return false;
-											}
-										} 
-										API.StudentAddtionInfoApi_updateMyCourseInfo(cid,user,function(tData){/////api 修改 学生专业年级性别
-											location.href = $(_this).attr('href');
-										});
-									})
-									d.find('.quitinfo').on('click',function(){
-										layer.close(l);
-									})
-								}
-							});
-						}
-					})
-				}
-			})
+		// 								}
+		// 							});
+		// 							d.find('.sureinfo').on('click',function(){
+		// 								var spro = $('#needspecialty').val();
+		// 								var sclass = $('#neednatureclass').val();
+		// 								var sgrade = $('#needgrade').val();
+		// 								var sdate = $('#needentrance').val();
+		// 								var user = {}
+		// 								if(data.setting.classno==1){
+		// 									if(sclass!=''){
+		// 										user.classno = sclass;
+		// 									}else{
+		// 										plugin.openMsg('请填写班级信息',1);
+		// 										return false;
+		// 									}
+		// 								}
+		// 								if(data.setting.enrolltime==1){
+		// 									if(sdate!=''){
+		// 										user.enrolltime = sdate;
+		// 									}else{
+		// 										plugin.openMsg('请填写入学时间',1);
+		// 										return false;
+		// 									}
+		// 								}
+		// 								if(data.setting.grade==1){
+		// 									if(sgrade!=''){
+		// 										user.grade = sgrade;
+		// 									}else{
+		// 										plugin.openMsg('请填写年级信息',1);
+		// 										return false;
+		// 									}
+		// 								}
+		// 								if(data.setting.major==1){
+		// 									if(spro!=''){
+		// 										user.major = spro;
+		// 									}else{
+		// 										plugin.openMsg('请填写专业信息',1);
+		// 										return false;
+		// 									}
+		// 								} 
+		// 								API.StudentAddtionInfoApi_updateMyCourseInfo(cid,user,function(tData){/////api 修改 学生专业年级性别
+		// 									location.href = $(_this).attr('href');
+		// 								});
+		// 							})
+		// 							d.find('.quitinfo').on('click',function(){
+		// 								layer.close(l);
+		// 							})
+		// 						}
+		// 					});
+		// 				}
+		// 			})
+		// 		}
+		// 	})
 			
-		})
+		// })
 
 		 //创建课堂
 		 $(".ktcon1l").click(function () {

@@ -1,0 +1,73 @@
+*{
+		margin: 0;padding:0;
+	}
+	a{ text-decoration: none; }
+	.textoverflow{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.overflow{ overflow: hidden; }
+	.attend_data{
+		width: 1000px;
+		height: 1000px;
+		box-shadow:0 0 5px #ccc;margin: 0 auto; 
+		background: #fff;
+		padding:40px 60px;
+		box-sizing: border-box;
+	}
+
+
+	/*attend 头部 基础样式表*/
+	.attend_header{ border-bottom: 1px solid #e6e6e6;height: 100px; }
+	.attend_headleft{  }
+	.attend_className{ font-size: 30px;color: #333;width: 300px; }
+	.attend_stunum{ font-size: 14px; color:#808080; }
+	.attend_rate{ font-size: 16px; color: #999; }
+	.attend_ratenums{ font-size: 20px;color: #357ae8; }
+	.attend_ratenum{ font-size: 36px; }
+	
+	/*attend 头部 布局样式表*/
+	.attend_header{ overflow: hidden; }
+	.attend_headleft{  }
+	.attend_className{  }
+	.attend_stunum{ margin: 20px 0; }
+	.attend_rate{ float: right; margin-top: 10px; }
+	.attend_ratenums{ margin-left: 24px; }
+	.attend_ratenum{  }
+	
+
+	/* attend 考勤历史趋势  */
+	.attend_history{ height: 450px;/*background: rgba(0,0,0,0.1);*/border-bottom: 1px solid #ccc }
+
+
+	/* attend 考勤数据底部 */
+	.attend_databottom{ height: 300px;margin-top: 50px;}
+
+		/* attend 底部班级出勤情况 */
+		.attend_classattend{ float: left;height: 300px;width: 500px;/*background-color: rgba(0,0,0,0.1);*/ }
+
+		/* attend 底部有旷课记录的学生 基础样式表*/
+		.attend_hascutclassstu{ width: 320px;height: 300px;width: 320px; }
+			.attend_hascuttitle{ font-size: 16px; color: #333;font-weight: 400; }
+			.attend_cutstulists{width: 328px;padding:17px 5px 17px 0;  height: 255px;overflow: auto;position: relative;top: -17px;}
+				.attent_cutstulist{height: 32px;margin-bottom: 16px;width: 300px;}
+				.attent_cutstulist:last-child{margin-bottom: 30px;}
+					.attend_cutstuhead{height: 32px;width: 32px;background-color: rgba(0,0,0,0.1);border-radius: 50%;vertical-align: middle;}
+					.attend_cutstuname{display: inline-block;width: 120px;font-size: 14px;color: #333;height: 100%;line-height: 32px;vertical-align: middle;}
+					.attend_cutstunum{display: inline-block;width: 50px;font-size: 14px;color: #666;height: 100%;line-height: 32px;vertical-align: middle;}
+			
+		/* attend 底部有旷课记录的学生 布局样式表*/
+		.attend_hascutclassstu{ float: right; }
+			.attend_hascuttitle{ margin-bottom: 20px }
+			.attend_cutstulists{}
+				.attent_cutstulist{cursor: pointer;}
+					.attend_cutstuhead{margin-right: 20px;}
+					.attend_cutstuname{margin-right: 20px;}
+					.attend_cutstunum{}
+
+	.history_by{display:none;position: absolute;top: 40px;left: 0;font-size: 12px;text-align: center;z-index: 1}
+	.btn_history_by{height: 28px;line-height: 26px;color: #333;width: 70px;float:left;background-color: #fff;border: 1px solid #ccc;box-sizing: border-box;}
+	.btn_by_attend{border-top-left-radius: 5px;border-bottom-left-radius: 5px;}
+	.btn_by_date{border-top-right-radius: 5px;border-bottom-right-radius: 5px;position: relative;left: -1px;}
+	.btn_history_by.on{background-color: #328eeb;color: #fff;}

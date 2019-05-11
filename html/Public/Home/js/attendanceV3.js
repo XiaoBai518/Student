@@ -329,10 +329,10 @@ define(function(require,exports,module){
         var courseid = $("#return-course").attr('data-id');
         location.href = url;
     });
-    $(document).on('click','.dlall',function(){
-        var courseid = $("#return-course").attr('data-id');
-        location.href = '/Export/attence/courseid/'+courseid+'.html';
-    })
+    // $(document).on('click','.dlall',function(){
+    //     var courseid = $("#return-course").attr('data-id');
+    //     location.href = '/Export/attence/courseid/'+courseid+'.html';
+    // })
     $(document).on('click','.dlbytime',function(){
         var courseid = $("#return-course").attr('data-id');
         plugin.cursorconfirm({
@@ -984,7 +984,10 @@ define(function(require,exports,module){
         });
         //放弃考勤
         var abandonLayer=null;
-        $(document).on('click','#number-attend .cancel,#nows-attend .cancel,#Face-attend .cancel,#number-attend .close,#Face-attend .close,#nows-attend .close',function(){
+         $(document).on('click','#number-attend .close,#Face-attend .close,',function(){
+             layer.closeAll();
+         });
+        $(document).on('click','#number-attend .cancel,#nows-attend .cancel,#Face-attend .cancel,#nows-attend .close',function(){
             // var id = $(this).parent().parent().data('id');
             var id = $('body').attr("data-id");
             API.attenceApi_getAttenceState(id,function(data2){

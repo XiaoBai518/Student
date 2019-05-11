@@ -360,20 +360,7 @@
     <div class="bgx"></div>
     <!--弹出默认灰色背景-->
     <div class="bg" style="display: none;"></div>
-
-	<script type="text/html" id="tpl-archive">
-	<dl class="gpdl1 dv1" data-id="{{a['courseid']}}" title="{{a['coursename']}}">
-		<dt style="background:url({{a['minarpic']}}) no-repeat;background-color: #1066af;">
-			<strong><a class="text-overflow" href="/Interact/index/courseid/{{a['courseid']}}.html" title="{{a['coursename']}}">{{a['coursename']}}</a></strong>
-			<p>{{if a.role==0}}角色：学生 &nbsp;&nbsp;&nbsp;&nbsp; 老师：{{a.username}}{{else if a.role==1}}角色：老师{{/if}}</p>
-			<a class="kdmorex" href="javascript:;"></a>
-			<ul class="kdcgdx">
-				<li class="kdli1 gdhf"><a href="javascript:;">恢复</a></li>
-				<li class="kdli2 gdsc"><a href="javascript:;">{{if a.role==0}}退课{{else if a.role==1}}删除{{/if}}</a></li>
-			</ul>
-		</dt>
-	</dl>
-	</script>
+    <!--左侧弹窗课程列表-->
    <script type="text/html" id="tpl-leftlists">
     {{each lists as l i}}
     <a href="javascript:;" title="{{l['coursename']}}" onclick="toCourse({{l['id']}})">
@@ -382,6 +369,8 @@
                     </a>     
    {{/each}}
    </script>
+
+   <!--课堂课程列表-->
    <script type="text/html" id="tpl-course">
 {{each lists as l i}}
 <dl class="ktdl1 ktpx1" data-id="{{l['id']}}" data-color="{{l['bannercolor']}}" >
@@ -389,25 +378,17 @@
 		<strong {{if newtype}}class="newtype"{{/if}}>
 			<a href="javascript:;" onclick="toCourseStudent({{l['id']}})" title="{{l['coursename']}}" class="jumptoclass" data-id="{{l['id']}}" {{if i==0}}data-step="2"  data-intro="这是一个示例班级；点击班级名称进入此班级，可以快速了解课堂派。"  data-position="right"{{/if}}>{{substr38 l['coursename']}}</a>
 		</strong>
-        <p>{{if l.role==0}}角色：学生 &nbsp;&nbsp;&nbsp;&nbsp; 老师：{{l.username}}{{else if l.role==1}}角色：老师{{/if}}</p>
+        <p>角色：学生 &nbsp;&nbsp;&nbsp;&nbsp; 老师：{{l.username}}</p>
 		<a class="kdmore" href="javascript:;" {{if i==0}}data-step="4"  data-intro="点击此图标；可以对班级进行管理，如：编辑、删除等操作"  data-position="right"{{/if}}></a>
 		<ul class="kdcgd">
-			{{if l.role==1}}
-			<li class="kdli1"><a href="javascript:;">编辑</a></li>
-			{{/if}}
-            <li class="kdli3"><a href="javascript:;">{{if l.role==0}}退课{{else if l.role==1}}删除{{/if}}</a></li>
-		   	<li class="kdli2"><a href="javascript:;">归档</a></li>
-			{{if l.role==1}}
-			<li class="kdli5"><a href="javascript:;">复制班级</a></li>
-			<li class="kdli4"><a href="{{l.packageUrl}}" target="_blank">打包下载</a></li>
-			{{/if}}
+            <li class="kdli3"><a href="javascript:;">退课</a></li>
 		</ul>
     </dt>
 	<dd>
 		<ul>
 			<li class="off"><span>近期公告</span></li>
 			{{each l['hlist'] as h}}
-				<li><span title="{{h['title']}}"><a href={{if h['type']==0}}"/Review/index/homeworkid/{{h['id']}}.html"{{else}}"/Review/groupindex/homeworkid/{{h['id']}}.html"{{/if}}>{{h['title']}}</a></span></li>
+				<li><span title="{{h['title']}}"><a href="javascript:;" onclick="toAnnounceStudent({{l['id']}})">{{h['title']}}</a></span></li>
             {{/each}}
 		</ul>
         <div class="ddfoot clearfix">
